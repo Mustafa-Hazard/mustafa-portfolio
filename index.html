@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mustafa Iqbal — Portfolio</title>
+  <meta name="description" content="Mustafa Iqbal — CS student focused on cybersecurity & full‑stack web apps." />
+  <style>
+    /* ===== Theme (simple: system first, optional toggle) ===== */
+    :root{
+      --bg:#0b0c10; --card:#0f1115; --ink:#e7ecf3; --muted:#9aa7b4; --line:#232635;
+      --brand:#6aa7ff; --brand2:#7ef0d8; --radius:14px; --shadow:0 10px 28px rgba(0,0,0,.35);
+      --grad: linear-gradient(90deg,var(--brand),var(--brand2));
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f8fafc; --card:#ffffff; --ink:#101827; --muted:#64748b; --line:#e6eaf0; --shadow:0 10px 28px rgba(0,0,0,.08); }
+    }
+    html.theme-light{ --bg:#f8fafc; --card:#ffffff; --ink:#101827; --muted:#64748b; --line:#e6eaf0; --shadow:0 10px 28px rgba(0,0,0,.08); }
+    html.theme-dark{ --bg:#0b0c10; --card:#0f1115; --ink:#e7ecf3; --muted:#9aa7b4; --line:#232635; --shadow:0 10px 28px rgba(0,0,0,.35); }
+
+    /* ===== Base ===== */
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none;position:relative}
+    a:hover{text-decoration:none}
+    /* classy link underline */
+    .link{color:var(--ink)}
+    .link::after{
+      content:""; position:absolute; left:0; right:0; bottom:-2px; height:2px;
+      background:var(--grad); transform:scaleX(0); transform-origin:left; transition:transform .25s ease;
+    }
+    .link:hover::after{ transform:scaleX(1); }
+    .container{max-width:980px;margin:0 auto;padding:0 16px}
+    .eyebrow{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+
+    /* ===== Header ===== */
+    header{position:sticky;top:0;background:color-mix(in hsl, var(--bg) 85%, transparent);backdrop-filter:saturate(150%) blur(8px);border-bottom:1px solid var(--line);z-index:10}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{font-weight:800;letter-spacing:.2px}
+    .brand span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .nav a{margin-left:14px;font-size:14px}
+    .icon-btn{border:1px solid var(--line);background:var(--card);border-radius:10px;padding:6px 10px;cursor:pointer;color:inherit;box-shadow:var(--shadow)}
+
+    /* ===== Hero ===== */
+    .hero{padding:44px 0;background:var(--card);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+    /* soft corner gradient */
+    .hero::before{
+      content:""; position:absolute; inset:-30% -10% auto auto; width:min(60vw,720px); aspect-ratio:1/1;
+      background:conic-gradient(from 120deg,var(--brand),var(--brand2),var(--brand));
+      filter:blur(70px) saturate(140%); opacity:.35; pointer-events:none;
+    }
+    .hero h1{margin:0 0 8px;font-size:28px}
+    .hero p{margin:0 0 16px;color:var(--muted)}
+    .btn{display:inline-block;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:inherit;box-shadow:var(--shadow)}
+    .btn.primary{border-color:transparent;background:var(--grad);color:#0b0c10;font-weight:700}
+    .btn.ghost{border-color:var(--line)}
+    .row{display:flex;flex-wrap:wrap;gap:10px}
+
+    /* ===== Sections / Cards ===== */
+    section{padding:32px 0}
+    .grid{display:grid;gap:16px}
+    @media(min-width:720px){.grid.cols-2{grid-template-columns:1fr 1fr}}
+    .card{
+      background:linear-gradient(180deg,color-mix(in hsl,var(--card) 96%, transparent), color-mix(in hsl,var(--card) 86%, transparent));
+      border:1px solid var(--line); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow);
+      transition:transform .15s ease, border-color .2s ease;
+    }
+    .card:hover{ transform:translateY(-2px); border-color:color-mix(in hsl, var(--brand) 28%, var(--line)); }
+    .card h3{margin:0 0 6px;font-size:18px}
+    .meta{color:var(--muted);font-size:13px;margin-bottom:8px}
+    .chip{display:inline-block;font-size:12px;border:1px solid var(--line);border-radius:999px;padding:4px 8px;margin:2px 6px 0 0;color:inherit;background:color-mix(in hsl, var(--ink) 6%, transparent)}
+
+    /* ===== Form ===== */
+    .input{width:100%;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:inherit}
+    textarea.input{min-height:120px;resize:vertical}
+
+    /* ===== Footer ===== */
+    footer{padding:28px 0 40px;color:var(--muted);text-align:center}
+
+    /* accent text */
+    .accent{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand">Mustafa <span>Iqbal</span></div>
+      <nav>
+        <a class="link" href="#projects">Projects</a>
+        <a class="link" href="#education">Education</a>
+        <a class="link" href="#skills">Skills</a>
+        <a class="link" href="#contact">Contact</a>
+        <a class="link" href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
+        <!-- Email button with robust mailto + JS fallback -->
+        <a id="emailTop" class="btn primary" href="mailto:talhamustafa642@gmail.com?subject=Hello%20Mustafa&body=Hi%20Mustafa%2C%0A" title="Email me">Email</a>
+        <button id="themeBtn" class="icon-btn" title="Toggle dark/light">🌓</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container">
+      <h1>Hi, I'm <span class="accent">Mustafa</span> — CS student focused on cybersecurity & full‑stack web apps.</h1>
+      <p>Karachi, Pakistan · SZABIST (BSCS, expected Jun 2027) · GPA 3.53/4.0</p>
+      <div class="row">
+        <a class="btn primary" href="#projects">See Projects</a>
+        <a class="btn ghost" id="callBtn" href="tel:+923302479956">Call</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/mustafa-muhammad-i-75434922b" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn ghost" href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+    <!-- Projects -->
+    <section id="projects">
+      <h2 class="eyebrow">Technical Experience</h2>
+      <div class="grid cols-2">
+        <article class="card">
+          <h3>Full‑Stack GPA & CGPA Tracking Web App</h3>
+          <div class="meta">Node.js · Express · PostgreSQL (Neon) · Alpine.js · Apr–Jun 2025</div>
+          <p>Built and deployed an academic tracker with 10+ REST endpoints and 24/7 availability. Indexed/optimized schema (~30% faster queries). Deployed on Firebase Hosting.</p>
+          <div>
+            <span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">PostgreSQL</span><span class="chip">Alpine.js</span><span class="chip">Firebase</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Attendance Management Web Application</h3>
+          <div class="meta">Node.js · Express · PostgreSQL · EJS · Jul 2025</div>
+          <p>Implemented secure login and role‑based access. Designed indexed schema. Built responsive EJS views and CRUD with validation.</p>
+          <div>
+            <span class="chip">RBAC</span><span class="chip">SQL</span><span class="chip">EJS</span><span class="chip">CRUD</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Restaurant Management System</h3>
+          <div class="meta">Java (console) · Jan 2024</div>
+          <p>Console app for orders/billing with secure login and menu CRUD. Automated receipts cut manual billing time by ~60%.</p>
+          <div>
+            <span class="chip">Java</span><span class="chip">OOP</span><span class="chip">File I/O</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Car Rental Management System — Hackathon Finalist</h3>
+          <div class="meta">Prototype · Dec 2023</div>
+          <p>48‑hour prototype with listing, booking, and payment logic. Finalist among 30+ teams at SZABIST Hackathon.</p>
+          <div>
+            <span class="chip">Teamwork</span><span class="chip">UI/UX</span><span class="chip">Rapid prototyping</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <h2 class="eyebrow">Education</h2>
+      <div class="card">
+        <h3>SZABIST University, Karachi — BS Computer Science</h3>
+        <div class="meta">Focus: Cybersecurity · Expected Jun 2027 · CGPA 3.53/4.0</div>
+        <p><strong>Relevant coursework:</strong> Data Structures, OOP, Operating Systems, Database Systems, Artificial Intelligence.</p>
+      </div>
+      <div class="card" style="margin-top:12px">
+        <h3>Alpha College, Karachi — A‑Levels</h3>
+        <div class="meta">Jan 2021 – Jun 2023</div>
+        <p>Mathematics, Computer Science, Physics.</p>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2 class="eyebrow">Skills</h2>
+      <div class="card">
+        <p><strong>Languages:</strong> Java (Advanced), Python, JavaScript (Node.js), SQL</p>
+        <p><strong>Frameworks/Libraries:</strong> Express.js, Alpine.js, EJS</p>
+        <p><strong>Domains:</strong> Network Security, RESTful API development</p>
+        <p><strong>Tools:</strong> PostgreSQL, Firebase, Git & GitHub, VS Code</p>
+        <p><strong>Operating Systems:</strong> Windows, Linux (basic CLI)</p>
+        <p><strong>Certifications:</strong> Python Pro (Udemy, 2025); Linux for Beginners (Udemy, 2025); Cybersecurity Specialization (2/9)</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2 class="eyebrow">Contact</h2>
+      <div class="card">
+        <!-- Simple buttons: mailto + copy fallback so it works everywhere -->
+        <div class="row" style="margin-bottom:10px">
+          <a id="emailBottom" class="btn primary" href="mailto:talhamustafa642@gmail.com?subject=Hello%20Mustafa&body=Hi%20Mustafa%2C%0A">Email me</a>
+          <button id="copyEmail" class="btn">Copy email</button>
+        </div>
+
+        <div class="meta">
+          Email: <a class="link" id="emailPlain" href="mailto:talhamustafa642@gmail.com">talhamustafa642@gmail.com</a> ·
+          Phone: <a class="link" href="tel:+923302479956">+92 330 2479956</a> ·
+          LinkedIn: <a class="link" href="https://www.linkedin.com/in/mustafa-muhammad-i-75434922b" target="_blank" rel="noopener">/mustafa‑muhammad‑iqbal</a> ·
+          GitHub: <a class="link" href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener">@Mustafa‑Hazard</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="y"></span> Mustafa Iqbal</div>
+  </footer>
+
+  <script>
+    // smooth scroll for in-page links (basic)
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id=a.getAttribute('href').slice(1), el=document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+      });
+    });
+
+    // year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // theme toggle (auto ↔ dark ↔ light)
+    const KEY='mi-theme-mode';
+    const btn=document.getElementById('themeBtn');
+    const apply=m=>{
+      document.documentElement.classList.remove('theme-dark','theme-light');
+      if(m==='dark') document.documentElement.classList.add('theme-dark');
+      else if(m==='light') document.documentElement.classList.add('theme-light');
+      btn.title = 'Theme: ' + (m||'auto');
+      btn.setAttribute('aria-label', btn.title);
+    };
+    const next=m=> m==='auto'?'dark':m==='dark'?'light':'auto';
+    let mode=localStorage.getItem(KEY)||'auto'; apply(mode);
+    btn.addEventListener('click',()=>{ mode=next(mode); localStorage.setItem(KEY,mode); apply(mode); });
+
+    // ===== Email: robust behavior + copy fallback =====
+    const EMAIL = "talhamustafa642@gmail.com";
+    function tryMail(anchorId){
+      const a = document.getElementById(anchorId);
+      if(!a) return;
+      a.addEventListener('click', (e)=>{
+        // On some desktops without a default mail app, mailto fails silently.
+        // We attempt it, and also set a short timeout to show a copy hint.
+        setTimeout(()=>{},0); // keeps it simple; no extra UI
+      });
+    }
+    tryMail('emailTop'); tryMail('emailBottom');
+
+    // Copy to clipboard buttons
+    function copy(str){
+      navigator.clipboard?.writeText(str).then(()=>{
+        alert("Email copied: " + str);
+      }).catch(()=>{
+        // no clipboard? fallback
+        const t = document.createElement("textarea");
+        t.value = str; document.body.appendChild(t); t.select(); document.execCommand("copy"); document.body.removeChild(t);
+        alert("Email copied: " + str);
+      });
+    }
+    document.getElementById('copyEmail')?.addEventListener('click', ()=>copy(EMAIL));
+
+    // Make the plain email link text selectable without opening mail app (for desktop users)
+    document.getElementById('emailPlain')?.addEventListener('auxclick', e=>e.preventDefault());
+  </script>
+</body>
+</html>
