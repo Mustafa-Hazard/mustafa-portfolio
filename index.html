@@ -71,7 +71,6 @@
     .card{position:relative;background:linear-gradient(180deg,color-mix(in hsl,var(--card) 96%, transparent), color-mix(in hsl,var(--card) 86%, transparent)); border:1px solid var(--line); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow); transition:transform .15s ease, border-color .2s ease, box-shadow .2s ease}
     .card:hover{ transform:translateY(-3px); border-color:color-mix(in hsl, var(--brand) 34%, var(--line)); box-shadow:0 16px 36px rgba(0,0,0,.25)}
 
-    /* fancy glow border on hover */
     .card::after{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:conic-gradient(from 220deg, transparent, color-mix(in hsl, var(--brand) 40%, transparent), transparent); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity:0; transition:opacity .25s ease}
     .card:hover::after{opacity:1}
 
@@ -80,25 +79,14 @@
     .chip{display:inline-block;font-size:12px;border:1px solid var(--line);border-radius:999px;padding:4px 8px;margin:2px 6px 0 0;color:inherit;background:color-mix(in hsl, var(--ink) 6%, transparent);transition:transform var(--speed), background var(--speed)}
     .chip:hover{transform:translateY(-1px);background:color-mix(in hsl, var(--ink) 10%, transparent)}
 
-    /* Project toolbar */
-    .toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:8px 0 16px}
-    .input{width:100%;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:inherit}
-    .toolbar .filters{display:flex;flex-wrap:wrap;gap:6px}
-    .filter{border:1px solid var(--line);padding:6px 10px;border-radius:999px;background:var(--card);cursor:pointer}
-    .filter[aria-pressed="true"]{background:color-mix(in hsl, var(--brand) 20%, var(--card)); border-color:color-mix(in hsl, var(--brand) 40%, var(--line))}
-
-    /* Scroll reveal */
     .reveal{opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease}
     .reveal.show{opacity:1; transform:none}
 
-    /* Footer */
     footer{padding:28px 0 40px;color:var(--muted);text-align:center}
 
-    /* Floating to-top button */
     #toTop{position:fixed;right:16px;bottom:16px;opacity:0;pointer-events:none}
     #toTop.show{opacity:1;pointer-events:auto}
 
-    /* Reduced motion */
     @media (prefers-reduced-motion: reduce){
       .hero::before{display:none}
       .reveal{transition:none}
@@ -108,7 +96,6 @@
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <!-- Header -->
   <header>
     <div class="container nav" role="navigation" aria-label="Primary">
       <div class="brand" aria-label="Site brand">Mustafa <span>Iqbal</span></div>
@@ -124,7 +111,6 @@
     </div>
   </header>
 
-  <!-- Hero -->
   <section class="hero" id="home">
     <div class="container">
       <h1>Hi, I'm <span class="link" style="font-weight:800"><span style="background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent">Mustafa</span></span> — CS student focused on cybersecurity & full‑stack web apps.</h1>
@@ -139,23 +125,8 @@
   </section>
 
   <main id="main" class="container">
-    <!-- Projects -->
     <section id="projects" class="reveal">
       <h2 class="eyebrow">Technical Experience</h2>
-
-      <!-- Toolbar: search + filters -->
-      <div class="toolbar card" role="region" aria-label="Project filters">
-        <input id="search" class="input" type="search" placeholder="Search projects (e.g., PostgreSQL, RBAC, Java)" aria-label="Search projects" />
-        <div class="filters" role="group" aria-label="Tags">
-          <button class="filter" data-tag="all" aria-pressed="true">All</button>
-          <button class="filter" data-tag="backend">Backend</button>
-          <button class="filter" data-tag="web">Web</button>
-          <button class="filter" data-tag="security">Security</button>
-          <button class="filter" data-tag="java">Java</button>
-          <button class="filter" data-tag="sql">SQL</button>
-        </div>
-      </div>
-
       <div class="grid cols-2" id="projectGrid">
         <article class="card tilt" data-tags="backend web sql node express postgres alpine firebase">
           <h3>Full‑Stack GPA & CGPA Tracking Web App</h3>
@@ -195,7 +166,6 @@
       </div>
     </section>
 
-    <!-- Education -->
     <section id="education" class="reveal">
       <h2 class="eyebrow">Education</h2>
       <div class="card">
@@ -210,7 +180,6 @@
       </div>
     </section>
 
-    <!-- Skills -->
     <section id="skills" class="reveal">
       <h2 class="eyebrow">Skills</h2>
       <div class="card">
@@ -223,7 +192,6 @@
       </div>
     </section>
 
-    <!-- Contact -->
     <section id="contact" class="reveal">
       <h2 class="eyebrow">Contact</h2>
       <div class="card">
@@ -237,117 +205,4 @@
           Email: <a class="link" id="emailPlain" href="mailto:talhamustafa642@gmail.com">talhamustafa642@gmail.com</a> ·
           Phone: <a class="link" id="phoneLink" href="tel:+923302479956">+92 330 2479956</a> ·
           LinkedIn: <a class="link" href="https://www.linkedin.com/in/mustafa-muhammad-i-75434922b" target="_blank" rel="noopener">/mustafa‑muhammad‑iqbal</a> ·
-          GitHub: <a class="link" href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener">@Mustafa‑Hazard</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">© <span id="y"></span> Mustafa Iqbal</div>
-  </footer>
-
-  <button id="toTop" class="btn icon-btn" aria-label="Back to top">↑</button>
-
-  <script>
-    // smooth-scroll handled by CSS; keep JS minimal for intra-page links
-
-    // year
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // theme toggle (auto ↔ dark ↔ light)
-    const KEY='mi-theme-mode';
-    const btn=document.getElementById('themeBtn');
-    const apply=m=>{
-      document.documentElement.classList.remove('theme-dark','theme-light');
-      if(m==='dark') document.documentElement.classList.add('theme-dark');
-      else if(m==='light') document.documentElement.classList.add('theme-light');
-      btn.title = 'Theme: ' + (m||'auto');
-      btn.setAttribute('aria-label', btn.title);
-    };
-    const next=m=> m==='auto'?'dark':m==='dark'?'light':'auto';
-    let mode=localStorage.getItem(KEY)||'auto'; apply(mode);
-    btn.addEventListener('click',()=>{ mode=next(mode); localStorage.setItem(KEY,mode); apply(mode); });
-
-    // ===== Email + phone utilities =====
-    const EMAIL = "talhamustafa642@gmail.com";
-    const PHONE = "+923302479956";
-    function copy(str){
-      if(navigator.clipboard){
-        navigator.clipboard.writeText(str).then(()=> alert("Copied: " + str));
-      }else{
-        const t = document.createElement('textarea'); t.value=str; document.body.appendChild(t); t.select(); document.execCommand('copy'); document.body.removeChild(t); alert("Copied: " + str);
-      }
-    }
-    document.getElementById('copyEmail')?.addEventListener('click', ()=>copy(EMAIL));
-    document.getElementById('copyPhone')?.addEventListener('click', ()=>copy(PHONE));
-
-    // prevent aux-click on mail link from opening mail app
-    document.getElementById('emailPlain')?.addEventListener('auxclick', e=>e.preventDefault());
-
-    // ===== Scroll reveal (IntersectionObserver) =====
-    const io = 'IntersectionObserver' in window ? new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target);} });
-    }, {threshold:.12}) : null;
-    document.querySelectorAll('.reveal').forEach(el=> io?.observe(el));
-
-    // ===== Back to top button =====
-    const toTop = document.getElementById('toTop');
-    const onScroll = ()=>{
-      if(window.scrollY > 400) toTop.classList.add('show'); else toTop.classList.remove('show');
-      highlightActiveLink();
-    };
-    window.addEventListener('scroll', onScroll, {passive:true});
-    toTop.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
-
-    // ===== Active nav link on scroll =====
-    const sections = [...document.querySelectorAll('main section')];
-    const navLinks = [...document.querySelectorAll('header nav a[href^="#"]')];
-    function highlightActiveLink(){
-      let cur = sections[0]?.id;
-      for(const s of sections){ if(window.scrollY + 120 >= s.offsetTop) cur = s.id; }
-      navLinks.forEach(a=>{ a.classList.toggle('active-link', a.getAttribute('href') === '#' + cur); });
-    }
-    highlightActiveLink();
-
-    // ===== Card tilt (subtle parallax) =====
-    const tilts = document.querySelectorAll('.tilt');
-    tilts.forEach(card=>{
-      card.addEventListener('mousemove', e=>{
-        const r = card.getBoundingClientRect();
-        const x = (e.clientX - r.left) / r.width; // 0..1
-        const y = (e.clientY - r.top) / r.height; // 0..1
-        const rx = (y - .5) * 6; // tilt range
-        const ry = (x - .5) * -6;
-        card.style.transform = `translateY(-3px) rotateX(${rx}deg) rotateY(${ry}deg)`;
-      });
-      card.addEventListener('mouseleave', ()=>{ card.style.transform=''; });
-    });
-
-    // ===== Project search + tag filters =====
-    const search = document.getElementById('search');
-    const filters = document.querySelectorAll('.filter');
-    const cards = [...document.querySelectorAll('#projectGrid .card')];
-    let activeTag = 'all';
-
-    function applyFilters(){
-      const q = search.value.toLowerCase().trim();
-      cards.forEach(c=>{
-        const tags = (c.getAttribute('data-tags')||'').toLowerCase();
-        const text = c.innerText.toLowerCase();
-        const matchesTag = activeTag==='all' || tags.includes(activeTag);
-        const matchesSearch = !q || text.includes(q);
-        c.style.display = (matchesTag && matchesSearch) ? '' : 'none';
-      });
-    }
-
-    search.addEventListener('input', applyFilters);
-    filters.forEach(f=> f.addEventListener('click', ()=>{
-      activeTag = f.dataset.tag;
-      filters.forEach(x=> x.setAttribute('aria-pressed', x===f ? 'true' : 'false'));
-      applyFilters();
-    }));
-
-  </script>
-</body>
-</html>
+          GitHub: <a class="
