@@ -4,305 +4,211 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mustafa Iqbal — Portfolio</title>
-  <meta name="description" content="Mustafa Iqbal — CS student focused on cybersecurity & full‑stack web apps." />
-  <meta name="theme-color" content="#1e5c93" />
+  <meta name="description" content="Mustafa Iqbal — Cybersecurity (blue team) & backend enthusiast. BSCS @ SZABIST." />
+  <meta name="theme-color" content="#1f5fa3" />
   <style>
-    /* ===== Theme (system default + toggle) ===== */
+    /* ===== Minimal theme ===== */
     :root{
-      --bg:#0b0c10; --card:#0f1115; --ink:#e7ecf3; --muted:#b7c3cf; --line:#232635;
-      --brand:#6aa7ff; --brand2:#7ef0d8; --radius:14px; --shadow:0 10px 28px rgba(0,0,0,.35);
-      --grad: linear-gradient(90deg,var(--brand),var(--brand2));
-      --focus: 0 0 0 3px color-mix(in hsl, var(--brand) 40%, transparent);
-      --ring: 0 1px 0 rgba(255,255,255,.03) inset, 0 8px 24px rgba(0,0,0,.28);
-      --speed: .18s;
-      --hero:#1e5c93; /* new bold hero color */
+      --hero:#1f5fa3;         /* vibrant blue */
+      --hero-ink:#eef5ff;     /* headline text on blue */
+      --bg:#0b0c10;           /* page bg (dark) */
+      --ink:#e7ecf3;          /* body text */
+      --muted:#a7b7c9;        /* secondary text */
+      --line:#233446;         /* borders */
+      --radius:14px;
+      --shadow:0 10px 28px rgba(0,0,0,.28);
+      --speed:.18s;
     }
     @media (prefers-color-scheme: light){
-      :root{ --bg:#f5f7fb; --card:#ffffff; --ink:#0f172a; --muted:#6b7b8f; --line:#e6eaf0; --shadow:0 10px 28px rgba(0,0,0,.08); }
+      :root{ --bg:#f7f9fc; --ink:#0f172a; --muted:#627089; --line:#dfE6EE; }
     }
-    html.theme-light{ --bg:#f5f7fb; --card:#ffffff; --ink:#0f172a; --muted:#6b7b8f; --line:#e6eaf0; --shadow:0 10px 28px rgba(0,0,0,.08); }
-    html.theme-dark{ --bg:#0b0c10; --card:#0f1115; --ink:#e7ecf3; --muted:#b7c3cf; --line:#232635; --shadow:0 10px 28px rgba(0,0,0,.35); }
 
-    /* ===== Base ===== */
     *{box-sizing:border-box}
     html:focus-within{scroll-behavior:smooth}
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
-    img{max-width:100%;display:block}
-    a{color:inherit;text-decoration:none;position:relative}
-    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{outline:none; box-shadow:var(--focus); border-radius:12px}
-
-    /* link underline */
-    .link{color:inherit}
-    .link::after{content:""; position:absolute; left:0; right:0; bottom:-2px; height:2px; background:var(--grad); transform:scaleX(0); transform-origin:left; transition:transform .25s ease}
-    .link:hover::after{ transform:scaleX(1)}
-
     .container{max-width:1120px;margin:0 auto;padding:0 20px}
-    .eyebrow{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
 
-    /* ===== Header ===== */
-    .skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-    .skip:focus{left:16px;top:8px;width:auto;height:auto;background:var(--card);padding:8px 12px;border-radius:10px;box-shadow:var(--shadow)}
-
-    header{position:sticky;top:0;background:color-mix(in hsl, var(--hero) 88%, transparent);backdrop-filter:saturate(150%) blur(8px);border-bottom:1px solid color-mix(in hsl, var(--hero) 24%, var(--line));z-index:10}
-    .nav{display:flex;align-items:center;justify-content:space-between;height:68px;color:#ecf2f9}
+    /* ===== Header (ultra-minimal) ===== */
+    header{position:sticky;top:0;z-index:10;background:color-mix(in hsl, var(--hero) 92%, transparent);color:#ecf3ff;border-bottom:1px solid color-mix(in hsl, var(--hero) 30%, #000);backdrop-filter:saturate(140%) blur(8px)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
     .brand{font-weight:800;letter-spacing:.2px}
-    .brand span{opacity:.9}
-    .nav a{margin-left:16px;font-size:14px}
-    .icon-btn{border:1px solid color-mix(in hsl, #fff 15%, transparent);background:color-mix(in hsl, var(--hero) 30%, #0000);border-radius:10px;padding:6px 10px;cursor:pointer;color:#ecf2f9;box-shadow:var(--ring);transition:transform var(--speed)}
-    .icon-btn:hover{transform:translateY(-2px)}
+    .nav .links{display:flex;gap:18px;align-items:center}
+    .nav a{color:inherit;text-decoration:none;font-size:14px}
+    .icon-btn{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:999px;border:1px solid color-mix(in hsl, #fff 18%, transparent);background:transparent;transition:transform var(--speed), background var(--speed);}
+    .icon-btn:hover{transform:translateY(-1px);background:color-mix(in hsl, #000 14%, transparent)}
+    svg{width:18px;height:18px;fill:currentColor}
 
-    /* ===== HERO — bold, two-column like reference ===== */
-    .hero{background:var(--hero); color:#ecf2f9; border-bottom:1px solid color-mix(in hsl, var(--hero) 30%, #000);}
-    .hero .wrap{display:grid; grid-template-columns:140px 1fr; gap:28px; align-items:center; padding:64px 0}
-    @media (min-width:880px){ .hero .wrap{ grid-template-columns:220px 1fr; gap:44px; } }
-    .avatar{width:140px;height:140px;border-radius:50%;background:radial-gradient(circle at 30% 30%, #8fdcff, #3a78b1);display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.25);overflow:hidden}
-    .avatar span{font-size:46px;font-weight:800;letter-spacing:.5px}
-    @media (min-width:880px){ .avatar{width:220px;height:220px} .avatar span{font-size:68px} }
+    /* ===== Hero (like the reference: left circle + bold headline) ===== */
+    .hero{background:var(--hero);color:var(--hero-ink);border-bottom:1px solid color-mix(in hsl, var(--hero) 30%, #000)}
+    .hero .row{display:grid;grid-template-columns:140px 1fr;gap:28px;align-items:center;padding:64px 0}
+    @media(min-width:900px){.hero .row{grid-template-columns:200px 1fr;gap:44px}}
+    .badge{width:140px;height:140px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%, #8fd8ff, #2d6fb2 65%, #0f3a77);box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    .badge svg{width:64px;height:64px;opacity:.92}
+    @media(min-width:900px){.badge{width:200px;height:200px}.badge svg{width:86px;height:86px}}
     .hero h1{margin:0;font-size:28px;line-height:1.2}
-    @media (min-width:720px){ .hero h1{font-size:44px} }
-    @media (min-width:1100px){ .hero h1{font-size:52px} }
-    .hero p.meta{margin:.6rem 0 0;color:color-mix(in hsl, #fff 65%, #0000)}
-    .hero .btns{margin-top:16px;display:flex;flex-wrap:wrap;gap:10px}
-    .btn{display:inline-block;padding:10px 14px;border:1px solid color-mix(in hsl, #fff 25%, transparent);border-radius:12px;background:transparent;color:#ecf2f9;box-shadow:var(--ring);transition:transform var(--speed), border-color var(--speed), background var(--speed)}
-    .btn:hover{transform:translateY(-1.5px)}
-    .btn.primary{border-color:transparent;background:linear-gradient(90deg,#fff,#c9e8ff);color:#0b0c10;font-weight:700}
-    .btn.ghost{background:color-mix(in hsl, #000 12%, transparent)}
+    @media(min-width:720px){.hero h1{font-size:44px}}
+    @media(min-width:1100px){.hero h1{font-size:52px}}
+    .meta{margin:.6rem 0 0;color:color-mix(in hsl, #fff 70%, #0000)}
 
-    /* Intro row */
-    .intro{display:grid;grid-template-columns:160px 1fr;gap:28px;align-items:start;color:#ecf2f9;padding:0 0 54px}
-    .intro h3{margin:20px 0 10px;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:color-mix(in hsl, #fff 80%, #0000)}
-    .rule{height:2px;background:color-mix(in hsl, #fff 40%, #0000);border-radius:2px;width:100px;margin-top:26px}
-    .intro p{margin:0;color:color-mix(in hsl, #fff 85%, #0000)}
-    @media (min-width:920px){ .intro{grid-template-columns:220px 1fr;gap:44px} }
+    .intro{display:grid;grid-template-columns:140px 1fr;gap:28px;align-items:start;color:var(--hero-ink);padding:0 0 54px}
+    @media(min-width:900px){.intro{grid-template-columns:200px 1fr;gap:44px}}
+    .rule{height:2px;background:color-mix(in hsl, #fff 42%, #0000);border-radius:2px;width:100px;margin-top:26px}
+    .intro h3{margin:20px 0 12px;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:color-mix(in hsl, #fff 80%, #0000)}
 
-    /* ===== Sections / Cards ===== */
+    /* ===== Minimal sections ===== */
     section{padding:40px 0}
+    .eyebrow{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
     .grid{display:grid;gap:18px}
     @media(min-width:720px){.grid.cols-2{grid-template-columns:1fr 1fr}}
-
-    .card{position:relative;background:linear-gradient(180deg,color-mix(in hsl,var(--card) 96%, transparent), color-mix(in hsl,var(--card) 86%, transparent)); border:1px solid var(--line); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); transition:transform .15s ease, border-color .2s ease, box-shadow .2s ease}
-    .card:hover{ transform:translateY(-3px); border-color:color-mix(in hsl, var(--brand) 34%, var(--line)); box-shadow:0 16px 36px rgba(0,0,0,.25)}
-    .card::after{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:conic-gradient(from 220deg, transparent, color-mix(in hsl, var(--brand) 40%, transparent), transparent); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity:0; transition:opacity .25s ease}
-    .card:hover::after{opacity:1}
+    .card{background:linear-gradient(180deg,color-mix(in hsl, #ffffff10 30%, transparent), transparent);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
     .card h3{margin:0 0 6px;font-size:18px}
-    .meta{color:var(--muted);font-size:13px;margin-bottom:8px}
-    .chip{display:inline-block;font-size:12px;border:1px solid var(--line);border-radius:999px;padding:4px 8px;margin:2px 6px 0 0;color:inherit;background:color-mix(in hsl, var(--ink) 6%, transparent);transition:transform var(--speed), background var(--speed)}
-    .chip:hover{transform:translateY(-1px);background:color-mix(in hsl, var(--ink) 10%, transparent)}
+    .card .meta{color:var(--muted)}
+    .chip{display:inline-block;font-size:12px;border:1px solid var(--line);border-radius:999px;padding:4px 8px;margin:2px 6px 0 0}
 
-    .reveal{opacity:0; transform:translateY(10px); transition:opacity .5s ease, transform .5s ease}
-    .reveal.show{opacity:1; transform:none}
+    /* ===== Footer with icons ===== */
+    footer{padding:36px 0 48px;border-top:1px solid var(--line);color:var(--muted)}
+    .fwrap{display:flex;flex-direction:column;gap:10px;align-items:center}
+    .ficons{display:flex;gap:10px}
 
-    /* Footer */
-    footer{padding:32px 0 46px;color:var(--muted);text-align:center}
-    footer .links{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:6px}
-    footer .links a{color:inherit}
-
-    #toTop{position:fixed;right:16px;bottom:16px;opacity:0;pointer-events:none}
-    #toTop.show{opacity:1;pointer-events:auto}
-
-    @media (prefers-reduced-motion: reduce){
-      .reveal{transition:none}
-      .card, .btn{transition:none}
-    }
+    /* reduce motion */
+    @media (prefers-reduced-motion: reduce){ .icon-btn{transition:none} }
   </style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+  <!-- Header with icons -->
   <header>
-    <div class="container nav" role="navigation" aria-label="Primary">
-      <div class="brand" aria-label="Site brand">Mustafa <span>Iqbal</span></div>
-      <nav>
-        <a class="link" href="#projects">Projects</a>
-        <a class="link" href="#education">Education</a>
-        <a class="link" href="#skills">Skills</a>
-        <a class="link" href="#contact">Contact</a>
-        <a class="link" href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
-        <a id="emailTop" class="btn" href="mailto:talhamustafa642@gmail.com?subject=Hello%20Mustafa&body=Hi%20Mustafa%2C%0A" title="Email me">Email</a>
-        <button id="themeBtn" class="icon-btn" title="Toggle dark/light" aria-label="Toggle dark/light">🌓</button>
-      </nav>
+    <div class="container nav">
+      <div class="brand">Mustafa Iqbal</div>
+      <div class="links" aria-label="Primary">
+        <a href="#projects" title="Projects">Projects</a>
+        <a href="#education" title="Education">Education</a>
+        <a href="#skills" title="Skills">Skills</a>
+        <a href="#contact" title="Contact">Contact</a>
+        <a href="resume.pdf" target="_blank" rel="noopener" title="Résumé">Résumé</a>
+        <!-- Icons -->
+        <a class="icon-btn" href="mailto:talhamustafa642@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5Z"/></svg>
+        </a>
+        <a class="icon-btn" href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.38-1.34-1.75-1.34-1.75-1.1-.75.08-.74.08-.74 1.22.09 1.86 1.25 1.86 1.25 1.08 1.86 2.83 1.32 3.52 1.01.11-.79.43-1.32.78-1.63-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.39 1.24-3.24-.12-.3-.54-1.51.12-3.15 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.64.24 2.85.12 3.15.77.85 1.24 1.93 1.24 3.24 0 4.61-2.8 5.62-5.47 5.92.44.38.83 1.11.83 2.25v3.34c0 .32.22.69.83.58A12 12 0 0 0 12 .5Z"/></svg>
+        </a>
+        <a class="icon-btn" href="https://www.linkedin.com/in/mustafa-muhammad-i-75434922b" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.5 8h4V23h-4V8Zm7 0h3.8v2.05h.06c.53-1 1.84-2.05 3.8-2.05C19.7 8 21 10.1 21 13.56V23h-4v-8.3c0-1.98-.03-4.53-2.76-4.53-2.77 0-3.19 2.16-3.19 4.39V23h-4V8Z"/></svg>
+        </a>
+        <a class="icon-btn" href="tel:+923302479956" aria-label="Phone">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.05 15.05 0 0 0 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.3.5 2.7.8 4.1.8.7 0 1.3.6 1.3 1.3V21c0 .7-.6 1.3-1.3 1.3C9.4 22.3 1.7 14.6 1.7 4.3 1.7 3.6 2.3 3 3 3h3.9c.7 0 1.3.6 1.3 1.3 0 1.4.3 2.8.8 4.1.1.4 0 .9-.3 1.2l-2.1 2.2Z"/></svg>
+        </a>
+      </div>
     </div>
   </header>
 
-  <!-- HERO like the reference: avatar left, bold headline right, intro row below -->
+  <!-- Minimal hero (no photo; shield badge) -->
   <section class="hero" id="home">
     <div class="container">
-      <div class="wrap">
-        <!-- Replace background with your real photo by setting style="background-image:url('YOUR_URL');background-size:cover;background-position:center" -->
-        <div class="avatar" id="avatar"><span>MI</span></div>
+      <div class="row">
+        <div class="badge" aria-hidden="true">
+          <!-- shield/lock icon -->
+          <svg viewBox="0 0 24 24" role="img" aria-label="Cybersecurity">
+            <path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Z" fill="currentColor" opacity=".9"/>
+            <path d="M9 12a3 3 0 1 1 6 0v2h1a1 1 0 0 1 1 1v3H7v-3a1 1 0 0 1 1-1h1v-2Z" fill="#fff" opacity=".9"/>
+          </svg>
+        </div>
         <div>
-          <h1>CS student at SZABIST focused on <strong>cybersecurity</strong> & <strong>full‑stack web apps</strong>, building practical tools with Java, Node.js, and PostgreSQL.</h1>
-          <p class="meta">Karachi, Pakistan · BSCS (Expected Jun 2027) · CGPA 3.53/4.0</p>
-          <div class="btns">
-            <a class="btn primary" href="#projects">See Projects</a>
-            <a class="btn ghost" href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
-            <a class="btn ghost" href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener">GitHub</a>
-            <a class="btn ghost" href="https://www.linkedin.com/in/mustafa-muhammad-i-75434922b" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
+          <h1>Cybersecurity enthusiast focused on <strong>blue‑team defense</strong> and practical backend systems.</h1>
+          <p class="meta">CS @ SZABIST · Karachi, Pakistan · CGPA 3.53/4.0 · Seeking junior roles/internships in SOC/defensive security or backend.</p>
         </div>
       </div>
       <div class="intro">
         <div class="rule" aria-hidden="true"></div>
         <div>
           <h3>Intro</h3>
-          <p>I’m a BSCS student at SZABIST in Karachi. I enjoy applying security and backend concepts to real projects—like a GPA/CGPA tracker (Node.js, PostgreSQL) and an attendance system with RBAC. I was a hackathon finalist for a car‑rental prototype. I’m currently looking for opportunities where I can contribute on backend, databases, or app security while learning from a strong engineering team.</p>
+          <p>I enjoy threat detection, secure coding, and making reliable web apps. Recent work includes a GPA/CGPA tracker (Node.js + PostgreSQL, optimized queries) and an attendance system with RBAC and input validation. Hackathon finalist for a car‑rental prototype.</p>
         </div>
       </div>
     </div>
   </section>
 
   <main id="main" class="container">
-    <!-- Projects -->
-    <section id="projects" class="reveal">
-      <h2 class="eyebrow">Technical Experience</h2>
+    <!-- Projects (kept minimal) -->
+    <section id="projects">
+      <h2 class="eyebrow">Projects</h2>
       <div class="grid cols-2">
-        <article class="card tilt">
-          <h3>Full‑Stack GPA & CGPA Tracking Web App</h3>
+        <article class="card">
+          <h3>GPA & CGPA Tracking Web App</h3>
           <div class="meta">Node.js · Express · PostgreSQL (Neon) · Alpine.js · Apr–Jun 2025</div>
-          <p>Built and deployed an academic tracker with 10+ REST endpoints and 24/7 availability. Indexed/optimized schema (~30% faster queries). Deployed on Firebase Hosting.</p>
-          <div>
-            <span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">PostgreSQL</span><span class="chip">Alpine.js</span><span class="chip">Firebase</span>
-          </div>
+          <p>10+ REST endpoints, indexed schema (~30% faster reads), deployed on Firebase Hosting.</p>
+          <div><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">PostgreSQL</span></div>
         </article>
-
-        <article class="card tilt">
+        <article class="card">
           <h3>Attendance Management Web Application</h3>
           <div class="meta">Node.js · Express · PostgreSQL · EJS · Jul 2025</div>
-          <p>Implemented secure login and role‑based access. Designed indexed schema. Built responsive EJS views and CRUD with validation.</p>
-          <div>
-            <span class="chip">RBAC</span><span class="chip">SQL</span><span class="chip">EJS</span><span class="chip">CRUD</span>
-          </div>
+          <p>Role‑based access, validation, and responsive EJS views.</p>
+          <div><span class="chip">RBAC</span><span class="chip">SQL</span><span class="chip">EJS</span></div>
         </article>
-
-        <article class="card tilt">
+        <article class="card">
           <h3>Restaurant Management System</h3>
           <div class="meta">Java (console) · Jan 2024</div>
-          <p>Console app for orders/billing with secure login and menu CRUD. Automated receipts cut manual billing time by ~60%.</p>
-          <div>
-            <span class="chip">Java</span><span class="chip">OOP</span><span class="chip">File I/O</span>
-          </div>
+          <p>Login, menu CRUD, receipt generation; reduced manual billing time by ~60%.</p>
+          <div><span class="chip">Java</span><span class="chip">OOP</span></div>
         </article>
-
-        <article class="card tilt">
-          <h3>Car Rental Management System — Hackathon Finalist</h3>
+        <article class="card">
+          <h3>Car Rental — Hackathon Finalist</h3>
           <div class="meta">Prototype · Dec 2023</div>
-          <p>48‑hour prototype with listing, booking, and payment logic. Finalist among 30+ teams at SZABIST Hackathon.</p>
-          <div>
-            <span class="chip">Teamwork</span><span class="chip">UI/UX</span><span class="chip">Rapid prototyping</span>
-          </div>
+          <p>48‑hour listing, booking, and payment logic. Finalist among 30+ teams.</p>
+          <div><span class="chip">Prototype</span><span class="chip">Teamwork</span></div>
         </article>
       </div>
     </section>
 
-    <!-- Education -->
-    <section id="education" class="reveal">
+    <!-- Education & Skills (condensed) -->
+    <section id="education">
       <h2 class="eyebrow">Education</h2>
       <div class="card">
-        <h3>SZABIST University, Karachi — BS Computer Science</h3>
-        <div class="meta">Focus: Cybersecurity · Expected Jun 2027 · CGPA 3.53/4.0</div>
-        <p><strong>Relevant coursework:</strong> Data Structures, OOP, Operating Systems, Database Systems, Artificial Intelligence.</p>
-      </div>
-      <div class="card" style="margin-top:12px">
-        <h3>Alpha College, Karachi — A‑Levels</h3>
-        <div class="meta">Jan 2021 – Jun 2023</div>
-        <p>Mathematics, Computer Science, Physics.</p>
+        <h3>SZABIST University — BS Computer Science</h3>
+        <div class="meta">Karachi · Expected Jun 2027 · CGPA 3.53/4.0 · Focus: Cybersecurity</div>
       </div>
     </section>
 
-    <!-- Skills -->
-    <section id="skills" class="reveal">
+    <section id="skills">
       <h2 class="eyebrow">Skills</h2>
       <div class="card">
-        <p><strong>Languages:</strong> Java (Advanced), Python, JavaScript (Node.js), SQL</p>
-        <p><strong>Frameworks/Libraries:</strong> Express.js, Alpine.js, EJS</p>
-        <p><strong>Domains:</strong> Network Security, RESTful API development</p>
-        <p><strong>Tools:</strong> PostgreSQL, Firebase, Git & GitHub, VS Code</p>
-        <p><strong>Operating Systems:</strong> Windows, Linux (basic CLI)</p>
-        <p><strong>Certifications:</strong> Python Pro (Udemy, 2025); Linux for Beginners (Udemy, 2025); Cybersecurity Specialization (4/9)</p>
+        <p><strong>Languages:</strong> Java, Python, JavaScript (Node.js), SQL</p>
+        <p><strong>Tools:</strong> Express.js, PostgreSQL, Firebase, Git & GitHub</p>
+        <p><strong>Domains:</strong> Blue‑team, API security, RESTful services</p>
+        <p class="meta">Certs: Python Pro (Udemy, 2025); Linux for Beginners (Udemy, 2025); Cybersecurity Specialization (4/9)</p>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="reveal">
+    <section id="contact">
       <h2 class="eyebrow">Contact</h2>
       <div class="card">
-        <div class="row" style="margin-bottom:10px">
-          <a class="btn primary" href="mailto:talhamustafa642@gmail.com?subject=Hello%20Mustafa&body=Hi%20Mustafa%2C%0A">Email me</a>
-          <a class="btn ghost" href="tel:+923302479956">Call</a>
-          <button id="copyEmail" class="btn" type="button">Copy email</button>
-          <button id="copyPhone" class="btn" type="button">Copy phone</button>
-        </div>
-
-        <div class="meta">
-          Email: <a class="link" id="emailPlain" href="mailto:talhamustafa642@gmail.com">talhamustafa642@gmail.com</a> ·
-          Phone: <a class="link" id="phoneLink" href="tel:+923302479956">+92 330 2479956</a> ·
-          LinkedIn: <a class="link" href="https://www.linkedin.com/in/mustafa-muhammad-i-75434922b" target="_blank" rel="noopener">/mustafa‑muhammad‑iqbal</a> ·
-          GitHub: <a class="link" href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener">@Mustafa‑Hazard</a>
-        </div>
+        <p>Email <a href="mailto:talhamustafa642@gmail.com">talhamustafa642@gmail.com</a> · Phone <a href="tel:+923302479956">+92 330 2479956</a> · LinkedIn <a href="https://www.linkedin.com/in/mustafa-muhammad-i-75434922b" target="_blank" rel="noopener">/mustafa‑muhammad‑iqbal</a> · GitHub <a href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener">@Mustafa‑Hazard</a></p>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container">
-      © <span id="y"></span> Mustafa Iqbal
-      <div class="links" aria-label="Footer links">
-        <a class="link" href="mailto:talhamustafa642@gmail.com">Email</a>
-        <a class="link" href="tel:+923302479956">Call</a>
-        <a class="link" href="https://www.linkedin.com/in/mustafa-muhammad-i-75434922b" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="link" href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener">GitHub</a>
+    <div class="container fwrap">
+      <div>© <span id="y"></span> Mustafa Iqbal</div>
+      <div class="ficons" aria-label="Social links">
+        <a class="icon-btn" href="mailto:talhamustafa642@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5Z"/></svg>
+        </a>
+        <a class="icon-btn" href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.38-1.34-1.75-1.34-1.75-1.1-.75.08-.74.08-.74 1.22.09 1.86 1.25 1.86 1.25 1.08 1.86 2.83 1.32 3.52 1.01.11-.79.43-1.32.78-1.63-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.39 1.24-3.24-.12-.3-.54-1.51.12-3.15 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.64.24 2.85.12 3.15.77.85 1.24 1.93 1.24 3.24 0 4.61-2.8 5.62-5.47 5.92.44.38.83 1.11.83 2.25v3.34c0 .32.22.69.83.58A12 12 0 0 0 12 .5Z"/></svg>
+        </a>
+        <a class="icon-btn" href="https://www.linkedin.com/in/mustafa-muhammad-i-75434922b" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.5 8h4V23h-4V8Zm7 0h3.8v2.05h.06c.53-1 1.84-2.05 3.8-2.05C19.7 8 21 10.1 21 13.56V23h-4v-8.3c0-1.98-.03-4.53-2.76-4.53-2.77 0-3.19 2.16-3.19 4.39V23h-4V8Z"/></svg>
+        </a>
+        <a class="icon-btn" href="tel:+923302479956" aria-label="Phone">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.05 15.05 0 0 0 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.3.5 2.7.8 4.1.8.7 0 1.3.6 1.3 1.3V21c0 .7-.6 1.3-1.3 1.3C9.4 22.3 1.7 14.6 1.7 4.3 1.7 3.6 2.3 3 3 3h3.9c.7 0 1.3.6 1.3 1.3 0 1.4.3 2.8.8 4.1.1.4 0 .9-.3 1.2l-2.1 2.2Z"/></svg>
+        </a>
       </div>
     </div>
   </footer>
 
-  <button id="toTop" class="btn icon-btn" aria-label="Back to top">↑</button>
-
   <script>
-    // year
     document.getElementById('y').textContent = new Date().getFullYear();
-
-    // theme toggle (auto ↔ dark ↔ light)
-    const KEY='mi-theme-mode';
-    const btn=document.getElementById('themeBtn');
-    const apply=m=>{
-      document.documentElement.classList.remove('theme-dark','theme-light');
-      if(m==='dark') document.documentElement.classList.add('theme-dark');
-      else if(m==='light') document.documentElement.classList.add('theme-light');
-      btn.title = 'Theme: ' + (m||'auto');
-      btn.setAttribute('aria-label', btn.title);
-    };
-    const next=m=> m==='auto'?'dark':m==='dark'?'light':'auto';
-    let mode=localStorage.getItem(KEY)||'auto'; apply(mode);
-    btn.addEventListener('click',()=>{ mode=next(mode); localStorage.setItem(KEY,mode); apply(mode); });
-
-    // copy helpers
-    const EMAIL = "talhamustafa642@gmail.com";
-    const PHONE = "+923302479956";
-    function copy(str){
-      if(navigator.clipboard){
-        navigator.clipboard.writeText(str).then(()=> alert("Copied: " + str));
-      }else{
-        const t = document.createElement('textarea'); t.value=str; document.body.appendChild(t); t.select(); document.execCommand('copy'); document.body.removeChild(t); alert("Copied: " + str);
-      }
-    }
-    document.getElementById('copyEmail')?.addEventListener('click', ()=>copy(EMAIL));
-    document.getElementById('copyPhone')?.addEventListener('click', ()=>copy(PHONE));
-
-    // reveal on scroll
-    const io = 'IntersectionObserver' in window ? new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target);} });
-    }, {threshold:.12}) : null;
-    document.querySelectorAll('.reveal').forEach(el=> io?.observe(el));
-
-    // back to top
-    const toTop = document.getElementById('toTop');
-    const onScroll = ()=>{ if(window.scrollY > 400) toTop.classList.add('show'); else toTop.classList.remove('show'); };
-    window.addEventListener('scroll', onScroll, {passive:true});
-    toTop.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
-
-    // OPTIONAL: set a real photo as avatar if URL param photo=... is present
-    const url = new URL(location.href);
-    const photo = url.searchParams.get('photo');
-    if(photo){ const a=document.getElementById('avatar'); a.style.background=`center/cover no-repeat url('${photo}')`; a.innerHTML=''; }
   </script>
 </body>
 </html>
