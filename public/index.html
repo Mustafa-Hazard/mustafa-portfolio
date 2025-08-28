@@ -1,443 +1,504 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mustafa Iqbal — Cybersecurity Portfolio</title>
-  <meta name="description" content="Mustafa Iqbal — Blue-team cybersecurity & secure backend enthusiast. BSCS @ SZABIST. SOC monitoring, access control, secure coding." />
-  <meta name="theme-color" content="#0d1b2a" />
-  <link rel="canonical" href="https://mustafa-portfolio-cyan.vercel.app/" />
-  <meta name="robots" content="index,follow" />
+
+  <title>Mustafa Iqbal — Cybersecurity Student</title>
+  <meta name="description" content="Portfolio of Mustafa Iqbal — cybersecurity student focusing on SOC/IR, secure backend development, RBAC, audit logging, and log analysis." />
+  <meta name="keywords" content="Mustafa Iqbal, cybersecurity, SOC, incident response, RBAC, secure coding, Karachi, Pakistan, PostgreSQL, Node.js, Java, Python" />
+  <link rel="canonical" href="https://your-domain.example/" />
+
   <!-- Open Graph -->
-  <meta property="og:title" content="Mustafa Iqbal — Cybersecurity Portfolio" />
-  <meta property="og:description" content="Blue-team cybersecurity & secure backend. Projects, skills, and contact." />
+  <meta property="og:title" content="Mustafa Iqbal — Cybersecurity Student" />
+  <meta property="og:description" content="SOC/IR fundamentals, secure coding, RBAC, audit logging. Projects, certifications, and contact info." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://mustafa-portfolio-cyan.vercel.app/" />
-  <meta property="og:image" content="https://mustafa-portfolio-cyan.vercel.app/og-card.png" />
+  <meta property="og:url" content="https://your-domain.example/" />
+  <meta property="og:image" content="https://your-domain.example/og-card.png" />
+
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Mustafa Iqbal — Cybersecurity Portfolio" />
-  <meta name="twitter:description" content="Blue-team cybersecurity & secure backend. Projects, skills, and contact." />
-  <meta name="twitter:image" content="/og-card.png" />
-  <link rel="icon" href="/favicon.ico" />
-  
-  <style>
-    :root{
-      --hero:#0d1b2a;         /* dark navy */
-      --hero-ink:#e6f0ff;     /* light ink for contrast */
-      --bg:#0d1b2a;           /* page bg */
-      --ink:#e6f0ff;          /* body text */
-      --muted:#8ca0c0;        /* secondary text */
-      --line:#1b263b;         /* borders */
-      --radius:16px;
-      --shadow:0 10px 28px rgba(0,0,0,.4);
-      --speed:.18s;
-      --accent:#4ea8de;       /* accent blue */
-      --accent-2:#7bdcff;     /* accent gradient end */
-      --success:#3ad29f;
-      --warning:#ffd166;
-      --glass:rgba(255,255,255,.04);
-    }
-    [data-theme="light"]{
-      --hero:#f5f8ff;
-      --hero-ink:#0d1b2a;
-      --bg:#f7f9ff;
-      --ink:#0d1b2a;
-      --muted:#4d607e;
-      --line:#dfe7f3;
-      --accent:#1c70c7;
-      --accent-2:#79b9ff;
-      --glass:rgba(255,255,255,.7);
-    }
-    *{box-sizing:border-box}
-    html:focus-within{scroll-behavior:smooth}
-    ::selection{background:color-mix(in srgb, var(--accent) 40%, transparent); color:var(--hero-ink)}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
-    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+  <meta name="twitter:title" content="Mustafa Iqbal — Cybersecurity Student" />
+  <meta name="twitter:description" content="SOC/IR fundamentals, secure coding, RBAC, audit logging. Projects, certifications, and contact info." />
+  <meta name="twitter:image" content="https://your-domain.example/og-card.png" />
 
-    /* Skip link */
-    .skip{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
-    .skip:focus{left:16px;top:16px;width:auto;height:auto;background:var(--hero-ink);color:var(--hero);padding:8px 12px;border-radius:8px;box-shadow:var(--shadow)}
+  <meta name="theme-color" content="#0f172a" />
 
-    /* Progress bar */
-    #progress{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 0;transform:scaleX(0);background:linear-gradient(90deg,var(--accent),var(--accent-2));z-index:50}
+  <!-- Favicon set (replace with your files if you have them) -->
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
 
-    header{position:sticky;top:0;z-index:40;background:color-mix(in srgb, var(--hero) 80%, transparent);border-bottom:1px solid var(--line);backdrop-filter:saturate(140%) blur(8px)}
-    .nav{display:flex;align-items:center;justify-content:space-between;height:72px;color:var(--hero-ink)}
-    .brand{font-weight:800;letter-spacing:.2px}
-    .links{display:flex;gap:16px;align-items:center}
-    .links a{color:inherit;text-decoration:none;font-size:14px;position:relative}
-    .links a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));transform:scaleX(0);transform-origin:left;transition:transform .2s ease}
-    .links a:hover::after{transform:scaleX(1)}
-    .links a.active{color:var(--accent)}
-    .icon-btn{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);transition:transform var(--speed), background var(--speed), border-color var(--speed), box-shadow var(--speed)}
-    .icon-btn:hover{transform:translateY(-1px);background:var(--line);border-color:color-mix(in srgb, var(--accent) 40%, var(--line));box-shadow:0 6px 18px rgba(0,0,0,.25)}
-    svg{width:18px;height:18px;fill:currentColor}
-
-    .theme-toggle{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:13px;background:transparent;color:var(--hero-ink);cursor:pointer}
-
-    .hero{background:var(--hero);color:var(--hero-ink);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
-    .hero .row{display:grid;grid-template-columns:120px 1fr;gap:28px;align-items:center;padding:72px 0}
-    @media(min-width:900px){.hero .row{grid-template-columns:160px 1fr;gap:40px}}
-    .badge{width:120px;height:120px;border-radius:50%;display:grid;place-items:center;background:
-      radial-gradient(circle at 35% 30%, var(--accent), #1b263b);
-      box-shadow:0 8px 24px rgba(0,0,0,.45);
-      position:relative;isolation:isolate}
-    .badge::after{content:"";position:absolute;inset:-8px;border-radius:inherit;background:conic-gradient(from 0deg, var(--accent), var(--accent-2), var(--accent));filter:blur(20px);opacity:.2;z-index:-1}
-    .badge svg{width:52px;height:52px;opacity:.95}
-    @media(min-width:900px){.badge{width:160px;height:160px}.badge svg{width:72px;height:72px}}
-    .hero h1{margin:0;font-size:28px;line-height:1.25}
-    @media(min-width:720px){.hero h1{font-size:40px}}
-    @media(min-width:1100px){.hero h1{font-size:48px}}
-    .meta{margin:.6rem 0 0;color:var(--muted)}
-
-    .intro{display:grid;grid-template-columns:120px 1fr;gap:28px;align-items:start;color:var(--ink);padding:0 0 54px}
-    @media(min-width:900px){.intro{grid-template-columns:160px 1fr;gap:40px}}
-    .rule{height:2px;background:var(--line);border-radius:2px;width:80px;margin-top:26px}
-    .intro h3{margin:20px 0 12px;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-
-    section{padding:44px 0;scroll-margin-top:90px}
-    .eyebrow{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
-    .grid{display:grid;gap:18px}
-    @media(min-width:720px){.grid.cols-2{grid-template-columns:1fr 1fr}}
-
-    .card{position:relative;background:var(--glass);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);transition:transform .18s ease,border-color .2s ease, box-shadow .2s ease}
-    .card:hover{transform:translateY(-4px);border-color:color-mix(in srgb, var(--accent) 40%, var(--line));box-shadow:0 14px 38px rgba(0,0,0,.35)}
-    .card::before{content:"";position:absolute;inset:-1px;border-radius:inherit;background:conic-gradient(from 0deg,var(--accent),transparent 30%,transparent 70%,var(--accent-2));opacity:0;filter:blur(18px);transition:opacity .25s}
-    .card:hover::before{opacity:.35}
-    .card h3{margin:0 0 6px;font-size:18px}
-    .card .meta{color:var(--muted)}
-
-    .chip{display:inline-block;font-size:12px;border:1px solid var(--line);border-radius:999px;padding:4px 8px;margin:2px 6px 0 0;color:var(--muted);transition:transform .12s}
-    .chip:hover{transform:translateY(-1px)}
-
-    .card-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-    .btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);padding:8px 12px;border-radius:12px;background:transparent;color:var(--ink);text-decoration:none;font-size:14px;transition:transform .14s, border-color .18s, box-shadow .18s}
-    .btn:hover{border-color:color-mix(in srgb, var(--accent) 45%, var(--line));transform:translateY(-1px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
-    .btn[aria-disabled="true"]{opacity:.55;cursor:not-allowed;pointer-events:none}
-    .chip[data-status="soon"]{border-color:var(--warning);color:var(--warning)}
-
-    .timeline{display:grid;gap:14px}
-    .timeline .item{display:grid;gap:6px;border-left:3px solid var(--line);padding-left:14px}
-
-    /* Footer */
-    footer{padding:40px 0 72px;border-top:1px solid var(--line);color:var(--muted);position:relative}
-    .fgrid{display:grid;gap:16px;text-align:center}
-    @media(min-width:720px){.fgrid{grid-template-columns:1fr auto 1fr;align-items:center;text-align:left}}
-    .brand-small{font-weight:800;color:var(--ink)}
-    .small{font-size:13px;color:var(--muted)}
-    .ficons{display:flex;gap:10px;justify-content:center}
-    @media(min-width:720px){.ficons{justify-content:flex-end}}
-    .sep{display:none}
-    @media(min-width:720px){.sep{display:block;width:1px;height:38px;background:var(--line);margin:0 auto;border-radius:1px}}
-
-    a.link, footer a{position:relative;color:var(--ink);text-decoration:none}
-    a.link::after, footer a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent-2));transform:scaleX(0);transform-origin:left;transition:transform .2s ease}
-    a.link:hover::after, footer a:hover::after{transform:scaleX(1)}
-
-    /* subtle animated cyber grid background */
-    body::before{content:"";position:fixed;inset:0;pointer-events:none;background:
-      repeating-linear-gradient(0deg, transparent 0 30px, rgba(255,255,255,.03) 30px 31px),
-      repeating-linear-gradient(90deg, transparent 0 30px, rgba(255,255,255,.03) 30px 31px);
-      opacity:.35;mask-image:radial-gradient(ellipse at 50% 10%, #000 40%, transparent 70%);
-      animation:pan 40s linear infinite}
-
-    /* Floating back-to-top */
-    .fab{position:fixed;right:18px;bottom:18px;border-radius:999px;border:1px solid var(--line);background:var(--hero);color:var(--hero-ink);width:46px;height:46px;display:none;place-items:center;box-shadow:var(--shadow);transition:transform .12s, background .18s}
-    .fab.show{display:grid}
-    .fab:hover{transform:translateY(-2px);background:color-mix(in srgb, var(--hero) 60%, var(--accent) 40%)}
-
-    @keyframes pan{from{background-position:0 0,0 0} to{background-position:120px 0,0 120px}}
-
-    /* Reduced motion */
-    @media (prefers-reduced-motion: reduce) {
-      *{transition:none !important; animation:none !important}
-    }
-    /* Print tweaks */
-    @media print{
-      header, .ficons, .theme-toggle, .icon-btn, .card-actions, .rule, #progress, .fab {display:none !important}
-      body{background:#fff;color:#000}
-      a{color:#000}
-      .card{box-shadow:none;border-color:#bbb}
-    }
-  </style>
-
-  <!-- Structured Data -->
+  <!-- Schema.org JSON-LD (Person) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Mustafa Iqbal",
-    "jobTitle": "Cybersecurity (Blue Team) & Backend Enthusiast",
+    "jobTitle": "Cybersecurity Student",
     "email": "mailto:talhamustafa642@gmail.com",
-    "telephone": "+923302479956",
-    "url": "https://example.com/",
-    "alumniOf": {"@type": "CollegeOrUniversity", "name": "SZABIST University"},
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Karachi",
+      "addressCountry": "PK"
+    },
     "sameAs": [
       "https://github.com/Mustafa-Hazard",
-      "https://www.linkedin.com/in/mustafa-muhammad-i-75434922b"
-    ]
+      "https://linkedin.com/in/mustafa-muhammad-i-75434922b",
+      "https://wa.me/923302479956"
+    ],
+    "url": "https://your-domain.example/"
   }
   </script>
+
+  <style>
+    /* ---------- Design Tokens ---------- */
+    :root{
+      --bg:#0b1020;--panel:#0f172a;--text:#e5e7eb;--muted:#94a3b8;
+      --brand:#22d3ee;--brand-2:#60a5fa;--ring:rgba(96,165,250,.4);
+      --card:#0b1220;--border:#1f2937;--success:#22c55e;--danger:#ef4444;
+      --shadow:0 10px 30px rgba(2,6,23,.5);color-scheme:dark
+    }
+    :root.light{
+      --bg:#f8fafc;--panel:#fff;--text:#0f172a;--muted:#475569;
+      --brand:#0ea5e9;--brand-2:#2563eb;--ring:rgba(14,165,233,.35);
+      --card:#f8fafc;--border:#e5e7eb;color-scheme:light
+    }
+
+    /* ---------- Base ---------- */
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji";
+      background:radial-gradient(1000px 600px at 20% -10%, rgba(34,211,238,.12), transparent 50%),
+                 radial-gradient(800px 500px at 120% 10%, rgba(96,165,250,.12), transparent 60%),
+                 var(--bg);
+      color:var(--text)
+    }
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    img{max-width:100%;display:block}
+    :focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+
+    /* ---------- Layout ---------- */
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+    header.topbar{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:saturate(140%) blur(8px);
+      background:color-mix(in oklab, var(--bg) 90%, transparent);
+      border-bottom:1px solid var(--border)
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px}
+    .logo{width:28px;height:28px;display:grid;place-items:center;border-radius:8px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#000;font-weight:900}
+    .menu{display:flex;gap:18px;flex-wrap:wrap}
+    .menu a{color:var(--muted);font-weight:600}
+    .menu a:hover,.menu a[aria-current="page"]{color:var(--text)}
+    .actions{display:flex;gap:8px;align-items:center}
+    .btn,button.btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(180deg,var(--brand),var(--brand-2));color:white;border:none;border-radius:12px;padding:10px 14px;font-weight:700;box-shadow:var(--shadow);cursor:pointer}
+    .btn.secondary{background:transparent;color:var(--text);border:1px solid var(--border);box-shadow:none}
+    .btn.ghost{background:transparent;color:var(--muted);border:1px dashed var(--border)}
+
+    /* ---------- Skip link ---------- */
+    .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{left:12px;top:12px;width:auto;height:auto;background:var(--panel);border:2px solid var(--brand);border-radius:8px;padding:8px 12px;z-index:1000}
+
+    /* ---------- Hero ---------- */
+    .hero{padding:48px 0 24px;display:grid;align-items:center;gap:32px;grid-template-columns:1.1fr}
+    .hero h1{font-size:clamp(30px,4vw,48px);line-height:1.1;margin:0 0 12px}
+    .lead{color:var(--muted);font-size:clamp(16px,2.5vw,18px);margin:0 0 24px}
+    .quick{display:flex;gap:10px;flex-wrap:wrap}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:color-mix(in oklab, var(--panel) 70%, transparent);border:1px solid var(--border);color:var(--muted);font-weight:600;font-size:13px}
+
+    /* ---------- Sections ---------- */
+    section{padding:36px 0}
+    h2.section-title{font-size:22px;margin:0 0 18px;letter-spacing:.2px}
+    .grid{display:grid;gap:16px}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 8px;font-size:18px}
+    .meta{color:var(--muted);font-size:14px}
+    .skills{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--border);border-radius:12px;background:var(--card);font-weight:600}
+
+    /* ---------- Projects filter ---------- */
+    .filterbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+    .input{
+      background:var(--card);color:var(--text);border:1px solid var(--border);
+      border-radius:10px;padding:10px 12px;min-width:240px
+    }
+    .tag{cursor:pointer}
+    .tag.active{outline:2px solid var(--brand)}
+
+    /* ---------- Back to top ---------- */
+    #toTop{
+      position:fixed;right:16px;bottom:16px;display:none;padding:10px 12px;border-radius:12px;border:1px solid var(--border);
+      background:var(--panel);color:var(--text);box-shadow:var(--shadow)
+    }
+
+    /* ---------- Footer ---------- */
+    footer{padding:32px 0 60px;color:var(--muted);font-size:14px;border-top:1px solid var(--border)}
+
+    /* ---------- Responsive ---------- */
+    @media (min-width:880px){
+      .hero{grid-template-columns:1.2fr .8fr}
+      .hero .panel{justify-self:end;width:min(420px,95%)}
+    }
+
+    /* ---------- Print styles (nice PDF) ---------- */
+    @media print{
+      :root{color-scheme:light}
+      body{background:white}
+      header, #toTop, .actions, .quick, .filterbar, .row .btn{display:none !important}
+      a{color:#000;text-decoration:underline}
+      .card{box-shadow:none;border:1px solid #ddd}
+      footer{border-top:1px solid #ddd}
+    }
+  </style>
 </head>
 <body>
-  <div id="progress" aria-hidden="true"></div>
-  <a class="skip" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header role="banner">
-    <div class="container nav">
-      <div class="brand">Mustafa Iqbal</div>
-      <nav class="links" aria-label="Primary">
+  <!-- Top Navigation -->
+  <header class="topbar" role="banner">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-current="page">
+        <span class="logo" aria-hidden="true">M</span><span>Mustafa Iqbal</span>
+      </a>
+      <nav class="menu" aria-label="Primary">
         <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
         <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#certs">Certifications</a>
         <a href="#contact">Contact</a>
-        <a href="resume.pdf" target="_blank" rel="noopener" aria-label="Open résumé">Résumé</a>
-        <button id="theme" class="theme-toggle" type="button" aria-pressed="false" title="Toggle theme">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1Zm0 14a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm8-5a1 1 0 0 1 1 1h2a1 1 0 1 1 0 2h-2a1 1 0 1 1 0-2ZM3 12a1 1 0 0 1 1-1H2a1 1 0 1 1 0-2h2a1 1 0 1 1 0 2H4a1 1 0 0 1-1 1Zm15.66 6.66a1 1 0 0 1 1.41 0l1.41 1.41a1 1 0 1 1-1.41 1.41l-1.41-1.41a1 1 0 0 1 0-1.41ZM3.52 4.93a1 1 0 0 1 1.41-1.41l1.41 1.41A1 1 0 0 1 5.93 6.34L4.52 4.93ZM4.93 19.48a1 1 0 0 1 1.41-1.41l1.41 1.41a1 1 0 0 1-1.41 1.41l-1.41-1.41ZM18.07 6.34a1 1 0 0 1 0-1.41l1.41-1.41a1 1 0 1 1 1.41 1.41l-1.41 1.41a1 1 0 0 1-1.41 0Z"/></svg>
-          Theme
-        </button>
-        <a class="icon-btn" href="mailto:talhamustafa642@gmail.com" aria-label="Email">
-          <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5Z"/></svg>
-        </a>
-        <a class="icon-btn" href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener" aria-label="GitHub">
-          <svg viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.38-1.34-1.75-1.34-1.75-1.1-.75.08-.74.08-.74 1.22.09 1.86 1.25 1.86 1.25 1.08 1.86 2.83 1.32 3.52 1.01.11-.79.43-1.32.78-1.63-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.39 1.24-3.24-.12-.3-.54-1.51.12-3.15 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.64.24 2.85.12 3.15.77.85 1.24 1.93 1.24 3.24 0 4.61-2.8 5.62-5.47 5.92.44.38.83 1.11.83 2.25v3.34c0 .32.22.69.83.58A12 12 0 0 0 12 .5Z"/></svg>
-        </a>
-        <a class="icon-btn" href="https://www.linkedin.com/in/mustafa-muhammad-i-75434922b" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.5 8h4V23h-4V8Zm7 0h3.8v2.05h.06c.53-1 1.84-2.05 3.8-2.05C19.7 8 21 10.1 21 13.56V23h-4v-8.3c0-1.98-.03-4.53-2.76-4.53-2.77 0-3.19 2.16-3.19 4.39V23h-4V8Z"/></svg>
-        </a>
-        <a class="icon-btn" href="tel:+923302479956" aria-label="Phone">
-          <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.05 15.05 0 0 0 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.3.5 2.7.8 4.1.8.7 0 1.3.6 1.3 1.3V21c0 .7-.6 1.3-1.3 1.3C9.4 22.3 1.7 14.6 1.7 4.3 1.7 3.6 2.3 3 3 3h3.9c.7 0 1.3.6 1.3 1.3 0 1.4.3 2.8.8 4.1.1.4 0 .9-.3 1.2l-2.1 2.2Z"/></svg>
-        </a>
       </nav>
+      <div class="actions">
+        <button class="btn secondary" id="themeToggle" type="button" aria-label="Toggle theme">🌗 Theme</button>
+        <a class="btn" id="resumeBtn" href="/resume.pdf" target="_blank" rel="noopener">Download Résumé</a>
+      </div>
     </div>
   </header>
 
-  <section class="hero" id="home">
-    <div class="container">
-      <div class="row">
-        <div class="badge" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Z" fill="currentColor"/></svg>
+  <!-- Hero -->
+  <main id="main" class="wrap" role="main">
+    <section class="hero" id="top" aria-labelledby="intro-title">
+      <div>
+        <h1 id="intro-title">Cybersecurity Student in Karachi, Pakistan</h1>
+        <p class="lead">
+          I’m <strong>Mustafa Iqbal</strong> — focused on <em>SOC/IR fundamentals</em>, <em>secure backend development</em> (RBAC, audit logging), and <em>log analysis</em>. I enjoy turning messy alerts into clear action.
+        </p>
+        <div class="quick" aria-label="Quick facts">
+          <span class="pill">🔭 SOC Monitoring</span>
+          <span class="pill">🧪 Alert Triage</span>
+          <span class="pill">🔎 IOC Extraction</span>
+          <span class="pill">🛡️ Secure Coding</span>
+          <span class="pill">🐘 PostgreSQL</span>
+          <span class="pill">🐧 Linux CLI</span>
         </div>
-        <div>
-          <h1 class="reveal">Blue‑team cybersecurity enthusiast focused on <strong>defensive security</strong>, <strong>threat detection</strong>, and building secure backend systems.</h1>
-          <p class="meta reveal">CS @ SZABIST · Karachi, Pakistan · CGPA 3.53/4.0 · Open to roles in SOC operations, secure backend, or infrastructure defense.</p>
-          <div class="card-actions reveal" role="group" aria-label="Primary actions">
-            <a class="btn" href="#projects" aria-label="Jump to projects">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21 3 8h18Z"/></svg>
-              View Projects
-            </a>
-            <a class="btn" href="resume.pdf" target="_blank" rel="noopener" aria-label="Open résumé in new tab">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9Zm0 0v6h6"/></svg>
-              Résumé (PDF)
-            </a>
-            <button class="btn" id="copyEmail" type="button" aria-live="polite">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4a2 2 0 0 0-2 2v12h2V3h12V1Zm3 4H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm0 14H8V7h11v12Z"/></svg>
-              Copy Email
-            </button>
-          </div>
+        <div class="row" style="margin-top:14px">
+          <a class="btn" href="mailto:talhamustafa642@gmail.com">Email Me</a>
+          <a class="btn secondary" href="https://wa.me/923302479956" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn secondary" href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn secondary" href="https://linkedin.com/in/mustafa-muhammad-i-75434922b" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
-      <div class="intro">
-        <div class="rule" aria-hidden="true"></div>
-        <div>
-          <h3>Intro</h3>
-          <p class="reveal">I strengthen defenses and mitigate threats. Highlights: a GPA tracker with tight input validation and indexed schema for efficient queries, an attendance system with RBAC and audit trails, and a hackathon prototype focusing on secure booking flows. I thrive where monitoring, analysis, and resilience matter most.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <main id="main" class="container">
+      <!-- Side Panel: At-a-glance -->
+      <aside class="panel card" aria-label="At a glance">
+        <h3>At a glance</h3>
+        <div class="meta">Role: Cybersecurity Student</div>
+        <div class="meta">Location: Karachi, Pakistan</div>
+        <div class="meta">Email: <a href="mailto:talhamustafa642@gmail.com">talhamustafa642@gmail.com</a></div>
+        <hr style="border:none;border-top:1px solid var(--border);margin:12px 0" />
+        <div class="list" style="display:grid;gap:8px">
+          <a href="/resume.pdf" target="_blank" rel="noopener">📄 Résumé (PDF)</a>
+          <a href="https://github.com/Mustafa-Hazard/Incident_Report_Analysis" target="_blank" rel="noopener">🗂️ Incident Report — DDoS (ICMP)</a>
+          <a href="https://github.com/Mustafa-Hazard/Attendance" target="_blank" rel="noopener">🗂️ Attendance Manager (RBAC)</a>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Projects -->
     <section id="projects" aria-labelledby="projects-title">
-      <h2 id="projects-title" class="eyebrow reveal">Projects</h2>
-      <div class="grid cols-2">
-        <article class="card reveal" aria-labelledby="p1-title">
-          <h3 id="p1-title">GPA & CGPA Tracking Web App</h3>
-          <div class="meta">Node.js · Express · PostgreSQL (Neon) · Alpine.js · Apr–Jun 2025</div>
-          <p>Implemented input validation, parameterized queries, and indexes for secure + fast reads; deployed on Firebase.</p>
-          <div>
-            <span class="chip">RBAC</span><span class="chip">OWASP</span><span class="chip">PostgreSQL</span>
-          </div>
-          <div class="card-actions">
-            <a class="btn" href="#" aria-disabled="true" aria-label="Repository link not yet available">Repo (coming soon)</a>
-          </div>
-          <div class="small" aria-live="polite" style="margin-top:6px;color:var(--muted)"><span class="chip" data-status="soon">Repo soon</span> Publishing after cleanup.</div>
-        </article>
-        <article class="card reveal" aria-labelledby="p2-title">
-          <h3 id="p2-title">Attendance Management System</h3>
-          <div class="meta">Node.js · Express · PostgreSQL · EJS · Jul 2025</div>
-          <p>RBAC enforced for teachers vs. students, secure authentication (hashed passwords + sessions), and clean audit trails.</p>
-          <div>
-            <span class="chip">RBAC</span><span class="chip">Auth</span><span class="chip">Audit</span>
-          </div>
-          <div class="card-actions">
-            <a class="btn" href="https://github.com/Mustafa-Hazard/Attendance" target="_blank" rel="noopener" aria-label="Open repository for Attendance">Repo</a>
-          </div>
-        </article>
-        <article class="card reveal" aria-labelledby="p3-title">
-          <h3 id="p3-title">Restaurant Management Console App</h3>
-          <div class="meta">Java · Jan 2024</div>
-          <p>Secure login and file‑based persistence; simulated billing system reduced manual time by ~60%.</p>
-          <div>
-            <span class="chip">Java</span><span class="chip">CLI</span><span class="chip">Files</span>
-          </div>
-        </article>
-        <article class="card reveal" aria-labelledby="p4-title">
-          <h3 id="p4-title">Car Rental Prototype — Hackathon Finalist</h3>
-          <div class="meta">Prototype · Dec 2023</div>
-          <p>Built booking/payment logic under time pressure with focus on secure transactions.</p>
-          <div>
-            <span class="chip">Prototype</span><span class="chip">Payments</span><span class="chip">Threat modeling</span>
-          </div>
-        </article>
-      </div>
-    </section>
+      <h2 class="section-title" id="projects-title">Projects</h2>
 
-    <section id="education" aria-labelledby="edu-title">
-      <h2 id="edu-title" class="eyebrow reveal">Education</h2>
-      <div class="card timeline reveal">
-        <div class="item">
-          <h3>SZABIST University — BS Computer Science</h3>
-          <div class="meta">Karachi · Expected Jun 2027 · CGPA 3.53/4.0 · Focus: Cybersecurity & Blue‑Team Defense</div>
+      <!-- Project search/filter -->
+      <div class="filterbar" role="search">
+        <input class="input" type="search" id="projectSearch" placeholder="Search projects (e.g., NIST, Node, RBAC)..." aria-label="Search projects" />
+        <button class="btn secondary" type="button" id="clearSearch">Clear</button>
+        <div class="row" aria-label="Quick tags">
+          <button class="chip tag" data-tag="NIST">NIST</button>
+          <button class="chip tag" data-tag="RBAC">RBAC</button>
+          <button class="chip tag" data-tag="PostgreSQL">PostgreSQL</button>
+          <button class="chip tag" data-tag="Java">Java</button>
+          <button class="chip tag" data-tag="Node.js">Node.js</button>
         </div>
       </div>
+
+      <div class="grid" id="projectGrid">
+        <article class="card project" data-tags="NIST,IOC,Incident Response">
+          <h3>Incident Report — DDoS (ICMP)</h3>
+          <p class="meta">Hands-on simulated incident report following NIST Cybersecurity Framework (2025).</p>
+          <p>
+            Wrote a full lifecycle report (Identify → Protect → Detect → Respond → Recover), including packet patterns, indicators of compromise, triage notes, and response playbook steps.
+          </p>
+          <div class="row">
+            <a class="btn" href="https://github.com/Mustafa-Hazard/Incident_Report_Analysis" target="_blank" rel="noopener">View Repo</a>
+            <a class="btn secondary" href="https://raw.githubusercontent.com/Mustafa-Hazard/Incident_Report_Analysis/main/Incident_Report_Analysis_NIST_Framework_MustafaMuhammad.pdf" target="_blank" rel="noopener">Read PDF</a>
+            <span class="chip">NIST CSF</span><span class="chip">IOC Extraction</span><span class="chip">Incident Response</span>
+          </div>
+        </article>
+
+        <article class="card project" data-tags="RBAC,Node.js,PostgreSQL,Audit">
+          <h3>Attendance Manager (RBAC)</h3>
+          <p class="meta">Node.js + PostgreSQL with sessions and audit logging.</p>
+          <p>Role-based access (Admin/Teacher/Student), secure sessions, and event-based audit trails. Focused on input validation and least-privilege design.</p>
+          <div class="row">
+            <a class="btn" href="https://github.com/Mustafa-Hazard/Attendance" target="_blank" rel="noopener">View Repo</a>
+            <span class="chip">Node.js</span><span class="chip">PostgreSQL</span><span class="chip">RBAC</span><span class="chip">Audit Logging</span>
+          </div>
+        </article>
+
+        <article class="card project" data-tags="Java,CLI,Login">
+          <h3>Restaurant Console App (Java)</h3>
+          <p class="meta">CLI application with secure login and billing.</p>
+          <p>Showcases credential handling, menu logic, and error-checked input flows. Demonstrates Java OOP and clean separation of concerns.</p>
+          <div class="row">
+            <span class="chip">Java</span><span class="chip">CLI</span><span class="chip">Secure Login</span>
+          </div>
+        </article>
+
+        <article class="card project" data-tags="Node.js,PostgreSQL,Validation">
+          <h3>Grade Tracker (Node + Postgres)</h3>
+          <p class="meta">Indexed queries + robust validation (repo cleanup in progress).</p>
+          <p>Schema with sensible indexes, server-side validation, and defensive query building to reduce injection risk and improve performance.</p>
+          <div class="row">
+            <span class="chip">Node.js</span><span class="chip">PostgreSQL</span><span class="chip">Input Validation</span>
+          </div>
+        </article>
+      </div>
+      <p id="noResults" class="meta" style="display:none">No projects match your search.</p>
     </section>
 
+    <!-- Skills -->
     <section id="skills" aria-labelledby="skills-title">
-      <h2 id="skills-title" class="eyebrow reveal">Skills</h2>
-      <div class="card reveal">
-        <p><strong>Security Domains:</strong> Blue‑team defense, SOC monitoring, access control, secure coding</p>
-        <p><strong>Languages:</strong> Java, Python, JavaScript (Node.js), SQL</p>
-        <p><strong>Tools:</strong> Express.js, PostgreSQL, Firebase, Git & GitHub</p>
-        <p><strong>Certifications:</strong> Python Pro (Udemy, 2025); Linux for Beginners (Udemy, 2025); Cybersecurity Specialization (4/9)</p>
+      <h2 class="section-title" id="skills-title">Skills</h2>
+      <div class="skills">
+        <span class="chip">Incident Response Basics</span><span class="chip">SOC Monitoring</span>
+        <span class="chip">Alert Triage</span><span class="chip">Log Analysis</span>
+        <span class="chip">IOC Extraction</span><span class="chip">RBAC / AuthZ</span>
+        <span class="chip">Audit Logging</span><span class="chip">Secure Coding</span>
+        <span class="chip">Java</span><span class="chip">Python</span><span class="chip">Node.js</span>
+        <span class="chip">SQL / PostgreSQL</span><span class="chip">Git &amp; GitHub</span><span class="chip">Linux CLI</span>
       </div>
     </section>
 
+    <!-- Education -->
+    <section id="education" aria-labelledby="edu-title">
+      <h2 class="section-title" id="edu-title">Education</h2>
+      <div class="card">
+        <h3>Shaheed Zulfikar Ali Bhutto Institute of Science &amp; Technology (SZABIST), Karachi</h3>
+        <p class="meta">3rd Year · 5th Semester</p>
+        <p>Focus: Cybersecurity foundations, secure backend development, SOC/IR fundamentals.</p>
+        <p class="meta">Subjects/Tags: Networks, Operating Systems, Secure Coding, Databases</p>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certs" aria-labelledby="certs-title">
+      <h2 class="section-title" id="certs-title">Certifications</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Python Pro — Udemy (2025)</h3>
+          <a class="btn secondary" href="https://www.udemy.com/certificate/UC-dbdf73dc-9367-4df0-b854-486c0b946b9a/" target="_blank" rel="noopener">Verify</a>
+        </article>
+        <article class="card">
+          <h3>Linux for Beginners — Udemy (2025)</h3>
+          <a class="btn secondary" href="https://www.udemy.com/certificate/UC-91ec6ae7-dc40-42dc-8a3f-504f880ef5b8/" target="_blank" rel="noopener">Verify</a>
+        </article>
+        <article class="card">
+          <h3>SEMrush Academy (2025)</h3>
+          <a class="btn secondary" href="https://static.semrush.com/academy/certificates/7b86fc0626/mustafa-muhammad-iqbal_25.pdf" target="_blank" rel="noopener">View PDF</a>
+        </article>
+        <article class="card">
+          <h3>Google Cybersecurity Specialization — Coursera (4/9)</h3>
+          <div class="list" style="display:grid;gap:6px">
+            <a href="https://coursera.org/share/77e83be860c6819d79c6947fc3961c07" target="_blank" rel="noopener">Foundations of Cybersecurity</a>
+            <a href="https://coursera.org/share/56d5dd64706bf09f8bf4d6db8e281897" target="_blank" rel="noopener">Play It Safe</a>
+            <a href="https://coursera.org/share/ab08bf4386e0e683111a61434a261b53" target="_blank" rel="noopener">Tools of the Trade</a>
+            <a href="https://coursera.org/share/72b07b47471003af97d970f8a0199fab" target="_blank" rel="noopener">Connect &amp; Protect</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
     <section id="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title" class="eyebrow reveal">Contact</h2>
-      <div class="card reveal">
-        <p>Email <a class="link" href="mailto:talhamustafa642@gmail.com">talhamustafa642@gmail.com</a> · Phone <a class="link" href="tel:+923302479956">+92 330 2479956</a> · LinkedIn <a class="link" href="https://www.linkedin.com/in/mustafa-muhammad-i-75434922b" target="_blank" rel="noopener">LinkedIn</a> · GitHub <a class="link" href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener">@Mustafa‑Hazard</a></p>
-        <div class="card-actions">
-          <a class="btn" href="mailto:talhamustafa642@gmail.com?subject=Hello%20Mustafa&body=Hi%20Mustafa,%20...">Email Me</a>
-          <a class="btn" href="https://wa.me/923302479956" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
+      <h2 class="section-title" id="contact-title">Contact</h2>
+      <div class="card">
+        <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST" novalidate>
+          <div class="row" style="gap:12px;flex-wrap:wrap">
+            <input class="input" type="text" name="name" placeholder="Your name" aria-label="Your name" required />
+            <input class="input" type="email" name="email" placeholder="you@example.com" aria-label="Your email" required />
+          </div>
+          <textarea class="input" name="message" placeholder="Tell me about your project or role..." aria-label="Message" rows="5" required style="margin-top:10px;width:100%"></textarea>
+          <div class="row" style="margin-top:10px">
+            <button class="btn" type="submit">Send Message</button>
+            <button class="btn secondary" type="button" id="copyEmail">Copy Email</button>
+            <a class="btn secondary" href="/resume.pdf" target="_blank" rel="noopener">Open Résumé</a>
+          </div>
+          <p id="formStatus" class="meta" role="status" aria-live="polite" style="margin-top:8px"></p>
+        </form>
+        <hr style="border:none;border-top:1px solid var(--border);margin:16px 0" />
+        <p><strong>Email:</strong> <a id="emailLink" href="mailto:talhamustafa642@gmail.com">talhamustafa642@gmail.com</a></p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/923302479956" target="_blank" rel="noopener">+92 330 2479956</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener">Mustafa-Hazard</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/mustafa-muhammad-i-75434922b" target="_blank" rel="noopener">mustafa-muhammad-i-75434922b</a></p>
       </div>
     </section>
   </main>
 
   <footer role="contentinfo">
-    <div class="container fgrid" aria-label="Footer">
-      <div>
-        <div class="brand-small">Mustafa Iqbal</div>
-        <div class="small">Karachi, Pakistan · Open to security internships</div>
-      </div>
-
-      <div class="sep" aria-hidden="true"></div>
-
-      <div class="ficons" role="group" aria-label="Quick links">
-        <a class="icon-btn" href="mailto:talhamustafa642@gmail.com" aria-label="Email">
-          <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5Z"/></svg>
-        </a>
-        <a class="icon-btn" href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener" aria-label="GitHub">
-          <svg viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.38-1.34-1.75-1.34-1.75-1.1-.75.08-.74.08-.74 1.22.09 1.86 1.25 1.86 1.25 1.08 1.86 2.83 1.32 3.52 1.01.11-.79.43-1.32.78-1.63-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.39 1.24-3.24-.12-.3-.54-1.51.12-3.15 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.64.24 2.85.12 3.15.77.85 1.24 1.93 1.24 3.24 0 4.61-2.8 5.62-5.47 5.92.44.38.83 1.11.83 2.25v3.34c0 .32.22.69.83.58A12 12 0 0 0 12 .5Z"/></svg>
-        </a>
-        <a class="icon-btn" href="https://www.linkedin.com/in/mustafa-muhammad-i-75434922b" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.5 8h4V23h-4V8Zm7 0h3.8v2.05h.06c.53-1 1.84-2.05 3.8-2.05C19.7 8 21 10.1 21 13.56V23h-4v-8.3c0-1.98-.03-4.53-2.76-4.53-2.77 0-3.19 2.16-3.19 4.39V23h-4V8Z"/></svg>
-        </a>
-        <a class="icon-btn" href="tel:+923302479956" aria-label="Phone">
-          <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.05 15.05 0 0 0 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.3.5 2.7.8 4.1.8.7 0 1.3.6 1.3 1.3V21c0 .7-.6 1.3-1.3 1.3C9.4 22.3 1.7 14.6 1.7 4.3 1.7 3.6 2.3 3 3 3h3.9c.7 0 1.3.6 1.3 1.3 0 1.4.3 2.8.8 4.1.1.4 0 .9-.3 1.2l-2.1 2.2Z"/></svg>
-        </a>
-      </div>
-
-      <div class="small" style="grid-column:1/-1;text-align:center;margin-top:8px">
-        © <span id="y"></span> Mustafa Iqbal · <a class="link" href="#home">Back to top</a>
+    <div class="wrap">
+      <div>&copy; <span id="year"></span> Mustafa Iqbal. All rights reserved.</div>
+      <div class="meta">
+        Last updated: <span id="lastUpdated"></span> ·
+        <span class="kbd">/</span> Toggle theme: click “🌗 Theme”
       </div>
     </div>
   </footer>
 
-  <button id="toTop" class="fab" title="Back to top" aria-label="Back to top">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 6 10h4v6h4v-6h4Z"/></svg>
-  </button>
+  <!-- Back to top -->
+  <button id="toTop" aria-label="Back to top">▲ Top</button>
 
   <script>
-    // set year
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // theme toggle with persistence
-    const root = document.documentElement;
-    const themeBtn = document.getElementById('theme');
-    const saved = localStorage.getItem('theme');
-    if(saved){
-      root.setAttribute('data-theme', saved);
-      themeBtn.setAttribute('aria-pressed', saved === 'light');
-    }
-    themeBtn?.addEventListener('click', () => {
-      const toLight = root.getAttribute('data-theme') !== 'light';
-      if(toLight){
-        root.setAttribute('data-theme','light');
-        themeBtn.setAttribute('aria-pressed','true');
-        localStorage.setItem('theme','light');
-      }else{
-        root.removeAttribute('data-theme');
-        themeBtn.setAttribute('aria-pressed','false');
-        localStorage.removeItem('theme');
-      }
-    });
-
-    // highlight active nav link on scroll + aria-current
-    const sections = [...document.querySelectorAll('main section')];
-    const links = [...document.querySelectorAll('.links a[href^="#"]')];
-    function setActive(){
-      let cur = sections[0]?.id;
-      for(const s of sections){ if(window.scrollY+120>=s.offsetTop) cur=s.id; }
-      links.forEach(a=> {
-        const active = a.getAttribute('href') === '#' + cur;
-        a.classList.toggle('active', active);
-        if(active) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+    // ---------- Theme Toggle with Persistence ----------
+    (function() {
+      const root = document.documentElement;
+      const saved = localStorage.getItem('theme');
+      if (saved === 'light') root.classList.add('light');
+      document.getElementById('themeToggle')?.addEventListener('click', () => {
+        root.classList.toggle('light');
+        localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
       });
-    }
-    setActive();
-    window.addEventListener('scroll', setActive, {passive:true});
+    })();
 
-    // copy email helper
-    const copyBtn = document.getElementById('copyEmail');
-    copyBtn?.addEventListener('click', async () => {
-      try{
-        await navigator.clipboard.writeText('talhamustafa642@gmail.com');
-        copyBtn.textContent = 'Email copied!';
-        copyBtn.style.borderColor = 'var(--success)';
-        setTimeout(()=>{ copyBtn.textContent='Copy Email'; copyBtn.style.borderColor='var(--line)'; }, 1600);
-      }catch(e){
-        copyBtn.textContent = 'Press Ctrl+C to copy';
-        copyBtn.style.borderColor = 'var(--warning)';
-        setTimeout(()=>{ copyBtn.textContent='Copy Email'; copyBtn.style.borderColor='var(--line)'; }, 2200);
+    // ---------- Footer Year & Last Updated ----------
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('lastUpdated').textContent = document.lastModified ? new Date(document.lastModified).toLocaleString() : new Date().toLocaleString();
+
+    // ---------- Copy Email ----------
+    document.getElementById('copyEmail')?.addEventListener('click', async () => {
+      const email = 'talhamustafa642@gmail.com';
+      const status = document.getElementById('formStatus') || document.createElement('p');
+      try {
+        await navigator.clipboard.writeText(email);
+        status.textContent = 'Email copied to clipboard ✔';
+        status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--success');
+      } catch {
+        status.textContent = 'Could not copy email — right click and copy manually.';
+        status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--danger');
       }
+      setTimeout(() => status.textContent = '', 2500);
     });
 
-    // scroll progress bar
-    const progress = document.getElementById('progress');
-    function setProgress(){
-      const h = document.documentElement;
-      const scrolled = (h.scrollTop)/(h.scrollHeight - h.clientHeight);
-      progress.style.transform = `scaleX(${scrolled})`;
-    }
-    setProgress();
-    window.addEventListener('scroll', setProgress, {passive:true});
-    window.addEventListener('resize', setProgress);
+    // ---------- Projects search & tag filter ----------
+    (function(){
+      const search = document.getElementById('projectSearch');
+      const clear = document.getElementById('clearSearch');
+      const tags = Array.from(document.querySelectorAll('.tag'));
+      const cards = Array.from(document.querySelectorAll('.project'));
+      const noResults = document.getElementById('noResults');
 
-    // reveal on scroll
-    const io = new IntersectionObserver((entries)=>{
-      for(const e of entries){ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } }
-    },{threshold:.12, rootMargin:'-20px 0px -20px 0px'});
-    document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
+      function applyFilter() {
+        const q = (search.value || '').trim().toLowerCase();
+        const activeTags = tags.filter(t => t.classList.contains('active')).map(t => t.dataset.tag.toLowerCase());
 
-    // back-to-top
-    const toTop = document.getElementById('toTop');
-    window.addEventListener('scroll', ()=>{
-      if(window.scrollY>400){ toTop.classList.add('show'); } else { toTop.classList.remove('show'); }
-    }, {passive:true});
-    toTop.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+        let shown = 0;
+        cards.forEach(card => {
+          const title = card.querySelector('h3').textContent.toLowerCase();
+          const body = card.textContent.toLowerCase();
+          const cardTags = (card.dataset.tags || '').toLowerCase();
+
+          const matchesText = !q || title.includes(q) || body.includes(q);
+          const matchesTags = activeTags.length === 0 || activeTags.some(t => cardTags.includes(t));
+
+          const visible = matchesText && matchesTags;
+          card.style.display = visible ? '' : 'none';
+          if (visible) shown++;
+        });
+
+        noResults.style.display = shown ? 'none' : '';
+      }
+
+      search?.addEventListener('input', applyFilter);
+      clear?.addEventListener('click', () => { search.value=''; tags.forEach(t=>t.classList.remove('active')); applyFilter(); });
+      tags.forEach(tag => tag.addEventListener('click', () => { tag.classList.toggle('active'); applyFilter(); }));
+      applyFilter();
+    })();
+
+    // ---------- Back to top ----------
+    (function(){
+      const btn = document.getElementById('toTop');
+      const showAfter = 300; // px
+      window.addEventListener('scroll', () => {
+        btn.style.display = window.scrollY > showAfter ? 'block' : 'none';
+      });
+      btn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+    })();
+
+    // ---------- Simple form validation (no backend needed) ----------
+    (function(){
+      const form = document.getElementById('contactForm');
+      const status = document.getElementById('formStatus');
+      form?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        status.textContent = '';
+
+        const data = new FormData(form);
+        const name = (data.get('name') || '').toString().trim();
+        const email = (data.get('email') || '').toString().trim();
+        const message = (data.get('message') || '').toString().trim();
+
+        if (!name || !email || !message) {
+          status.textContent = 'Please fill out all fields.';
+          status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--danger');
+          return;
+        }
+        // Basic email check
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          status.textContent = 'Please enter a valid email.';
+          status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--danger');
+          return;
+        }
+
+        // Submit to Formspree (replace action with your endpoint)
+        try {
+          const resp = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' }});
+          if (resp.ok) {
+            form.reset();
+            status.textContent = 'Thanks! Your message has been sent.';
+            status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--success');
+          } else {
+            status.textContent = 'Something went wrong. You can email me directly.';
+            status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--danger');
+          }
+        } catch {
+          status.textContent = 'Network error — please email me directly.';
+          status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--danger');
+        }
+      });
+    })();
+
+    // ---------- Lightweight click tracking (console) ----------
+    (function(){
+      const log = (label, href) => console.info('[analytics]', label, href);
+      document.getElementById('resumeBtn')?.addEventListener('click', (e)=> log('resume_click', e.currentTarget.href));
+      document.querySelectorAll('a[target="_blank"]').forEach(a => {
+        a.addEventListener('click', () => log('outbound', a.href));
+      });
+    })();
   </script>
 </body>
 </html>
