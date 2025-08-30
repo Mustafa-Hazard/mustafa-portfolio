@@ -33,7 +33,7 @@ This portfolio is deployed with [**Vercel**](https://vercel.com/) for fast, reli
 
 ## 📬 Contact  
 - 📧 [Email](mailto:talhamustafa642@gmail.com)  
-- 💼 [LinkedIn](https://linkedin.com/in/mustafa-muhammad-i-75434922b)  
+- 💼 [LinkedIn](https://linkedin.com/in/mustafa642)  
 - 🐙 [GitHub](https://github.com/Mustafa-Hazard)  
 - 💬 [WhatsApp](https://wa.me/923302479956)  
 
