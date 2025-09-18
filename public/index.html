@@ -155,6 +155,10 @@
       .card{box-shadow:none;border:1px solid #ddd}
       footer{border-top:1px solid #ddd}
     }
+
+    /* ---------- Inline alert banner ---------- */
+    .banner{display:none;align-items:center;gap:8px;margin:10px 0;padding:10px 12px;border-radius:10px;border:1px solid var(--border);background:color-mix(in oklab, var(--panel) 70%, transparent);color:var(--muted)}
+    .banner.show{display:flex}
   </style>
 </head>
 <body>
@@ -175,7 +179,7 @@
       </nav>
       <div class="actions">
         <button class="btn secondary" id="themeToggle" type="button" aria-label="Toggle theme">🌗 Theme</button>
-        <a class="btn" id="resumeBtn" href="/resume.pdf" download="Mustafa_Iqbal_Resume.pdf"> Download Résumé </a>
+        <a class="btn" data-resume href="/resume.pdf" download="Mustafa_Iqbal_Resume.pdf" rel="noopener">Download Résumé</a>
       </div>
     </div>
   </header>
@@ -196,6 +200,9 @@
           <span class="pill">🐘 PostgreSQL</span>
           <span class="pill">🐧 Linux CLI</span>
         </div>
+        <div id="resumeBanner" class="banner" role="alert" aria-live="polite">
+          ⚠️ <span>Couldn’t find <code>/resume.pdf</code>. Make sure the file exists at <strong>public/resume.pdf</strong> and redeploy.</span>
+        </div>
         <div class="row" style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
           <a class="btn" href="mailto:talhamustafa642@gmail.com">Email Me</a>
           <a class="btn secondary" href="https://wa.me/923302479956" target="_blank" rel="noopener noreferrer">WhatsApp</a>
@@ -212,7 +219,7 @@
         <div class="meta">Email: <a href="mailto:talhamustafa642@gmail.com">talhamustafa642@gmail.com</a></div>
         <hr style="border:none;border-top:1px solid var(--border);margin:12px 0" />
         <div class="list" style="display:grid;gap:8px">
-        <a class="btn" id="resumeBtn" href="/resume.pdf" download="Mustafa_Iqbal_Resume.pdf">   Download Résumé </a>
+          <a class="btn" data-resume href="/resume.pdf" download="Mustafa_Iqbal_Resume.pdf" rel="noopener">Download Résumé</a>
           <a href="https://github.com/Mustafa-Hazard/Incident_Report_Analysis" target="_blank" rel="noopener noreferrer">🗂️ Incident Report — DDoS (ICMP)</a>
           <a href="https://github.com/Mustafa-Hazard/Attendance" target="_blank" rel="noopener noreferrer">🗂️ Attendance Manager (RBAC)</a>
         </div>
@@ -357,7 +364,7 @@
           <div class="row" style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
             <button class="btn" type="submit">Send Message</button>
             <button class="btn secondary" type="button" id="copyEmail">Copy Email</button>
-            <a class="btn secondary" href="/resume.pdf" download="Mustafa_Iqbal_Resume.pdf">  Download Résumé </a>
+            <a class="btn secondary" data-resume href="/resume.pdf" download="Mustafa_Iqbal_Resume.pdf" rel="noopener">Download Résumé</a>
           </div>
           <p id="formStatus" class="meta" role="status" aria-live="polite" style="margin-top:8px"></p>
         </form>
@@ -501,13 +508,25 @@
       });
     })();
 
-    // ---------- Lightweight click tracking (console) ----------
+    // ---------- Lightweight click tracking (console) + Resume check ----------
     (function(){
       const log = (label, href) => console.info('[analytics]', label, href);
-      document.getElementById('resumeBtn')?.addEventListener('click', (e)=> log('resume_click', e.currentTarget.href));
+
+      // Log all outbound links that open in a new tab
       document.querySelectorAll('a[target="_blank"]').forEach(a => {
         a.addEventListener('click', () => log('outbound', a.href));
       });
+
+      // Log resume clicks consistently (no duplicate IDs)
+      document.querySelectorAll('a[data-resume]').forEach(a => {
+        a.addEventListener('click', () => log('resume_click', a.href));
+      });
+
+      // HEAD check to surface a helpful banner if /resume.pdf is missing
+      const banner = document.getElementById('resumeBanner');
+      fetch('/resume.pdf', { method: 'HEAD' })
+        .then(r => { if (!r.ok) throw new Error('Not found'); })
+        .catch(() => { if (banner) banner.classList.add('show'); });
     })();
   </script>
 </body>
