@@ -6,29 +6,29 @@
 
   <title>Mustafa Iqbal — Cybersecurity Student</title>
   <meta name="description" content="Portfolio of Mustafa Iqbal — cybersecurity student focusing on SOC/IR, secure backend development, RBAC, audit logging, and log analysis." />
-  <meta name="keywords" content="Mustafa Iqbal, cybersecurity, SOC, incident response, RBAC, secure coding, Karachi, Pakistan, PostgreSQL, Node.js, Java, Python" />
-  <link rel="canonical" href="https://your-domain.example/" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://mustafa-portfolio-cyan.vercel.app/" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Mustafa Iqbal — Cybersecurity Student" />
   <meta property="og:description" content="SOC/IR fundamentals, secure coding, RBAC, audit logging. Projects, certifications, and contact info." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://your-domain.example/" />
-  <meta property="og:image" content="https://your-domain.example/og-card.png" />
+  <meta property="og:url" content="https://mustafa-portfolio-cyan.vercel.app/" />
+  <meta property="og:image" content="https://mustafa-portfolio-cyan.vercel.app/og-card.png" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Mustafa Iqbal — Cybersecurity Student" />
   <meta name="twitter:description" content="SOC/IR fundamentals, secure coding, RBAC, audit logging. Projects, certifications, and contact info." />
-  <meta name="twitter:image" content="https://your-domain.example/og-card.png" />
+  <meta name="twitter:image" content="https://mustafa-portfolio-cyan.vercel.app/og-card.png" />
 
   <meta name="theme-color" content="#0f172a" />
 
-  <!-- Favicon set (replace with your files if you have them) -->
-  <link rel="icon" href="favicon.ico" sizes="any" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-  <link rel="manifest" href="site.webmanifest" />
+  <!-- Favicon set (ensure these files exist in /public) -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 
   <!-- Schema.org JSON-LD (Person) -->
   <script type="application/ld+json">
@@ -48,7 +48,7 @@
       "https://linkedin.com/in/mustafa642",
       "https://wa.me/923302479956"
     ],
-    "url": "https://your-domain.example/"
+    "url": "https://mustafa-portfolio-cyan.vercel.app/"
   }
   </script>
 
@@ -175,7 +175,7 @@
       </nav>
       <div class="actions">
         <button class="btn secondary" id="themeToggle" type="button" aria-label="Toggle theme">🌗 Theme</button>
-        <a class="btn" id="resumeBtn" href="/resume.pdf" target="_blank" rel="noopener">Download Résumé</a>
+        <a class="btn" id="resumeBtn" href="/resume.pdf" target="_blank" rel="noopener noreferrer">Download Résumé</a>
       </div>
     </div>
   </header>
@@ -196,11 +196,11 @@
           <span class="pill">🐘 PostgreSQL</span>
           <span class="pill">🐧 Linux CLI</span>
         </div>
-        <div class="row" style="margin-top:14px">
+        <div class="row" style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
           <a class="btn" href="mailto:talhamustafa642@gmail.com">Email Me</a>
-          <a class="btn secondary" href="https://wa.me/923302479956" target="_blank" rel="noopener">WhatsApp</a>
-          <a class="btn secondary" href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn secondary" href="https://linkedin.com/in/mustafa642" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn secondary" href="https://wa.me/923302479956" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a class="btn secondary" href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="btn secondary" href="https://linkedin.com/in/mustafa642" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
       </div>
 
@@ -212,9 +212,9 @@
         <div class="meta">Email: <a href="mailto:talhamustafa642@gmail.com">talhamustafa642@gmail.com</a></div>
         <hr style="border:none;border-top:1px solid var(--border);margin:12px 0" />
         <div class="list" style="display:grid;gap:8px">
-          <a href="/resume.pdf" target="_blank" rel="noopener">📄 Résumé (PDF)</a>
-          <a href="https://github.com/Mustafa-Hazard/Incident_Report_Analysis" target="_blank" rel="noopener">🗂️ Incident Report — DDoS (ICMP)</a>
-          <a href="https://github.com/Mustafa-Hazard/Attendance" target="_blank" rel="noopener">🗂️ Attendance Manager (RBAC)</a>
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">📄 Download Résumé (PDF)</a>
+          <a href="https://github.com/Mustafa-Hazard/Incident_Report_Analysis" target="_blank" rel="noopener noreferrer">🗂️ Incident Report — DDoS (ICMP)</a>
+          <a href="https://github.com/Mustafa-Hazard/Attendance" target="_blank" rel="noopener noreferrer">🗂️ Attendance Manager (RBAC)</a>
         </div>
       </aside>
     </section>
@@ -227,25 +227,35 @@
       <div class="filterbar" role="search">
         <input class="input" type="search" id="projectSearch" placeholder="Search projects (e.g., NIST, Node, RBAC)..." aria-label="Search projects" />
         <button class="btn secondary" type="button" id="clearSearch">Clear</button>
-        <div class="row" aria-label="Quick tags">
-          <button class="chip tag" data-tag="NIST">NIST</button>
-          <button class="chip tag" data-tag="RBAC">RBAC</button>
-          <button class="chip tag" data-tag="PostgreSQL">PostgreSQL</button>
-          <button class="chip tag" data-tag="Java">Java</button>
-          <button class="chip tag" data-tag="Node.js">Node.js</button>
+        <div class="row" aria-label="Quick tags" style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="chip tag" data-tag="NIST" type="button">NIST</button>
+          <button class="chip tag" data-tag="RBAC" type="button">RBAC</button>
+          <button class="chip tag" data-tag="PostgreSQL" type="button">PostgreSQL</button>
+          <button class="chip tag" data-tag="Java" type="button">Java</button>
+          <button class="chip tag" data-tag="Node.js" type="button">Node.js</button>
         </div>
       </div>
 
       <div class="grid" id="projectGrid">
+        <article class="card project" data-tags="Risk,NIST,Threat Modeling">
+          <h3>Assets, Threats &amp; Vulnerabilities</h3>
+          <p class="meta">Risk fundamentals: identifying assets, profiling threats, and mapping vulnerabilities.</p>
+          <p>
+            Produced a concise matrix and narrative explaining business assets, likely threat actors/vectors, and specific vulnerabilities, then suggested prioritized mitigations.
+          </p>
+          <div class="row" style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="chip">Risk Analysis</span><span class="chip">Threat Modeling</span><span class="chip">NIST</span>
+          </div>
+        </article>
         <article class="card project" data-tags="NIST,IOC,Incident Response">
           <h3>Incident Report — DDoS (ICMP)</h3>
           <p class="meta">Hands-on simulated incident report following NIST Cybersecurity Framework (2025).</p>
           <p>
             Wrote a full lifecycle report (Identify → Protect → Detect → Respond → Recover), including packet patterns, indicators of compromise, triage notes, and response playbook steps.
           </p>
-          <div class="row">
-            <a class="btn" href="https://github.com/Mustafa-Hazard/Incident_Report_Analysis" target="_blank" rel="noopener">View Repo</a>
-            <a class="btn secondary" href="https://raw.githubusercontent.com/Mustafa-Hazard/Incident_Report_Analysis/main/Incident_Report_Analysis_NIST_Framework_MustafaMuhammad.pdf" target="_blank" rel="noopener">Read PDF</a>
+          <div class="row" style="display:flex;gap:8px;flex-wrap:wrap">
+            <a class="btn" href="https://github.com/Mustafa-Hazard/Incident_Report_Analysis" target="_blank" rel="noopener noreferrer">View Repo</a>
+            <a class="btn secondary" href="https://raw.githubusercontent.com/Mustafa-Hazard/Incident_Report_Analysis/main/Incident_Report_Analysis_NIST_Framework_MustafaMuhammad.pdf" target="_blank" rel="noopener noreferrer">Read PDF</a>
             <span class="chip">NIST CSF</span><span class="chip">IOC Extraction</span><span class="chip">Incident Response</span>
           </div>
         </article>
@@ -254,8 +264,8 @@
           <h3>Attendance Manager (RBAC)</h3>
           <p class="meta">Node.js + PostgreSQL with sessions and audit logging.</p>
           <p>Role-based access (Admin/Teacher/Student), secure sessions, and event-based audit trails. Focused on input validation and least-privilege design.</p>
-          <div class="row">
-            <a class="btn" href="https://github.com/Mustafa-Hazard/Attendance" target="_blank" rel="noopener">View Repo</a>
+          <div class="row" style="display:flex;gap:8px;flex-wrap:wrap">
+            <a class="btn" href="https://github.com/Mustafa-Hazard/Attendance" target="_blank" rel="noopener noreferrer">View Repo</a>
             <span class="chip">Node.js</span><span class="chip">PostgreSQL</span><span class="chip">RBAC</span><span class="chip">Audit Logging</span>
           </div>
         </article>
@@ -264,7 +274,7 @@
           <h3>Restaurant Console App (Java)</h3>
           <p class="meta">CLI application with secure login and billing.</p>
           <p>Showcases credential handling, menu logic, and error-checked input flows. Demonstrates Java OOP and clean separation of concerns.</p>
-          <div class="row">
+          <div class="row" style="display:flex;gap:8px;flex-wrap:wrap">
             <span class="chip">Java</span><span class="chip">CLI</span><span class="chip">Secure Login</span>
           </div>
         </article>
@@ -273,7 +283,7 @@
           <h3>Grade Tracker (Node + Postgres)</h3>
           <p class="meta">Indexed queries + robust validation (repo cleanup in progress).</p>
           <p>Schema with sensible indexes, server-side validation, and defensive query building to reduce injection risk and improve performance.</p>
-          <div class="row">
+          <div class="row" style="display:flex;gap:8px;flex-wrap:wrap">
             <span class="chip">Node.js</span><span class="chip">PostgreSQL</span><span class="chip">Input Validation</span>
           </div>
         </article>
@@ -311,23 +321,24 @@
       <div class="grid">
         <article class="card">
           <h3>Python Pro — Udemy (2025)</h3>
-          <a class="btn secondary" href="https://www.udemy.com/certificate/UC-dbdf73dc-9367-4df0-b854-486c0b946b9a/" target="_blank" rel="noopener">Verify</a>
+          <a class="btn secondary" href="https://www.udemy.com/certificate/UC-dbdf73dc-9367-4df0-b854-486c0b946b9a/" target="_blank" rel="noopener noreferrer">Verify</a>
         </article>
         <article class="card">
           <h3>Linux for Beginners — Udemy (2025)</h3>
-          <a class="btn secondary" href="https://www.udemy.com/certificate/UC-91ec6ae7-dc40-42dc-8a3f-504f880ef5b8/" target="_blank" rel="noopener">Verify</a>
+          <a class="btn secondary" href="https://www.udemy.com/certificate/UC-91ec6ae7-dc40-42dc-8a3f-504f880ef5b8/" target="_blank" rel="noopener noreferrer">Verify</a>
         </article>
         <article class="card">
           <h3>SEMrush Academy (2025)</h3>
-          <a class="btn secondary" href="https://static.semrush.com/academy/certificates/7b86fc0626/mustafa-muhammad-iqbal_25.pdf" target="_blank" rel="noopener">View PDF</a>
+          <a class="btn secondary" href="https://static.semrush.com/academy/certificates/7b86fc0626/mustafa-muhammad-iqbal_25.pdf" target="_blank" rel="noopener noreferrer">View PDF</a>
         </article>
         <article class="card">
-          <h3>Google Cybersecurity Specialization — Coursera (4/9)</h3>
+          <h3>Google Cybersecurity Specialization — Coursera (5/9)</h3>
           <div class="list" style="display:grid;gap:6px">
-            <a href="https://coursera.org/share/77e83be860c6819d79c6947fc3961c07" target="_blank" rel="noopener">Foundations of Cybersecurity</a>
-            <a href="https://coursera.org/share/56d5dd64706bf09f8bf4d6db8e281897" target="_blank" rel="noopener">Play It Safe</a>
-            <a href="https://coursera.org/share/ab08bf4386e0e683111a61434a261b53" target="_blank" rel="noopener">Tools of the Trade</a>
-            <a href="https://coursera.org/share/72b07b47471003af97d970f8a0199fab" target="_blank" rel="noopener">Connect &amp; Protect</a>
+            <a href="https://coursera.org/share/77e83be860c6819d79c6947fc3961c07" target="_blank" rel="noopener noreferrer">Foundations of Cybersecurity</a>
+            <a href="https://coursera.org/share/56d5dd64706bf09f8bf4d6db8e281897" target="_blank" rel="noopener noreferrer">Play It Safe</a>
+            <a href="https://coursera.org/share/ab08bf4386e0e683111a61434a261b53" target="_blank" rel="noopener noreferrer">Tools of the Trade</a>
+            <a href="https://coursera.org/share/72b07b47471003af97d970f8a0199fab" target="_blank" rel="noopener noreferrer">Connect &amp; Protect</a>
+            <a href="https://www.coursera.org/account/accomplishments/verify/02WNM4TQ7ZZG" target="_blank" rel="noopener noreferrer">Assets, Threats, and Vulnerabilities</a>
           </div>
         </article>
       </div>
@@ -338,23 +349,23 @@
       <h2 class="section-title" id="contact-title">Contact</h2>
       <div class="card">
         <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST" novalidate>
-          <div class="row" style="gap:12px;flex-wrap:wrap">
+          <div class="row" style="display:flex;gap:12px;flex-wrap:wrap">
             <input class="input" type="text" name="name" placeholder="Your name" aria-label="Your name" required />
             <input class="input" type="email" name="email" placeholder="you@example.com" aria-label="Your email" required />
           </div>
           <textarea class="input" name="message" placeholder="Tell me about your project or role..." aria-label="Message" rows="5" required style="margin-top:10px;width:100%"></textarea>
-          <div class="row" style="margin-top:10px">
+          <div class="row" style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
             <button class="btn" type="submit">Send Message</button>
             <button class="btn secondary" type="button" id="copyEmail">Copy Email</button>
-            <a class="btn secondary" href="/resume.pdf" target="_blank" rel="noopener">Open Résumé</a>
+            <a class="btn secondary" href="/resume.pdf" target="_blank" rel="noopener noreferrer">Download Résumé</a>
           </div>
           <p id="formStatus" class="meta" role="status" aria-live="polite" style="margin-top:8px"></p>
         </form>
         <hr style="border:none;border-top:1px solid var(--border);margin:16px 0" />
         <p><strong>Email:</strong> <a id="emailLink" href="mailto:talhamustafa642@gmail.com">talhamustafa642@gmail.com</a></p>
-        <p><strong>WhatsApp:</strong> <a href="https://wa.me/923302479956" target="_blank" rel="noopener">+92 330 2479956</a></p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener">Mustafa-Hazard</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/mustafa642" target="_blank" rel="noopener">mustafa642</a></p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/923302479956" target="_blank" rel="noopener noreferrer">+92 330 2479956</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener noreferrer">Mustafa-Hazard</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/mustafa642" target="_blank" rel="noopener noreferrer">mustafa642</a></p>
       </div>
     </section>
   </main>
@@ -373,6 +384,7 @@
   <button id="toTop" aria-label="Back to top">▲ Top</button>
 
   <script>
+    "use strict";
     // ---------- Theme Toggle with Persistence ----------
     (function() {
       const root = document.documentElement;
@@ -385,23 +397,26 @@
     })();
 
     // ---------- Footer Year & Last Updated ----------
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('lastUpdated').textContent = document.lastModified ? new Date(document.lastModified).toLocaleString() : new Date().toLocaleString();
+    (function(){
+      const now = new Date();
+      document.getElementById('year').textContent = now.getFullYear();
+      document.getElementById('lastUpdated').textContent = document.lastModified ? new Date(document.lastModified).toLocaleString() : now.toLocaleString();
+    })();
 
     // ---------- Copy Email ----------
-    document.getElementById('copyEmail')?.addEventListener('click', async () => {
-      const email = 'talhamustafa642@gmail.com';
-      const status = document.getElementById('formStatus') || document.createElement('p');
-      try {
-        await navigator.clipboard.writeText(email);
-        status.textContent = 'Email copied to clipboard ✔';
-        status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--success');
-      } catch {
-        status.textContent = 'Could not copy email — right click and copy manually.';
-        status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--danger');
-      }
-      setTimeout(() => status.textContent = '', 2500);
-    });
+    (function(){
+      const status = document.getElementById('formStatus');
+      document.getElementById('copyEmail')?.addEventListener('click', async () => {
+        const email = 'talhamustafa642@gmail.com';
+        try {
+          await navigator.clipboard.writeText(email);
+          if (status) { status.textContent = 'Email copied to clipboard ✔'; status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--success'); }
+        } catch {
+          if (status) { status.textContent = 'Could not copy email — right click and copy manually.'; status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--danger'); }
+        }
+        setTimeout(() => { if (status) status.textContent = ''; }, 2500);
+      });
+    })();
 
     // ---------- Projects search & tag filter ----------
     (function(){
@@ -412,13 +427,13 @@
       const noResults = document.getElementById('noResults');
 
       function applyFilter() {
-        const q = (search.value || '').trim().toLowerCase();
-        const activeTags = tags.filter(t => t.classList.contains('active')).map(t => t.dataset.tag.toLowerCase());
+        const q = (search?.value || '').trim().toLowerCase();
+        const activeTags = tags.filter(t => t.classList.contains('active')).map(t => (t.dataset.tag || '').toLowerCase());
 
         let shown = 0;
         cards.forEach(card => {
-          const title = card.querySelector('h3').textContent.toLowerCase();
-          const body = card.textContent.toLowerCase();
+          const title = (card.querySelector('h3')?.textContent || '').toLowerCase();
+          const body = (card.textContent || '').toLowerCase();
           const cardTags = (card.dataset.tags || '').toLowerCase();
 
           const matchesText = !q || title.includes(q) || body.includes(q);
@@ -429,11 +444,11 @@
           if (visible) shown++;
         });
 
-        noResults.style.display = shown ? 'none' : '';
+        if (noResults) noResults.style.display = shown ? 'none' : '';
       }
 
       search?.addEventListener('input', applyFilter);
-      clear?.addEventListener('click', () => { search.value=''; tags.forEach(t=>t.classList.remove('active')); applyFilter(); });
+      clear?.addEventListener('click', () => { if (search) search.value=''; tags.forEach(t=>t.classList.remove('active')); applyFilter(); });
       tags.forEach(tag => tag.addEventListener('click', () => { tag.classList.toggle('active'); applyFilter(); }));
       applyFilter();
     })();
@@ -443,18 +458,19 @@
       const btn = document.getElementById('toTop');
       const showAfter = 300; // px
       window.addEventListener('scroll', () => {
+        if (!btn) return;
         btn.style.display = window.scrollY > showAfter ? 'block' : 'none';
       });
-      btn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+      btn?.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
     })();
 
-    // ---------- Simple form validation (no backend needed) ----------
+    // ---------- Simple form validation + submit ----------
     (function(){
       const form = document.getElementById('contactForm');
       const status = document.getElementById('formStatus');
       form?.addEventListener('submit', async (e) => {
         e.preventDefault();
-        status.textContent = '';
+        if (status) status.textContent = '';
 
         const data = new FormData(form);
         const name = (data.get('name') || '').toString().trim();
@@ -462,31 +478,25 @@
         const message = (data.get('message') || '').toString().trim();
 
         if (!name || !email || !message) {
-          status.textContent = 'Please fill out all fields.';
-          status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--danger');
+          if (status){ status.textContent = 'Please fill out all fields.'; status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--danger'); }
           return;
         }
         // Basic email check
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-          status.textContent = 'Please enter a valid email.';
-          status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--danger');
+          if (status){ status.textContent = 'Please enter a valid email.'; status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--danger'); }
           return;
         }
 
-        // Submit to Formspree (replace action with your endpoint)
         try {
           const resp = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' }});
           if (resp.ok) {
             form.reset();
-            status.textContent = 'Thanks! Your message has been sent.';
-            status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--success');
+            if (status){ status.textContent = 'Thanks! Your message has been sent.'; status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--success'); }
           } else {
-            status.textContent = 'Something went wrong. You can email me directly.';
-            status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--danger');
+            if (status){ status.textContent = 'Something went wrong. You can email me directly.'; status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--danger'); }
           }
         } catch {
-          status.textContent = 'Network error — please email me directly.';
-          status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--danger');
+          if (status){ status.textContent = 'Network error — please email me directly.'; status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--danger'); }
         }
       });
     })();
