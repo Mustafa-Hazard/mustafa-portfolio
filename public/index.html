@@ -1,9 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mustafa Iqbal — Cybersecurity Student</title>
   <meta name="description" content="Portfolio of Mustafa Iqbal — cybersecurity student focusing on SOC/IR, secure backend development, RBAC, audit logging, and log analysis." />
   <meta name="robots" content="index,follow" />
@@ -52,479 +51,443 @@
   }
   </script>
 
+  <!-- Tailwind + libraries used by top design -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+
   <style>
-    /* ---------- Design Tokens ---------- */
-    :root{
-      --bg:#0b1020;--panel:#0f172a;--text:#e5e7eb;--muted:#94a3b8;
-      --brand:#22d3ee;--brand-2:#60a5fa;--ring:rgba(96,165,250,.4);
-      --card:#0b1220;--border:#1f2937;--success:#22c55e;--danger:#ef4444;
-      --shadow:0 10px 30px rgba(2,6,23,.5);color-scheme:dark
-    }
-    :root.light{
-      --bg:#f8fafc;--panel:#fff;--text:#0f172a;--muted:#475569;
-      --brand:#0ea5e9;--brand-2:#2563eb;--ring:rgba(14,165,233,.35);
-      --card:#f8fafc;--border:#e5e7eb;color-scheme:light
-    }
-
-    /* ---------- Base ---------- */
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji";
-      background:radial-gradient(1000px 600px at 20% -10%, rgba(34,211,238,.12), transparent 50%),
-                 radial-gradient(800px 500px at 120% 10%, rgba(96,165,250,.12), transparent 60%),
-                 var(--bg);
-      color:var(--text)
-    }
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
-    img{max-width:100%;display:block}
-    :focus-visible{outline:3px solid var(--brand);outline-offset:2px}
-
-    /* ---------- Layout ---------- */
-    .wrap{max-width:1100px;margin:0 auto;padding:24px}
-    header.topbar{
-      position:sticky;top:0;z-index:50;
-      backdrop-filter:saturate(140%) blur(8px);
-      background:color-mix(in oklab, var(--bg) 90%, transparent);
-      border-bottom:1px solid var(--border)
-    }
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px}
-    .logo{width:28px;height:28px;display:grid;place-items:center;border-radius:8px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#000;font-weight:900}
-    .menu{display:flex;gap:18px;flex-wrap:wrap}
-    .menu a{color:var(--muted);font-weight:600}
-    .menu a:hover,.menu a[aria-current="page"]{color:var(--text)}
-    .actions{display:flex;gap:8px;align-items:center}
-    .btn,button.btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(180deg,var(--brand),var(--brand-2));color:white;border:none;border-radius:12px;padding:10px 14px;font-weight:700;box-shadow:var(--shadow);cursor:pointer}
-    .btn.secondary{background:transparent;color:var(--text);border:1px solid var(--border);box-shadow:none}
-    .btn.ghost{background:transparent;color:var(--muted);border:1px dashed var(--border)}
-
-    /* ---------- Skip link ---------- */
-    .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
-    .skip-link:focus{left:12px;top:12px;width:auto;height:auto;background:var(--panel);border:2px solid var(--brand);border-radius:8px;padding:8px 12px;z-index:1000}
-
-    /* ---------- Hero ---------- */
-    .hero{padding:48px 0 24px;display:grid;align-items:center;gap:32px;grid-template-columns:1.1fr}
-    .hero h1{font-size:clamp(30px,4vw,48px);line-height:1.1;margin:0 0 12px}
-    .lead{color:var(--muted);font-size:clamp(16px,2.5vw,18px);margin:0 0 24px}
-    .quick{display:flex;gap:10px;flex-wrap:wrap}
-    .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:color-mix(in oklab, var(--panel) 70%, transparent);border:1px solid var(--border);color:var(--muted);font-weight:600;font-size:13px}
-
-    /* ---------- Sections ---------- */
-    section{padding:36px 0}
-    h2.section-title{font-size:22px;margin:0 0 18px;letter-spacing:.2px}
-    .grid{display:grid;gap:16px}
-    .card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
-    .card h3{margin:0 0 8px;font-size:18px}
-    .meta{color:var(--muted);font-size:14px}
-    .skills{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
-    .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--border);border-radius:12px;background:var(--card);font-weight:600}
-
-    /* ---------- Projects filter ---------- */
-    .filterbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
-    .input{
-      background:var(--card);color:var(--text);border:1px solid var(--border);
-      border-radius:10px;padding:10px 12px;min-width:240px
-    }
-    .tag{cursor:pointer}
-    .tag.active{outline:2px solid var(--brand)}
-
-    /* ---------- Back to top ---------- */
-    #toTop{
-      position:fixed;right:16px;bottom:16px;display:none;padding:10px 12px;border-radius:12px;border:1px solid var(--border);
-      background:var(--panel);color:var(--text);box-shadow:var(--shadow)
-    }
-
-    /* ---------- Footer ---------- */
-    footer{padding:32px 0 60px;color:var(--muted);font-size:14px;border-top:1px solid var(--border)}
-
-    /* ---------- Responsive ---------- */
-    @media (min-width:880px){
-      .hero{grid-template-columns:1.2fr .8fr}
-      .hero .panel{justify-self:end;width:min(420px,95%)}
-    }
-
-    /* ---------- Print styles (nice PDF) ---------- */
-    @media print{
-      :root{color-scheme:light}
-      body{background:white}
-      header, #toTop, .actions, .quick, .filterbar, .row .btn{display:none !important}
-      a{color:#000;text-decoration:underline}
-      .card{box-shadow:none;border:1px solid #ddd}
-      footer{border-top:1px solid #ddd}
-    }
-
-    /* ---------- Inline alert banner ---------- */
-    .banner{display:none;align-items:center;gap:8px;margin:10px 0;padding:10px 12px;border-radius:10px;border:1px solid var(--border);background:color-mix(in oklab, var(--panel) 70%, transparent);color:var(--muted)}
-    .banner.show{display:flex}
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+    .text-gradient { background: linear-gradient(90deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .card-hover { transition: all 0.3s ease; }
+    .card-hover:hover { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04); }
+    .nav-link { position: relative; }
+    .nav-link:after { content: ''; position: absolute; width: 0; height: 2px; bottom: -2px; left: 0; background: linear-gradient(90deg, #3b82f6, #8b5cf6); transition: width 0.3s ease; }
+    .nav-link:hover:after, .active:after { width: 100%; }
   </style>
 </head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <!-- Top Navigation -->
-  <header class="topbar" role="banner">
-    <div class="wrap nav">
-      <a class="brand" href="#top" aria-current="page">
-        <span class="logo" aria-hidden="true">M</span><span>Mustafa Iqbal</span>
-      </a>
-      <nav class="menu" aria-label="Primary">
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#education">Education</a>
-        <a href="#certs">Certifications</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="actions">
-        <button class="btn secondary" id="themeToggle" type="button" aria-label="Toggle theme">🌗 Theme</button>
-        <a class="btn" data-resume href="/resume.pdf" download="Mustafa_Iqbal_Resume.pdf" rel="noopener">Download Résumé</a>
+<body class="bg-gray-50">
+  <!-- Hero Section with Vanta.js Background -->
+  <header id="home" class="relative">
+    <div id="vanta-bg" class="min-h-screen flex items-center justify-center px-4">
+      <div class="absolute inset-0 bg-black opacity-20"></div>
+      <div class="relative z-10 text-center max-w-4xl mx-auto" data-aos="fade-up">
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+          <span class="text-gradient">Mustafa Iqbal</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-200 mb-8">Cybersecurity student in Karachi — SOC/IR, secure backend (RBAC, audit logging), and log analysis</p>
+        <div class="flex justify-center flex-wrap gap-3">
+          <a href="#projects" class="px-8 py-3 bg-white text-indigo-600 font-medium rounded-full hover:bg-gray-100 transition">View Projects</a>
+          <a href="/resume.pdf" class="px-8 py-3 border-2 border-white text-white font-medium rounded-full hover:bg-white hover:text-indigo-600 transition" download>Download Résumé</a>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- Hero -->
-  <main id="main" class="wrap" role="main">
-    <section class="hero" id="top" aria-labelledby="intro-title">
-      <div>
-        <h1 id="intro-title">Cybersecurity Student in Karachi, Pakistan</h1>
-        <p class="lead">
-          I’m <strong>Mustafa Iqbal</strong> — focused on <em>SOC/IR fundamentals</em>, <em>secure backend development</em> (RBAC, audit logging), and <em>log analysis</em>. I enjoy turning messy alerts into clear action.
-        </p>
-        <div class="quick" aria-label="Quick facts">
-          <span class="pill">🔭 SOC Monitoring</span>
-          <span class="pill">🧪 Alert Triage</span>
-          <span class="pill">🔎 IOC Extraction</span>
-          <span class="pill">🛡️ Secure Coding</span>
-          <span class="pill">🐘 PostgreSQL</span>
-          <span class="pill">🐧 Linux CLI</span>
+  <!-- Navigation -->
+  <nav class="fixed w-full bg-white bg-opacity-90 backdrop-filter backdrop-blur-lg shadow-sm z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="#home" class="text-xl font-bold text-indigo-600">Mustafa.</a>
         </div>
-       
-        <div class="row" style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn" href="mailto:talhamustafa642@gmail.com">Email Me</a>
-          <a class="btn secondary" href="https://wa.me/923302479956" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-          <a class="btn secondary" href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a class="btn secondary" href="https://linkedin.com/in/mustafa642" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#home" class="nav-link text-gray-700 hover:text-indigo-600 active">Home</a>
+          <a href="#about" class="nav-link text-gray-700 hover:text-indigo-600">About</a>
+          <a href="#projects" class="nav-link text-gray-700 hover:text-indigo-600">Projects</a>
+          <a href="#skills" class="nav-link text-gray-700 hover:text-indigo-600">Skills</a>
+          <a href="#education" class="nav-link text-gray-700 hover:text-indigo-600">Education</a>
+          <a href="#certs" class="nav-link text-gray-700 hover:text-indigo-600">Certifications</a>
+          <a href="#contact" class="nav-link text-gray-700 hover:text-indigo-600">Contact</a>
+        </div>
+        <div class="flex md:hidden items-center">
+          <button id="menu-btn" class="text-gray-700" aria-label="Toggle menu">
+            <i data-feather="menu"></i>
+          </button>
         </div>
       </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4 shadow-lg">
+      <a href="#home" class="block py-2 text-gray-700 hover:text-indigo-600">Home</a>
+      <a href="#about" class="block py-2 text-gray-700 hover:text-indigo-600">About</a>
+      <a href="#projects" class="block py-2 text-gray-700 hover:text-indigo-600">Projects</a>
+      <a href="#skills" class="block py-2 text-gray-700 hover:text-indigo-600">Skills</a>
+      <a href="#education" class="block py-2 text-gray-700 hover:text-indigo-600">Education</a>
+      <a href="#certs" class="block py-2 text-gray-700 hover:text-indigo-600">Certifications</a>
+      <a href="#contact" class="block py-2 text-gray-700 hover:text-indigo-600">Contact</a>
+    </div>
+  </nav>
 
-      <!-- Side Panel: At-a-glance -->
-      <aside class="panel card" aria-label="At a glance">
-        <h3>At a glance</h3>
-        <div class="meta">Role: Cybersecurity Student</div>
-        <div class="meta">Location: Karachi, Pakistan</div>
-        <div class="meta">Email: <a href="mailto:talhamustafa642@gmail.com">talhamustafa642@gmail.com</a></div>
-        <hr style="border:none;border-top:1px solid var(--border);margin:12px 0" />
-        <div class="list" style="display:grid;gap:8px">
-          <a class="btn" data-resume href="/resume.pdf" download="Mustafa_Iqbal_Resume.pdf" rel="noopener">Download Résumé</a>
-          <a href="https://github.com/Mustafa-Hazard/Incident_Report_Analysis" target="_blank" rel="noopener noreferrer">🗂️ Incident Report — DDoS (ICMP)</a>
-          <a href="https://github.com/Mustafa-Hazard/Attendance" target="_blank" rel="noopener noreferrer">🗂️ Attendance Manager (RBAC)</a>
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">About Me</h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
+      </div>
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/3" data-aos="fade-right">
+          <div class="rounded-xl overflow-hidden shadow-xl">
+            <img src="images/profile.jpg" alt="Profile picture of Mustafa Iqbal" class="w-full h-auto rounded-xl shadow-lg object-cover" />
+          </div>
         </div>
-      </aside>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" aria-labelledby="projects-title">
-      <h2 class="section-title" id="projects-title">Projects</h2>
-
-      <!-- Project search/filter -->
-      <div class="filterbar" role="search">
-        <input class="input" type="search" id="projectSearch" placeholder="Search projects (e.g., NIST, Node, RBAC)..." aria-label="Search projects" />
-        <button class="btn secondary" type="button" id="clearSearch">Clear</button>
-        <div class="row" aria-label="Quick tags" style="display:flex;gap:8px;flex-wrap:wrap">
-          <button class="chip tag" data-tag="NIST" type="button">NIST</button>
-          <button class="chip tag" data-tag="RBAC" type="button">RBAC</button>
-          <button class="chip tag" data-tag="PostgreSQL" type="button">PostgreSQL</button>
-          <button class="chip tag" data-tag="Java" type="button">Java</button>
-          <button class="chip tag" data-tag="Node.js" type="button">Node.js</button>
+        <div class="md:w-2/3" data-aos="fade-left">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-4">Cybersecurity Focus</h3>
+          <p class="text-gray-600 mb-6">I’m a cybersecurity student focused on SOC/IR fundamentals, secure backend development (RBAC, audit logging), and log analysis. I enjoy turning messy alerts into clear action and building secure systems.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="flex items-start">
+              <div class="bg-indigo-100 p-3 rounded-full mr-4"><i data-feather="shield" class="text-indigo-600"></i></div>
+              <div><h4 class="font-medium text-gray-800 mb-1">SOC/IR</h4><p class="text-gray-600 text-sm">Monitoring, alert triage, IOC extraction</p></div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-purple-100 p-3 rounded-full mr-4"><i data-feather="lock" class="text-purple-600"></i></div>
+              <div><h4 class="font-medium text-gray-800 mb-1">Secure Coding</h4><p class="text-gray-600 text-sm">RBAC, audit logging, validation</p></div>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <a href="mailto:talhamustafa642@gmail.com" class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800">Email Me<i data-feather="mail" class="ml-2"></i></a>
+            <a href="https://wa.me/923302479956" target="_blank" rel="noopener" class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800">WhatsApp<i data-feather="message-circle" class="ml-2"></i></a>
+            <a href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener" class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800">GitHub<i data-feather="github" class="ml-2"></i></a>
+            <a href="https://linkedin.com/in/mustafa642" target="_blank" rel="noopener" class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800">LinkedIn<i data-feather="linkedin" class="ml-2"></i></a>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="grid" id="projectGrid">
-        <article class="card project" data-tags="Risk,NIST,Threat Modeling">
-          <h3>Assets, Threats &amp; Vulnerabilities</h3>
-          <p class="meta">Risk fundamentals: identifying assets, profiling threats, and mapping vulnerabilities.</p>
-          <p>
-            Produced a concise matrix and narrative explaining business assets, likely threat actors/vectors, and specific vulnerabilities, then suggested prioritized mitigations.
-          </p>
-          <div class="row" style="display:flex;gap:8px;flex-wrap:wrap">
-            <span class="chip">Risk Analysis</span><span class="chip">Threat Modeling</span><span class="chip">NIST</span>
-          </div>
-        </article>
-        <article class="card project" data-tags="NIST,IOC,Incident Response">
-          <h3>Incident Report — DDoS (ICMP)</h3>
-          <p class="meta">Hands-on simulated incident report following NIST Cybersecurity Framework (2025).</p>
-          <p>
-            Wrote a full lifecycle report (Identify → Protect → Detect → Respond → Recover), including packet patterns, indicators of compromise, triage notes, and response playbook steps.
-          </p>
-          <div class="row" style="display:flex;gap:8px;flex-wrap:wrap">
-            <a class="btn" href="https://github.com/Mustafa-Hazard/Incident_Report_Analysis" target="_blank" rel="noopener noreferrer">View Repo</a>
-            <a class="btn secondary" href="https://raw.githubusercontent.com/Mustafa-Hazard/Incident_Report_Analysis/main/Incident_Report_Analysis_NIST_Framework_MustafaMuhammad.pdf" target="_blank" rel="noopener noreferrer">Read PDF</a>
-            <span class="chip">NIST CSF</span><span class="chip">IOC Extraction</span><span class="chip">Incident Response</span>
-          </div>
-        </article>
-
-        <article class="card project" data-tags="RBAC,Node.js,PostgreSQL,Audit">
-          <h3>Attendance Manager (RBAC)</h3>
-          <p class="meta">Node.js + PostgreSQL with sessions and audit logging.</p>
-          <p>Role-based access (Admin/Teacher/Student), secure sessions, and event-based audit trails. Focused on input validation and least-privilege design.</p>
-          <div class="row" style="display:flex;gap:8px;flex-wrap:wrap">
-            <a class="btn" href="https://github.com/Mustafa-Hazard/Attendance" target="_blank" rel="noopener noreferrer">View Repo</a>
-            <span class="chip">Node.js</span><span class="chip">PostgreSQL</span><span class="chip">RBAC</span><span class="chip">Audit Logging</span>
-          </div>
-        </article>
-
-        <article class="card project" data-tags="Java,CLI,Login">
-          <h3>Restaurant Console App (Java)</h3>
-          <p class="meta">CLI application with secure login and billing.</p>
-          <p>Showcases credential handling, menu logic, and error-checked input flows. Demonstrates Java OOP and clean separation of concerns.</p>
-          <div class="row" style="display:flex;gap:8px;flex-wrap:wrap">
-            <span class="chip">Java</span><span class="chip">CLI</span><span class="chip">Secure Login</span>
-          </div>
-        </article>
-
-        <article class="card project" data-tags="Node.js,PostgreSQL,Validation">
-          <h3>Grade Tracker (Node + Postgres)</h3>
-          <p class="meta">Indexed queries + robust validation (repo cleanup in progress).</p>
-          <p>Schema with sensible indexes, server-side validation, and defensive query building to reduce injection risk and improve performance.</p>
-          <div class="row" style="display:flex;gap:8px;flex-wrap:wrap">
-            <span class="chip">Node.js</span><span class="chip">PostgreSQL</span><span class="chip">Input Validation</span>
-          </div>
-        </article>
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Projects</h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
       </div>
-      <p id="noResults" class="meta" style="display:none">No projects match your search.</p>
-    </section>
 
-    <!-- Skills -->
-    <section id="skills" aria-labelledby="skills-title">
-      <h2 class="section-title" id="skills-title">Skills</h2>
-      <div class="skills">
-        <span class="chip">Incident Response Basics</span><span class="chip">SOC Monitoring</span>
-        <span class="chip">Alert Triage</span><span class="chip">Log Analysis</span>
-        <span class="chip">IOC Extraction</span><span class="chip">RBAC / AuthZ</span>
-        <span class="chip">Audit Logging</span><span class="chip">Secure Coding</span>
-        <span class="chip">Java</span><span class="chip">Python</span><span class="chip">Node.js</span>
-        <span class="chip">SQL / PostgreSQL</span><span class="chip">Git &amp; GitHub</span><span class="chip">Linux CLI</span>
-      </div>
-    </section>
-
-    <!-- Education -->
-    <section id="education" aria-labelledby="edu-title">
-      <h2 class="section-title" id="edu-title">Education</h2>
-      <div class="card">
-        <h3>Shaheed Zulfikar Ali Bhutto Institute of Science &amp; Technology (SZABIST), Karachi</h3>
-        <p class="meta">3rd Year · 5th Semester</p>
-        <p>Focus: Cybersecurity foundations, secure backend development, SOC/IR fundamentals.</p>
-        <p class="meta">Subjects/Tags: Networks, Operating Systems, Secure Coding, Databases</p>
-      </div>
-    </section>
-
-    <!-- Certifications -->
-    <section id="certs" aria-labelledby="certs-title">
-      <h2 class="section-title" id="certs-title">Certifications</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Python Pro — Udemy (2025)</h3>
-          <a class="btn secondary" href="https://www.udemy.com/certificate/UC-dbdf73dc-9367-4df0-b854-486c0b946b9a/" target="_blank" rel="noopener noreferrer">Verify</a>
-        </article>
-        <article class="card">
-          <h3>Linux for Beginners — Udemy (2025)</h3>
-          <a class="btn secondary" href="https://www.udemy.com/certificate/UC-91ec6ae7-dc40-42dc-8a3f-504f880ef5b8/" target="_blank" rel="noopener noreferrer">Verify</a>
-        </article>
-        <article class="card">
-          <h3>SEMrush Academy (2025)</h3>
-          <a class="btn secondary" href="https://static.semrush.com/academy/certificates/7b86fc0626/mustafa-muhammad-iqbal_25.pdf" target="_blank" rel="noopener noreferrer">View PDF</a>
-        </article>
-        <article class="card">
-          <h3>Google Cybersecurity Specialization — Coursera (5/9)</h3>
-          <div class="list" style="display:grid;gap:6px">
-            <a href="https://coursera.org/share/77e83be860c6819d79c6947fc3961c07" target="_blank" rel="noopener noreferrer">Foundations of Cybersecurity</a>
-            <a href="https://coursera.org/share/56d5dd64706bf09f8bf4d6db8e281897" target="_blank" rel="noopener noreferrer">Play It Safe</a>
-            <a href="https://coursera.org/share/ab08bf4386e0e683111a61434a261b53" target="_blank" rel="noopener noreferrer">Tools of the Trade</a>
-            <a href="https://coursera.org/share/72b07b47471003af97d970f8a0199fab" target="_blank" rel="noopener noreferrer">Connect &amp; Protect</a>
-            <a href="https://www.coursera.org/account/accomplishments/verify/02WNM4TQ7ZZG" target="_blank" rel="noopener noreferrer">Assets, Threats, and Vulnerabilities</a>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Assets/Threats/Vulnerabilities -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="50">
+          <div class="relative overflow-hidden h-56">
+            <img src="http://static.photos/technology/640x360/110" alt="Risk Fundamentals" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+            <div class="absolute bottom-4 left-4"><span class="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">Risk Analysis</span></div>
           </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" aria-labelledby="contact-title">
-      <h2 class="section-title" id="contact-title">Contact</h2>
-      <div class="card">
-        <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST" novalidate>
-          <div class="row" style="display:flex;gap:12px;flex-wrap:wrap">
-            <input class="input" type="text" name="name" placeholder="Your name" aria-label="Your name" required />
-            <input class="input" type="email" name="email" placeholder="you@example.com" aria-label="Your email" required />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Assets, Threats & Vulnerabilities</h3>
+            <p class="text-gray-600 mb-4">Concise matrix + narrative on assets, likely threat actors/vectors, mapped vulnerabilities, and prioritized mitigations (NIST-aligned).</p>
           </div>
-          <textarea class="input" name="message" placeholder="Tell me about your project or role..." aria-label="Message" rows="5" required style="margin-top:10px;width:100%"></textarea>
-          <div class="row" style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
-            <button class="btn" type="submit">Send Message</button>
-            <button class="btn secondary" type="button" id="copyEmail">Copy Email</button>
-            <a class="btn secondary" data-resume href="/resume.pdf" download="Mustafa_Iqbal_Resume.pdf" rel="noopener">Download Résumé</a>
-          </div>
-          <p id="formStatus" class="meta" role="status" aria-live="polite" style="margin-top:8px"></p>
-        </form>
-        <hr style="border:none;border-top:1px solid var(--border);margin:16px 0" />
-        <p><strong>Email:</strong> <a id="emailLink" href="mailto:talhamustafa642@gmail.com">talhamustafa642@gmail.com</a></p>
-        <p><strong>WhatsApp:</strong> <a href="https://wa.me/923302479956" target="_blank" rel="noopener noreferrer">+92 330 2479956</a></p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener noreferrer">Mustafa-Hazard</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/mustafa642" target="_blank" rel="noopener noreferrer">mustafa642</a></p>
-      </div>
-    </section>
-  </main>
+        </div>
 
-  <footer role="contentinfo">
-    <div class="wrap">
-      <div>&copy; <span id="year"></span> Mustafa Iqbal. All rights reserved.</div>
-      <div class="meta">
-        Last updated: <span id="lastUpdated"></span> ·
-        <span class="kbd">/</span> Toggle theme: click “🌗 Theme”
+        <!-- Incident Report — DDoS (ICMP) -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="100">
+          <div class="relative overflow-hidden h-56">
+            <img src="http://static.photos/technology/640x360/101" alt="Incident Report DDoS" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+            <div class="absolute bottom-4 left-4"><span class="bg-purple-600 text-white text-xs px-3 py-1 rounded-full">Incident Response</span></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Incident Report — DDoS (ICMP)</h3>
+            <p class="text-gray-600 mb-4">Full lifecycle report (Identify → Protect → Detect → Respond → Recover) incl. packet patterns, IOCs, triage notes, and playbook steps.</p>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://github.com/Mustafa-Hazard/Incident_Report_Analysis" target="_blank" rel="noopener" class="text-indigo-600 font-medium hover:text-indigo-800 inline-flex items-center">View Repo<i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
+              <a href="https://raw.githubusercontent.com/Mustafa-Hazard/Incident_Report_Analysis/main/Incident_Report_Analysis_NIST_Framework_MustafaMuhammad.pdf" target="_blank" rel="noopener" class="text-indigo-600 font-medium hover:text-indigo-800 inline-flex items-center">Read PDF<i data-feather="file-text" class="ml-2 w-4 h-4"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Attendance Manager (RBAC) -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="150">
+          <div class="relative overflow-hidden h-56">
+            <img src="http://static.photos/technology/640x360/120" alt="Attendance Manager" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+            <div class="absolute bottom-4 left-4"><span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">RBAC</span></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Attendance Manager (RBAC)</h3>
+            <p class="text-gray-600 mb-4">Node.js + PostgreSQL with secure sessions and event-based audit trails. Input validation and least-privilege design.</p>
+            <a href="https://github.com/Mustafa-Hazard/Attendance" target="_blank" rel="noopener" class="text-indigo-600 font-medium hover:text-indigo-800 inline-flex items-center">View Repo<i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
+          </div>
+        </div>
+
+        <!-- Restaurant Console App (Java) -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="200">
+          <div class="relative overflow-hidden h-56">
+            <img src="http://static.photos/technology/640x360/130" alt="Java CLI App" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+            <div class="absolute bottom-4 left-4"><span class="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">Java</span></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Restaurant Console App (Java)</h3>
+            <p class="text-gray-600 mb-4">CLI with secure login and billing. Emphasizes credential handling, error-checked input, and clean OOP separation.</p>
+          </div>
+        </div>
+
+        <!-- Grade Tracker -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="250">
+          <div class="relative overflow-hidden h-56">
+            <img src="http://static.photos/technology/640x360/140" alt="Grade Tracker" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+            <div class="absolute bottom-4 left-4"><span class="bg-purple-600 text-white text-xs px-3 py-1 rounded-full">Node + Postgres</span></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Grade Tracker (Node + Postgres)</h3>
+            <p class="text-gray-600 mb-4">Sensible indexes, server-side validation, and defensive query building to reduce injection risk and improve performance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Skills</h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-gray-50 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+          <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto"><i data-feather="activity" class="text-indigo-600 w-6 h-6"></i></div>
+          <h3 class="text-xl font-semibold text-center text-gray-800 mb-4">SOC / IR</h3>
+          <ul class="space-y-3">
+            <li class="flex items-center"><div class="w-2 h-2 bg-indigo-600 rounded-full mr-3"></div><span class="text-gray-600">Incident Response Basics</span></li>
+            <li class="flex items-center"><div class="w-2 h-2 bg-indigo-600 rounded-full mr-3"></div><span class="text-gray-600">SOC Monitoring</span></li>
+            <li class="flex items-center"><div class="w-2 h-2 bg-indigo-600 rounded-full mr-3"></div><span class="text-gray-600">Alert Triage</span></li>
+            <li class="flex items-center"><div class="w-2 h-2 bg-indigo-600 rounded-full mr-3"></div><span class="text-gray-600">IOC Extraction</span></li>
+          </ul>
+        </div>
+        <div class="bg-gray-50 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+          <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto"><i data-feather="lock" class="text-purple-600 w-6 h-6"></i></div>
+          <h3 class="text-xl font-semibold text-center text-gray-800 mb-4">Secure Backend</h3>
+          <ul class="space-y-3">
+            <li class="flex items-center"><div class="w-2 h-2 bg-purple-600 rounded-full mr-3"></div><span class="text-gray-600">RBAC / AuthZ</span></li>
+            <li class="flex items-center"><div class="w-2 h-2 bg-purple-600 rounded-full mr-3"></div><span class="text-gray-600">Audit Logging</span></li>
+            <li class="flex items-center"><div class="w-2 h-2 bg-purple-600 rounded-full mr-3"></div><span class="text-gray-600">Input Validation</span></li>
+          </ul>
+        </div>
+        <div class="bg-gray-50 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="300">
+          <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto"><i data-feather="code" class="text-blue-600 w-6 h-6"></i></div>
+          <h3 class="text-xl font-semibold text-center text-gray-800 mb-4">Languages & Tools</h3>
+          <ul class="space-y-3">
+            <li class="flex items-center"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div><span class="text-gray-600">Java, Python, Node.js</span></li>
+            <li class="flex items-center"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div><span class="text-gray-600">SQL / PostgreSQL</span></li>
+            <li class="flex items-center"><div class="w-2 h-2 bg-blue-600 rounded-full mr-3"></div><span class="text-gray-600">Git & GitHub, Linux CLI</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Education</h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
+      </div>
+      <div class="bg-white p-8 rounded-xl shadow-sm" data-aos="fade-up">
+        <h3 class="text-2xl font-semibold text-gray-800">Shaheed Zulfikar Ali Bhutto Institute of Science & Technology (SZABIST), Karachi</h3>
+        <p class="text-gray-600 mt-2">3rd Year · 5th Semester</p>
+        <p class="text-gray-600 mt-4">Focus: Cybersecurity foundations, secure backend development, SOC/IR fundamentals.</p>
+        <p class="text-gray-500 mt-2">Subjects/Tags: Networks, Operating Systems, Secure Coding, Databases</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+<section id="certs" class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16" data-aos="fade-up">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Certifications</h2>
+<div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
+</div>
+<!-- Changed grid layout to 2 columns on medium screens -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="50">
+<h3 class="font-semibold text-gray-800">Python Pro — Udemy (2025)</h3>
+<a class="text-indigo-600 font-medium inline-flex items-center mt-2" href="https://www.udemy.com/certificate/UC-dbdf73dc-9367-4df0-b854-486c0b946b9a/" target="_blank" rel="noopener">Verify<i data-feather="external-link" class="ml-2 w-4 h-4"></i></a>
+</div>
+<div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+<h3 class="font-semibold text-gray-800">Linux for Beginners — Udemy (2025)</h3>
+<a class="text-indigo-600 font-medium inline-flex items-center mt-2" href="https://www.udemy.com/certificate/UC-91ec6ae7-dc40-42dc-8a3f-504f880ef5b8/" target="_blank" rel="noopener">Verify<i data-feather="external-link" class="ml-2 w-4 h-4"></i></a>
+</div>
+<div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="150">
+<h3 class="font-semibold text-gray-800">SEMrush Academy (2025)</h3>
+<a class="text-indigo-600 font-medium inline-flex items-center mt-2" href="https://static.semrush.com/academy/certificates/7b86fc0626/mustafa-muhammad-iqbal_25.pdf" target="_blank" rel="noopener">View PDF<i data-feather="file-text" class="ml-2 w-4 h-4"></i></a>
+</div>
+<div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+<h3 class="font-semibold text-gray-800">Google Cybersecurity Specialization — Coursera (5/9)</h3>
+<div class="mt-2 grid gap-2">
+<a class="text-indigo-600 hover:text-indigo-800" href="https://coursera.org/share/77e83be860c6819d79c6947fc3961c07" target="_blank" rel="noopener">Foundations of Cybersecurity</a>
+<a class="text-indigo-600 hover:text-indigo-800" href="https://coursera.org/share/56d5dd64706bf09f8bf4d6db8e281897" target="_blank" rel="noopener">Play It Safe</a>
+<a class="text-indigo-600 hover:text-indigo-800" href="https://coursera.org/share/ab08bf4386e0e683111a61434a261b53" target="_blank" rel="noopener">Tools of the Trade</a>
+<a class="text-indigo-600 hover:text-indigo-800" href="https://coursera.org/share/72b07b47471003af97d970f8a0199fab" target="_blank" rel="noopener">Connect & Protect</a>
+<a class="text-indigo-600 hover:text-indigo-800" href="https://www.coursera.org/account/accomplishments/verify/02WNM4TQ7ZZG" target="_blank" rel="noopener">Assets, Threats, and Vulnerabilities</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Work Together</h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto"></div>
+      </div>
+      <div class="flex flex-col md:flex-row gap-12">
+        <div class="md:w-1/2" data-aos="fade-right">
+          <h3 class="text-2xl font-semibold mb-6">Get in Touch</h3>
+          <p class="text-gray-300 mb-8">Have a project in mind or want to discuss potential opportunities? I'd love to hear from you!</p>
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div class="bg-indigo-600 bg-opacity-20 p-3 rounded-full mr-4"><i data-feather="mail" class="text-indigo-400"></i></div>
+              <div><h4 class="font-medium mb-1">Email</h4><a href="mailto:talhamustafa642@gmail.com" class="text-gray-300 hover:text-white">talhamustafa642@gmail.com</a></div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-purple-600 bg-opacity-20 p-3 rounded-full mr-4"><i data-feather="phone" class="text-purple-400"></i></div>
+              <div><h4 class="font-medium mb-1">WhatsApp</h4><a href="https://wa.me/923302479956" target="_blank" rel="noopener" class="text-gray-300 hover:text-white">+92 330 2479956</a></div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-blue-600 bg-opacity-20 p-3 rounded-full mr-4"><i data-feather="map-pin" class="text-blue-400"></i></div>
+              <div><h4 class="font-medium mb-1">Location</h4><p class="text-gray-300">Karachi, Pakistan</p></div>
+            </div>
+          </div>
+          <div class="flex space-x-4 mt-8">
+            <a href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener" class="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition"><i data-feather="github" class="text-white"></i></a>
+            <a href="https://linkedin.com/in/mustafa642" target="_blank" rel="noopener" class="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition"><i data-feather="linkedin" class="text-blue-400"></i></a>
+          </div>
+        </div>
+        <div class="md:w-1/2" data-aos="fade-left">
+          <form id="contactForm" class="space-y-6" action="https://formspree.io/f/your-form-id" method="POST" novalidate>
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+              <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-white placeholder-gray-400 transition" required />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+              <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-white placeholder-gray-400 transition" required />
+            </div>
+            <div>
+              <label for="subject" class="block text-sm font-medium text-gray-300 mb-1">Subject</label>
+              <input type="text" id="subject" name="subject" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-white placeholder-gray-400 transition" />
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+              <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-white placeholder-gray-400 transition" required></textarea>
+            </div>
+            <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-lg hover:from-indigo-700 hover:to-purple-700 transition flex items-center justify-center">Send Message<i data-feather="send" class="ml-2 w-4 h-4"></i></button>
+            <p id="formStatus" class="text-sm text-gray-300" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 border-t border-gray-800 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0"><span class="text-xl font-bold text-white">Mustafa.</span></div>
+        <div class="text-gray-400 text-sm"><p>© <span id="year"></span> Mustafa Iqbal. All rights reserved.</p></div>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+          <a href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition"><i data-feather="github"></i></a>
+          <a href="https://linkedin.com/in/mustafa642" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition"><i data-feather="linkedin"></i></a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <!-- Back to top -->
-  <button id="toTop" aria-label="Back to top">▲ Top</button>
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="fixed bottom-8 right-8 bg-indigo-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-indigo-700" aria-label="Back to top">
+    <i data-feather="arrow-up"></i>
+  </button>
 
   <script>
-    "use strict";
-    // ---------- Theme Toggle with Persistence ----------
-    (function() {
-      const root = document.documentElement;
-      const saved = localStorage.getItem('theme');
-      if (saved === 'light') root.classList.add('light');
-      document.getElementById('themeToggle')?.addEventListener('click', () => {
-        root.classList.toggle('light');
-        localStorage.setItem('theme', root.classList.contains('light') ? 'light' : 'dark');
-      });
-    })();
+    // Initialize AOS
+    AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
 
-    // ---------- Footer Year & Last Updated ----------
-    (function(){
-      const now = new Date();
-      document.getElementById('year').textContent = now.getFullYear();
-      document.getElementById('lastUpdated').textContent = document.lastModified ? new Date(document.lastModified).toLocaleString() : now.toLocaleString();
-    })();
+    // Initialize Feather Icons
+    feather.replace();
 
-    // ---------- Copy Email ----------
-    (function(){
-      const status = document.getElementById('formStatus');
-      document.getElementById('copyEmail')?.addEventListener('click', async () => {
-        const email = 'talhamustafa642@gmail.com';
-        try {
-          await navigator.clipboard.writeText(email);
-          if (status) { status.textContent = 'Email copied to clipboard ✔'; status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--success'); }
-        } catch {
-          if (status) { status.textContent = 'Could not copy email — right click and copy manually.'; status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--danger'); }
-        }
-        setTimeout(() => { if (status) status.textContent = ''; }, 2500);
-      });
-    })();
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
 
-    // ---------- Projects search & tag filter ----------
-    (function(){
-      const search = document.getElementById('projectSearch');
-      const clear = document.getElementById('clearSearch');
-      const tags = Array.from(document.querySelectorAll('.tag'));
-      const cards = Array.from(document.querySelectorAll('.project'));
-      const noResults = document.getElementById('noResults');
+    // Vanta.js Background
+    VANTA.NET({
+      el: '#vanta-bg', mouseControls: true, touchControls: true, gyroControls: false,
+      minHeight: 200.00, minWidth: 200.00, scale: 1.00, scaleMobile: 1.00,
+      color: 0x3b82f6, backgroundColor: 0x111827, points: 12.00, maxDistance: 22.00, spacing: 18.00
+    });
 
-      function applyFilter() {
-        const q = (search?.value || '').trim().toLowerCase();
-        const activeTags = tags.filter(t => t.classList.contains('active')).map(t => (t.dataset.tag || '').toLowerCase());
-
-        let shown = 0;
-        cards.forEach(card => {
-          const title = (card.querySelector('h3')?.textContent || '').toLowerCase();
-          const body = (card.textContent || '').toLowerCase();
-          const cardTags = (card.dataset.tags || '').toLowerCase();
-
-          const matchesText = !q || title.includes(q) || body.includes(q);
-          const matchesTags = activeTags.length === 0 || activeTags.some(t => cardTags.includes(t));
-
-          const visible = matchesText && matchesTags;
-          card.style.display = visible ? '' : 'none';
-          if (visible) shown++;
-        });
-
-        if (noResults) noResults.style.display = shown ? 'none' : '';
+    // Back to Top Button
+    const backToTopButton = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.remove('opacity-0', 'invisible');
+        backToTopButton.classList.add('opacity-100', 'visible');
+      } else {
+        backToTopButton.classList.remove('opacity-100', 'visible');
+        backToTopButton.classList.add('opacity-0', 'invisible');
       }
+    });
+    backToTopButton?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-      search?.addEventListener('input', applyFilter);
-      clear?.addEventListener('click', () => { if (search) search.value=''; tags.forEach(t=>t.classList.remove('active')); applyFilter(); });
-      tags.forEach(tag => tag.addEventListener('click', () => { tag.classList.toggle('active'); applyFilter(); }));
-      applyFilter();
-    })();
-
-    // ---------- Back to top ----------
-    (function(){
-      const btn = document.getElementById('toTop');
-      const showAfter = 300; // px
-      window.addEventListener('scroll', () => {
-        if (!btn) return;
-        btn.style.display = window.scrollY > showAfter ? 'block' : 'none';
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        // allow normal behavior if link is just '#'
+        const targetId = this.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+        e.preventDefault();
+        document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' });
       });
-      btn?.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
-    })();
+    });
 
-    // ---------- Simple form validation + submit ----------
+    // Highlight active navigation link
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= (sectionTop - 300)) current = section.getAttribute('id');
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (current && link.getAttribute('href') === `#${current}`) link.classList.add('active');
+      });
+    });
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Contact form minimal validation
     (function(){
       const form = document.getElementById('contactForm');
       const status = document.getElementById('formStatus');
       form?.addEventListener('submit', async (e) => {
         e.preventDefault();
         if (status) status.textContent = '';
-
         const data = new FormData(form);
-        const name = (data.get('name') || '').toString().trim();
-        const email = (data.get('email') || '').toString().trim();
-        const message = (data.get('message') || '').toString().trim();
-
-        if (!name || !email || !message) {
-          if (status){ status.textContent = 'Please fill out all fields.'; status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--danger'); }
-          return;
-        }
-        // Basic email check
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-          if (status){ status.textContent = 'Please enter a valid email.'; status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--danger'); }
-          return;
-        }
-
+        const name = (data.get('name')||'').toString().trim();
+        const email = (data.get('email')||'').toString().trim();
+        const message = (data.get('message')||'').toString().trim();
+        if (!name || !email || !message) { status.textContent = 'Please fill out all fields.'; return; }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { status.textContent = 'Please enter a valid email.'; return; }
         try {
-          const resp = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' }});
-          if (resp.ok) {
-            form.reset();
-            if (status){ status.textContent = 'Thanks! Your message has been sent.'; status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--success'); }
-          } else {
-            if (status){ status.textContent = 'Something went wrong. You can email me directly.'; status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--danger'); }
-          }
-        } catch {
-          if (status){ status.textContent = 'Network error — please email me directly.'; status.style.color = getComputedStyle(document.documentElement).getPropertyValue('--danger'); }
-        }
+          const resp = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+          if (resp.ok) { form.reset(); status.textContent = 'Thanks! Your message has been sent.'; }
+          else { status.textContent = 'Something went wrong. You can email me directly.'; }
+        } catch { status.textContent = 'Network error — please email me directly.'; }
       });
-    })();
-
-    // ---------- Lightweight click tracking (console) + Resume check ----------
-    (function(){
-      const log = (label, href) => console.info('[analytics]', label, href);
-
-      // Log all outbound links that open in a new tab
-      document.querySelectorAll('a[target="_blank"]').forEach(a => {
-        a.addEventListener('click', () => log('outbound', a.href));
-      });
-
-      // Log resume clicks consistently (no duplicate IDs)
-      document.querySelectorAll('a[data-resume]').forEach(a => {
-        a.addEventListener('click', () => log('resume_click', a.href));
-      });
-
-      // HEAD check to surface a helpful banner if /resume.pdf is missing
-      const banner = document.getElementById('resumeBanner');
-      fetch('/resume.pdf', { method: 'HEAD' })
-        .then(r => { if (!r.ok) throw new Error('Not found'); })
-        .catch(() => { if (banner) banner.classList.add('show'); });
     })();
   </script>
 </body>
