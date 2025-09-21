@@ -2,13 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mustafa Iqbal — Cybersecurity Student</title>
-  <meta name="description" content="Portfolio of Mustafa Iqbal — cybersecurity student focusing on SOC/IR, secure backend, RBAC, audit logging, and log analysis." />
+  <meta name="description" content="Portfolio of Mustafa Iqbal — cybersecurity student focusing on SOC/IR, secure backend development, RBAC, audit logging, and log analysis." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://mustafa-portfolio-cyan.vercel.app/" />
-  <meta name="theme-color" content="#0f172a" />
-  <meta name="color-scheme" content="dark light" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Mustafa Iqbal — Cybersecurity Student" />
@@ -23,20 +21,9 @@
   <meta name="twitter:description" content="SOC/IR fundamentals, secure coding, RBAC, audit logging. Projects, certifications, and contact info." />
   <meta name="twitter:image" content="https://mustafa-portfolio-cyan.vercel.app/og-card.png" />
 
-  <!-- Preconnect + Font (swap to avoid FOIT) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300..700&display=swap" rel="stylesheet" />
+  <meta name="theme-color" content="#0f172a" />
 
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com" defer></script>
-
-  <!-- AOS + Feather (deferred) -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'" />
-  <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script defer src="https://unpkg.com/feather-icons"></script>
-
-  <!-- Favicons -->
+  <!-- Favicon set (ensure these files exist in /public) -->
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -64,419 +51,397 @@
   }
   </script>
 
+  <!-- Tailwind + libraries used by top design -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+
   <style>
-    :root{
-      --bg:#0b1020; --card:#0f172a; --muted:#94a3b8;
-      --ring:#6366f1; --grad1:#3b82f6; --grad2:#8b5cf6;
-    }
-    body{ font-family:'Poppins',system-ui,sans-serif; background:var(--bg); color:#e5e7eb; scroll-behavior:smooth; }
-    img{ image-rendering:auto; }
-    /* Reusable utilities */
-    .text-gradient{ background:linear-gradient(90deg,var(--grad1),var(--grad2)); -webkit-background-clip:text; background-clip:text; color:transparent; }
-    .glow{ box-shadow:0 0 0 1px rgba(99,102,241,.25), 0 8px 40px -12px rgba(99,102,241,.35); }
-    .glass{ background:linear-gradient(180deg,rgba(15,23,42,.72),rgba(15,23,42,.55)); backdrop-filter:blur(8px); border:1px solid rgba(148,163,184,.15); }
-    .hover-lift{ transition:transform .25s ease, box-shadow .25s ease; }
-    .hover-lift:hover{ transform:translateY(-6px); box-shadow:0 16px 40px -24px rgba(0,0,0,.6); }
-    .g-border{ position:relative; border-radius:1rem; }
-    .g-border::before{
-  content:"";
-  position:absolute;
-  inset:-1px;
-  z-index:0;
-  border-radius:inherit;
-  background:linear-gradient(120deg,var(--grad1),transparent 30%,var(--grad2) 70%,transparent);
-
-  /* ✅ Standard first */
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask-composite: exclude;
-
-  /* ✅ Vendor-prefixed fallback */
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-
-  padding:1px;
-}
-
-    .g-border > *{ position:relative; z-index:1; }
-    section{ content-visibility:auto; contain-intrinsic-size:1px 1000px; }
-
-    /* Hero animated mesh (CSS-only) */
-    .mesh-bg{
-      position:relative; overflow:hidden;
-      background:
-        radial-gradient(40% 60% at 20% 10%, rgba(59,130,246,.25), transparent 60%),
-        radial-gradient(35% 55% at 80% 20%, rgba(139,92,246,.25), transparent 60%),
-        radial-gradient(40% 60% at 50% 80%, rgba(34,197,94,.18), transparent 60%),
-        linear-gradient(180deg,#0b1020,#0b1020 45%,#0e152b);
-    }
-    .mesh-bg::after{
-      content:""; position:absolute; inset:-20%;
-      background:conic-gradient(from 180deg at 50% 50%, rgba(99,102,241,.06), rgba(34,197,94,.05), rgba(59,130,246,.06), rgba(99,102,241,.06));
-      filter:blur(80px); animation:spin 24s linear infinite;
-    }
-    @keyframes spin{ to{ transform:rotate(360deg);} }
-    @media (prefers-reduced-motion: reduce){
-      .hover-lift:hover{ transform:none }
-      .mesh-bg::after{ animation:none }
-    }
-    /* Nav underline */
-    .nav-link{ position:relative; }
-    .nav-link:after{ content:""; position:absolute; left:0; bottom:-6px; height:2px; width:0; background:linear-gradient(90deg,var(--grad1),var(--grad2)); transition:width .25s ease; }
-    .nav-link:hover:after,.nav-link.active:after{ width:100% }
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+    .text-gradient { background: linear-gradient(90deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .card-hover { transition: all 0.3s ease; }
+    .card-hover:hover { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04); }
+    .nav-link { position: relative; }
+    .nav-link:after { content: ''; position: absolute; width: 0; height: 2px; bottom: -2px; left: 0; background: linear-gradient(90deg, #3b82f6, #8b5cf6); transition: width 0.3s ease; }
+    .nav-link:hover:after, .active:after { width: 100%; }
   </style>
 </head>
-<body>
-
-  <!-- Navigation (glass) -->
-  <nav class="fixed w-full z-50">
-    <div class="mx-auto max-w-7xl px-4">
-      <div class="mt-4"></div>
-      <div class="glass rounded-2xl glow">
-        <div class="flex h-14 items-center justify-between px-4 sm:px-6">
-          <a href="#home" class="text-lg font-semibold text-white">Mustafa.</a>
-          <div class="hidden md:flex items-center space-x-8 text-sm">
-            <a href="#home" class="nav-link text-slate-200 hover:text-white">Home</a>
-            <a href="#about" class="nav-link text-slate-200 hover:text-white">About</a>
-            <a href="#projects" class="nav-link text-slate-200 hover:text-white">Projects</a>
-            <a href="#skills" class="nav-link text-slate-200 hover:text-white">Skills</a>
-            <a href="#education" class="nav-link text-slate-200 hover:text-white">Education</a>
-            <a href="#certs" class="nav-link text-slate-200 hover:text-white">Certifications</a>
-            <a href="#contact" class="nav-link text-slate-200 hover:text-white">Contact</a>
-          </div>
-          <button id="menu-btn" class="md:hidden text-slate-200" aria-label="Toggle menu"><i data-feather="menu"></i></button>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 px-4 pb-4">
-          <div class="grid py-2">
-            <a href="#home" class="py-2 text-slate-200">Home</a>
-            <a href="#about" class="py-2 text-slate-200">About</a>
-            <a href="#projects" class="py-2 text-slate-200">Projects</a>
-            <a href="#skills" class="py-2 text-slate-200">Skills</a>
-            <a href="#education" class="py-2 text-slate-200">Education</a>
-            <a href="#certs" class="py-2 text-slate-200">Certifications</a>
-            <a href="#contact" class="py-2 text-slate-200">Contact</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <header id="home" class="relative mesh-bg">
-    <div class="min-h-[88vh] flex items-center justify-center px-4">
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#0b1020]/10 to-[#0b1020]"></div>
+<body class="bg-gray-50">
+  <!-- Hero Section with Vanta.js Background -->
+  <header id="home" class="relative">
+    <div id="vanta-bg" class="min-h-screen flex items-center justify-center px-4">
+      <div class="absolute inset-0 bg-black opacity-20"></div>
       <div class="relative z-10 text-center max-w-4xl mx-auto" data-aos="fade-up">
-        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs tracking-wide bg-white/5 ring-1 ring-white/10 mb-5">
-          <i data-feather="shield" class="w-3.5 h-3.5 text-indigo-400"></i> Cybersecurity Learner
-        </span>
-        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
           <span class="text-gradient">Mustafa Iqbal</span>
         </h1>
-        <p class="text-lg md:text-2xl text-slate-300/90 mb-8">
-          SOC/IR • Secure Backend (RBAC, Audit Logging) • Log & Network Analysis
-        </p>
+        <p class="text-xl md:text-2xl text-gray-200 mb-8">Cybersecurity student in Karachi — SOC/IR, secure backend (RBAC, audit logging), and log analysis</p>
         <div class="flex justify-center flex-wrap gap-3">
-          <a href="#projects" class="px-8 py-3 rounded-full bg-white text-gray-900 font-medium hover:opacity-90 transition hover-lift">View Projects</a>
-          <a href="/resume.pdf" class="px-8 py-3 rounded-full g-border hover-lift" download>
-            <span class="block px-0.5 py-0.5 rounded-full"><span class="block rounded-full px-7 py-2.5 bg-[#0f172a]">Download Résumé</span></span>
-          </a>
+          <a href="#projects" class="px-8 py-3 bg-white text-indigo-600 font-medium rounded-full hover:bg-gray-100 transition">View Projects</a>
+          <a href="/resume.pdf" class="px-8 py-3 border-2 border-white text-white font-medium rounded-full hover:bg-white hover:text-indigo-600 transition" download>Download Résumé</a>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- About -->
-  <section id="about" class="py-20">
+  <!-- Navigation -->
+  <nav class="fixed w-full bg-white bg-opacity-90 backdrop-filter backdrop-blur-lg shadow-sm z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="#home" class="text-xl font-bold text-indigo-600">Mustafa.</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#home" class="nav-link text-gray-700 hover:text-indigo-600 active">Home</a>
+          <a href="#about" class="nav-link text-gray-700 hover:text-indigo-600">About</a>
+          <a href="#projects" class="nav-link text-gray-700 hover:text-indigo-600">Projects</a>
+          <a href="#skills" class="nav-link text-gray-700 hover:text-indigo-600">Skills</a>
+          <a href="#education" class="nav-link text-gray-700 hover:text-indigo-600">Education</a>
+          <a href="#certs" class="nav-link text-gray-700 hover:text-indigo-600">Certifications</a>
+          <a href="#contact" class="nav-link text-gray-700 hover:text-indigo-600">Contact</a>
+        </div>
+        <div class="flex md:hidden items-center">
+          <button id="menu-btn" class="text-gray-700" aria-label="Toggle menu">
+            <i data-feather="menu"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4 shadow-lg">
+      <a href="#home" class="block py-2 text-gray-700 hover:text-indigo-600">Home</a>
+      <a href="#about" class="block py-2 text-gray-700 hover:text-indigo-600">About</a>
+      <a href="#projects" class="block py-2 text-gray-700 hover:text-indigo-600">Projects</a>
+      <a href="#skills" class="block py-2 text-gray-700 hover:text-indigo-600">Skills</a>
+      <a href="#education" class="block py-2 text-gray-700 hover:text-indigo-600">Education</a>
+      <a href="#certs" class="block py-2 text-gray-700 hover:text-indigo-600">Certifications</a>
+      <a href="#contact" class="block py-2 text-gray-700 hover:text-indigo-600">Contact</a>
+    </div>
+  </nav>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">About Me</h2>
         <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
       </div>
       <div class="flex flex-col md:flex-row items-center gap-12">
         <div class="md:w-1/3" data-aos="fade-right">
-          <div class="rounded-2xl overflow-hidden glow">
-            <img loading="lazy" decoding="async" src="images/profile.jpg" alt="Profile picture of Mustafa Iqbal" class="w-full h-auto object-cover" />
+          <div class="rounded-xl overflow-hidden shadow-xl">
+            <img src="images/profile.jpg" alt="Profile picture of Mustafa Iqbal" class="w-full h-auto rounded-xl shadow-lg object-cover" />
           </div>
         </div>
         <div class="md:w-2/3" data-aos="fade-left">
-          <h3 class="text-2xl font-semibold mb-4">Cybersecurity Focus</h3>
-          <p class="text-slate-300 mb-6">
-            I’m a cybersecurity student focused on SOC/IR fundamentals, secure backend development (RBAC, audit logging), and log/network analysis. I like turning messy alerts into clear action and building secure systems with least-privilege design.
-          </p>
+          <h3 class="text-2xl font-semibold text-gray-800 mb-4">Cybersecurity Focus</h3>
+          <p class="text-gray-600 mb-6">I’m a cybersecurity student focused on SOC/IR fundamentals, secure backend development (RBAC, audit logging), and log analysis. I enjoy turning messy alerts into clear action and building secure systems.</p>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <div class="flex items-start">
-              <div class="bg-indigo-500/15 p-3 rounded-full mr-4"><i data-feather="activity" class="text-indigo-400"></i></div>
-              <div><h4 class="font-medium mb-1">SOC/IR</h4><p class="text-slate-400 text-sm">Monitoring, alert triage, IOC extraction</p></div>
+              <div class="bg-indigo-100 p-3 rounded-full mr-4"><i data-feather="shield" class="text-indigo-600"></i></div>
+              <div><h4 class="font-medium text-gray-800 mb-1">SOC/IR</h4><p class="text-gray-600 text-sm">Monitoring, alert triage, IOC extraction</p></div>
             </div>
             <div class="flex items-start">
-              <div class="bg-purple-500/15 p-3 rounded-full mr-4"><i data-feather="lock" class="text-purple-400"></i></div>
-              <div><h4 class="font-medium mb-1">Secure Coding</h4><p class="text-slate-400 text-sm">RBAC, audit logging, validation</p></div>
+              <div class="bg-purple-100 p-3 rounded-full mr-4"><i data-feather="lock" class="text-purple-600"></i></div>
+              <div><h4 class="font-medium text-gray-800 mb-1">Secure Coding</h4><p class="text-gray-600 text-sm">RBAC, audit logging, validation</p></div>
             </div>
           </div>
           <div class="flex flex-wrap gap-3">
-            <a href="mailto:talhamustafa642@gmail.com" class="inline-flex items-center text-indigo-300 hover:text-indigo-200">Email Me<i data-feather="mail" class="ml-2"></i></a>
-            <a href="https://wa.me/923302479956" target="_blank" rel="noopener" class="inline-flex items-center text-indigo-300 hover:text-indigo-200">WhatsApp<i data-feather="message-circle" class="ml-2"></i></a>
-            <a href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener" class="inline-flex items-center text-indigo-300 hover:text-indigo-200">GitHub<i data-feather="github" class="ml-2"></i></a>
-            <a href="https://linkedin.com/in/mustafa642" target="_blank" rel="noopener" class="inline-flex items-center text-indigo-300 hover:text-indigo-200">LinkedIn<i data-feather="linkedin" class="ml-2"></i></a>
+            <a href="mailto:talhamustafa642@gmail.com" class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800">Email Me<i data-feather="mail" class="ml-2"></i></a>
+            <a href="https://wa.me/923302479956" target="_blank" rel="noopener" class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800">WhatsApp<i data-feather="message-circle" class="ml-2"></i></a>
+            <a href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener" class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800">GitHub<i data-feather="github" class="ml-2"></i></a>
+            <a href="https://linkedin.com/in/mustafa642" target="_blank" rel="noopener" class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-800">LinkedIn<i data-feather="linkedin" class="ml-2"></i></a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="py-20">
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Projects</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Projects</h2>
         <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Risk Fundamentals -->
-        <div class="glass rounded-2xl g-border hover-lift overflow-hidden" data-aos="fade-up" data-aos-delay="50">
+        <!-- Assets/Threats/Vulnerabilities -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="50">
           <div class="relative overflow-hidden h-56">
-            <img loading="lazy" decoding="async" src="http://static.photos/technology/640x360/110" alt="Risk Fundamentals" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <img src="http://static.photos/technology/640x360/110" alt="Risk Fundamentals" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
             <div class="absolute bottom-4 left-4"><span class="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">Risk Analysis</span></div>
           </div>
           <div class="p-6">
-            <h3 class="text-lg font-semibold mb-2">Assets, Threats & Vulnerabilities</h3>
-            <p class="text-slate-300 text-sm mb-2">Matrix + narrative on assets, likely threats, mapped vulns, and prioritized mitigations (NIST-aligned).</p>
-            <p class="text-xs text-slate-400">Tags: NIST CSF · Vulnerability Assessment</p>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Assets, Threats & Vulnerabilities</h3>
+            <p class="text-gray-600 mb-4">Concise matrix + narrative on assets, likely threat actors/vectors, mapped vulnerabilities, and prioritized mitigations (NIST-aligned).</p>
           </div>
         </div>
 
         <!-- Incident Report — DDoS (ICMP) -->
-        <div class="glass rounded-2xl g-border hover-lift overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+        <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="100">
           <div class="relative overflow-hidden h-56">
-            <img loading="lazy" decoding="async" src="http://static.photos/technology/640x360/101" alt="Incident Report DDoS" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <img src="http://static.photos/technology/640x360/101" alt="Incident Report DDoS" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
             <div class="absolute bottom-4 left-4"><span class="bg-purple-600 text-white text-xs px-3 py-1 rounded-full">Incident Response</span></div>
           </div>
           <div class="p-6">
-            <h3 class="text-lg font-semibold mb-2">Incident Report — DDoS (ICMP)</h3>
-            <p class="text-slate-300 text-sm mb-4">Full lifecycle: Identify → Protect → Detect → Respond → Recover, packet patterns, IOCs, triage notes, playbook.</p>
-            <div class="flex flex-wrap gap-3 text-sm">
-              <a href="https://github.com/Mustafa-Hazard/Incident_Report_Analysis" target="_blank" rel="noopener" class="text-indigo-300 hover:text-indigo-200 inline-flex items-center">View Repo<i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
-              <a href="https://raw.githubusercontent.com/Mustafa-Hazard/Incident_Report_Analysis/main/Incident_Report_Analysis_NIST_Framework_MustafaMuhammad.pdf" target="_blank" rel="noopener" class="text-indigo-300 hover:text-indigo-200 inline-flex items-center">Read PDF<i data-feather="file-text" class="ml-2 w-4 h-4"></i></a>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Incident Report — DDoS (ICMP)</h3>
+            <p class="text-gray-600 mb-4">Full lifecycle report (Identify → Protect → Detect → Respond → Recover) incl. packet patterns, IOCs, triage notes, and playbook steps.</p>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://github.com/Mustafa-Hazard/Incident_Report_Analysis" target="_blank" rel="noopener" class="text-indigo-600 font-medium hover:text-indigo-800 inline-flex items-center">View Repo<i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
+              <a href="https://raw.githubusercontent.com/Mustafa-Hazard/Incident_Report_Analysis/main/Incident_Report_Analysis_NIST_Framework_MustafaMuhammad.pdf" target="_blank" rel="noopener" class="text-indigo-600 font-medium hover:text-indigo-800 inline-flex items-center">Read PDF<i data-feather="file-text" class="ml-2 w-4 h-4"></i></a>
             </div>
           </div>
         </div>
 
         <!-- Attendance Manager (RBAC) -->
-        <div class="glass rounded-2xl g-border hover-lift overflow-hidden" data-aos="fade-up" data-aos-delay="150">
+        <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="150">
           <div class="relative overflow-hidden h-56">
-            <img loading="lazy" decoding="async" src="http://static.photos/technology/640x360/120" alt="Attendance Manager" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <img src="http://static.photos/technology/640x360/120" alt="Attendance Manager" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
             <div class="absolute bottom-4 left-4"><span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">RBAC</span></div>
           </div>
           <div class="p-6">
-            <h3 class="text-lg font-semibold mb-2">Attendance Manager (Node + Postgres)</h3>
-            <p class="text-slate-300 text-sm mb-4">Secure sessions, role-based access, and event-based audit trails. Input validation and least-privilege.</p>
-            <a href="https://github.com/Mustafa-Hazard/Attendance" target="_blank" rel="noopener" class="text-indigo-300 hover:text-indigo-200 inline-flex items-center">View Repo<i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Attendance Manager (RBAC)</h3>
+            <p class="text-gray-600 mb-4">Node.js + PostgreSQL with secure sessions and event-based audit trails. Input validation and least-privilege design.</p>
+            <a href="https://github.com/Mustafa-Hazard/Attendance" target="_blank" rel="noopener" class="text-indigo-600 font-medium hover:text-indigo-800 inline-flex items-center">View Repo<i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
           </div>
         </div>
 
-        <!-- Java CLI -->
-        <div class="glass rounded-2xl g-border hover-lift overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+        <!-- Restaurant Console App (Java) -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="200">
           <div class="relative overflow-hidden h-56">
-            <img loading="lazy" decoding="async" src="http://static.photos/technology/640x360/130" alt="Java CLI App" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <img src="http://static.photos/technology/640x360/130" alt="Java CLI App" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
             <div class="absolute bottom-4 left-4"><span class="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">Java</span></div>
           </div>
           <div class="p-6">
-            <h3 class="text-lg font-semibold mb-2">Restaurant Console App (Java)</h3>
-            <p class="text-slate-300 text-sm">CLI with secure login and billing. Emphasizes credential handling, validated input, and clean OOP separation.</p>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Restaurant Console App (Java)</h3>
+            <p class="text-gray-600 mb-4">CLI with secure login and billing. Emphasizes credential handling, error-checked input, and clean OOP separation.</p>
           </div>
         </div>
 
         <!-- Grade Tracker -->
-        <div class="glass rounded-2xl g-border hover-lift overflow-hidden" data-aos="fade-up" data-aos-delay="250">
+        <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="250">
           <div class="relative overflow-hidden h-56">
-            <img loading="lazy" decoding="async" src="http://static.photos/technology/640x360/140" alt="Grade Tracker" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <img src="http://static.photos/technology/640x360/140" alt="Grade Tracker" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
             <div class="absolute bottom-4 left-4"><span class="bg-purple-600 text-white text-xs px-3 py-1 rounded-full">Node + Postgres</span></div>
           </div>
           <div class="p-6">
-            <h3 class="text-lg font-semibold mb-2">Grade Tracker (Node + Postgres)</h3>
-            <p class="text-slate-300 text-sm">Indexes, server-side validation, and defensive queries to reduce injection risk and improve performance.</p>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Grade Tracker (Node + Postgres)</h3>
+            <p class="text-gray-600 mb-4">Sensible indexes, server-side validation, and defensive query building to reduce injection risk and improve performance.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Skills (rewritten for cybersecurity learner) -->
-  <section id="skills" class="py-20">
+  <!-- Skills Section (rewritten for cybersecurity-learner focus) -->
+<section id="skills" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Skills</h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
+      <p class="mt-4 text-gray-600 max-w-3xl mx-auto">
+        Early-career cybersecurity learner focused on SOC/IR fundamentals, secure backend practices, and practical log/network analysis through coursework and hands-on labs.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- SOC / IR -->
+      <div class="bg-gray-50 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+        <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+          <i data-feather="activity" class="text-indigo-600 w-6 h-6"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-center text-gray-800 mb-4">SOC / IR Fundamentals</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-indigo-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>Alert triage & IOC extraction</strong> — Hands-on</span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-indigo-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>Incident investigation</strong> (NIST CSF) — Foundational</span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-indigo-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>Vulnerability assessment</strong> — Basic</span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-indigo-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>Case exposure:</strong> flagged 32+ out-of-hours failed logins via SQL log review</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Security Engineering / Secure Backend -->
+      <div class="bg-gray-50 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+        <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+          <i data-feather="lock" class="text-purple-600 w-6 h-6"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-center text-gray-800 mb-4">Security Engineering</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-purple-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>RBAC / AuthZ</strong> in Node.js apps — Hands-on</span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-purple-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>Audit logging</strong> & event trails — Hands-on</span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-purple-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>Input validation & least privilege</strong> — Foundational</span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-purple-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>Linux hardening</strong> (users, services, basic hardening) — Hands-on</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Tools, Languages & Platforms -->
+      <div class="bg-gray-50 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="300">
+        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+          <i data-feather="code" class="text-blue-600 w-6 h-6"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-center text-gray-800 mb-4">Tools, Languages & Platforms</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-blue-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>Log & network analysis:</strong> SQL (joins/filters), Splunk (basic), Wireshark — Hands-on/Basic</span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-blue-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>Programming:</strong> Java (advanced), Python, JavaScript (Node.js)</span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-blue-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>Databases & infra:</strong> PostgreSQL, Firebase, Git/GitHub</span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-blue-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>Operating systems:</strong> Windows, Linux (CLI)</span>
+          </li>
+        </ul>
+        <div class="mt-6 p-4 bg-white border border-gray-200 rounded-lg">
+          <p class="text-sm text-gray-700">
+            <strong>Currently learning:</strong> Google Cybersecurity Professional Certificate (5/9),
+            20+ TryHackMe labs (Cyber Security 101).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- End Skills Section -->
+
+  <!-- Education Section -->
+  <section id="education" class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Skills</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Education</h2>
         <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
-        <p class="mt-4 text-slate-300 max-w-3xl mx-auto">
-          Early-career cybersecurity learner focused on SOC/IR, secure backend practices, and practical log/network analysis through coursework and hands-on labs.
-        </p>
       </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- SOC / IR -->
-        <div class="glass rounded-2xl g-border p-8" data-aos="fade-up" data-aos-delay="100">
-          <div class="bg-indigo-500/15 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-            <i data-feather="activity" class="text-indigo-400 w-6 h-6"></i>
-          </div>
-          <h3 class="text-xl font-semibold text-center mb-4">SOC / IR Fundamentals</h3>
-          <ul class="space-y-3 text-slate-300">
-            <li><span class="font-medium">Alert triage & IOC extraction</span> — Hands-on</li>
-            <li><span class="font-medium">Incident investigation</span> (NIST CSF) — Foundational</li>
-            <li><span class="font-medium">Vulnerability assessment</span> — Basic</li>
-            <li class="text-sm text-slate-400">SQL review surfaced <span class="font-semibold">32+ failed logins</span> outside business hours for targeted response.</li>
-          </ul>
-        </div>
-
-        <!-- Security Engineering -->
-        <div class="glass rounded-2xl g-border p-8" data-aos="fade-up" data-aos-delay="200">
-          <div class="bg-purple-500/15 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-            <i data-feather="lock" class="text-purple-400 w-6 h-6"></i>
-          </div>
-          <h3 class="text-xl font-semibold text-center mb-4">Security Engineering</h3>
-          <ul class="space-y-3 text-slate-300">
-            <li><span class="font-medium">RBAC / AuthZ</span> in Node.js apps — Hands-on</li>
-            <li><span class="font-medium">Audit logging</span> & event trails — Hands-on</li>
-            <li><span class="font-medium">Input validation & least privilege</span> — Foundational</li>
-            <li><span class="font-medium">Linux hardening</span> (users, services, basic hardening) — Hands-on</li>
-          </ul>
-        </div>
-
-        <!-- Tools & Languages -->
-        <div class="glass rounded-2xl g-border p-8" data-aos="fade-up" data-aos-delay="300">
-          <div class="bg-blue-500/15 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-            <i data-feather="code" class="text-blue-400 w-6 h-6"></i>
-          </div>
-          <h3 class="text-xl font-semibold text-center mb-4">Tools, Languages & Platforms</h3>
-          <ul class="space-y-3 text-slate-300">
-            <li><span class="font-medium">Log & network analysis:</span> SQL (joins/filters), Splunk (basic), Wireshark — Hands-on/Basic</li>
-            <li><span class="font-medium">Programming:</span> Java (advanced), Python, JavaScript (Node.js)</li>
-            <li><span class="font-medium">Databases & infra:</span> PostgreSQL, Firebase, Git/GitHub</li>
-            <li><span class="font-medium">Operating systems:</span> Windows, Linux (CLI)</li>
-          </ul>
-          <div class="mt-6 p-4 bg-black/20 border border-white/10 rounded-lg">
-            <p class="text-sm text-slate-300">
-              <span class="font-semibold">Currently learning:</span> Google Cybersecurity Professional Certificate (5/9),
-              20+ TryHackMe labs (Cyber Security 101).
-            </p>
-          </div>
-        </div>
+      <div class="bg-white p-8 rounded-xl shadow-sm" data-aos="fade-up">
+        <h3 class="text-2xl font-semibold text-gray-800">Shaheed Zulfikar Ali Bhutto Institute of Science & Technology (SZABIST), Karachi</h3>
+        <p class="text-gray-600 mt-2">3rd Year · 5th Semester</p>
+        <p class="text-gray-600 mt-4">Focus: Cybersecurity foundations, secure backend development, SOC/IR fundamentals.</p>
+        <p class="text-gray-500 mt-2">Subjects/Tags: Networks, Operating Systems, Secure Coding, Databases</p>
       </div>
     </div>
   </section>
 
-  <!-- Education -->
-  <section id="education" class="py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Education</h2>
-        <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
-      </div>
-      <div class="glass rounded-2xl g-border p-8" data-aos="fade-up">
-        <h3 class="text-2xl font-semibold">Shaheed Zulfikar Ali Bhutto Institute of Science & Technology (SZABIST), Karachi</h3>
-        <p class="text-slate-300 mt-2">B.S. Computer Science — CGPA 3.53/4.0 — Expected Jun 2027</p>
-        <p class="text-slate-300 mt-4">Focus: Cybersecurity foundations, secure backend development, SOC/IR fundamentals.</p>
-        <p class="text-slate-400 mt-2 text-sm">Coursework: DSA, OOP, OS, DBMS, AI, SE, Computer Networks & Data Communication</p>
-      </div>
-    </div>
-  </section>
+  <!-- Certifications Section -->
+<section id="certs" class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16" data-aos="fade-up">
+<h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Certifications</h2>
+<div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
+</div>
+<!-- Changed grid layout to 2 columns on medium screens -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="50">
+<h3 class="font-semibold text-gray-800">Python Pro — Udemy (2025)</h3>
+<a class="text-indigo-600 font-medium inline-flex items-center mt-2" href="https://www.udemy.com/certificate/UC-dbdf73dc-9367-4df0-b854-486c0b946b9a/" target="_blank" rel="noopener">Verify<i data-feather="external-link" class="ml-2 w-4 h-4"></i></a>
+</div>
+<div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+<h3 class="font-semibold text-gray-800">Linux for Beginners — Udemy (2025)</h3>
+<a class="text-indigo-600 font-medium inline-flex items-center mt-2" href="https://www.udemy.com/certificate/UC-91ec6ae7-dc40-42dc-8a3f-504f880ef5b8/" target="_blank" rel="noopener">Verify<i data-feather="external-link" class="ml-2 w-4 h-4"></i></a>
+</div>
+<div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="150">
+<h3 class="font-semibold text-gray-800">SEMrush Academy (2025)</h3>
+<a class="text-indigo-600 font-medium inline-flex items-center mt-2" href="https://static.semrush.com/academy/certificates/7b86fc0626/mustafa-muhammad-iqbal_25.pdf" target="_blank" rel="noopener">View PDF<i data-feather="file-text" class="ml-2 w-4 h-4"></i></a>
+</div>
+<div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+<h3 class="font-semibold text-gray-800">Google Cybersecurity Specialization — Coursera (5/9)</h3>
+<div class="mt-2 grid gap-2">
+<a class="text-indigo-600 hover:text-indigo-800" href="https://coursera.org/share/77e83be860c6819d79c6947fc3961c07" target="_blank" rel="noopener">Foundations of Cybersecurity</a>
+<a class="text-indigo-600 hover:text-indigo-800" href="https://coursera.org/share/56d5dd64706bf09f8bf4d6db8e281897" target="_blank" rel="noopener">Play It Safe</a>
+<a class="text-indigo-600 hover:text-indigo-800" href="https://coursera.org/share/ab08bf4386e0e683111a61434a261b53" target="_blank" rel="noopener">Tools of the Trade</a>
+<a class="text-indigo-600 hover:text-indigo-800" href="https://coursera.org/share/72b07b47471003af97d970f8a0199fab" target="_blank" rel="noopener">Connect & Protect</a>
+<a class="text-indigo-600 hover:text-indigo-800" href="https://www.coursera.org/account/accomplishments/verify/02WNM4TQ7ZZG" target="_blank" rel="noopener">Assets, Threats, and Vulnerabilities</a>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-  <!-- Certifications -->
-  <section id="certs" class="py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Certifications</h2>
-        <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="glass rounded-2xl g-border p-6" data-aos="fade-up" data-aos-delay="50">
-          <h3 class="font-semibold">Python Pro — Udemy (2025)</h3>
-          <a class="text-indigo-300 inline-flex items-center mt-2 hover:text-indigo-200" href="https://www.udemy.com/certificate/UC-dbdf73dc-9367-4df0-b854-486c0b946b9a/" target="_blank" rel="noopener">Verify<i data-feather="external-link" class="ml-2 w-4 h-4"></i></a>
-        </div>
-
-        <div class="glass rounded-2xl g-border p-6" data-aos="fade-up" data-aos-delay="100">
-          <h3 class="font-semibold">Linux for Beginners — Udemy (2025)</h3>
-          <a class="text-indigo-300 inline-flex items-center mt-2 hover:text-indigo-200" href="https://www.udemy.com/certificate/UC-91ec6ae7-dc40-42dc-8a3f-504f880ef5b8/" target="_blank" rel="noopener">Verify<i data-feather="external-link" class="ml-2 w-4 h-4"></i></a>
-        </div>
-
-        <div class="glass rounded-2xl g-border p-6" data-aos="fade-up" data-aos-delay="150">
-          <h3 class="font-semibold">SEMrush Academy (2025)</h3>
-          <a class="text-indigo-300 inline-flex items-center mt-2 hover:text-indigo-200" href="https://static.semrush.com/academy/certificates/7b86fc0626/mustafa-muhammad-iqbal_25.pdf" target="_blank" rel="noopener">View PDF<i data-feather="file-text" class="ml-2 w-4 h-4"></i></a>
-        </div>
-
-        <div class="glass rounded-2xl g-border p-6" data-aos="fade-up" data-aos-delay="200">
-          <h3 class="font-semibold">Google Cybersecurity Specialization — Coursera (5/9)</h3>
-          <div class="mt-2 grid gap-2 text-indigo-300">
-            <a class="hover:text-indigo-200" href="https://coursera.org/share/77e83be860c6819d79c6947fc3961c07" target="_blank" rel="noopener">Foundations of Cybersecurity</a>
-            <a class="hover:text-indigo-200" href="https://coursera.org/share/56d5dd64706bf09f8bf4d6db8e281897" target="_blank" rel="noopener">Play It Safe</a>
-            <a class="hover:text-indigo-200" href="https://coursera.org/share/ab08bf4386e0e683111a61434a261b53" target="_blank" rel="noopener">Tools of the Trade</a>
-            <a class="hover:text-indigo-200" href="https://coursera.org/share/72b07b47471003af97d970f8a0199fab" target="_blank" rel="noopener">Connect & Protect</a>
-            <a class="hover:text-indigo-200" href="https://www.coursera.org/account/accomplishments/verify/02WNM4TQ7ZZG" target="_blank" rel="noopener">Assets, Threats, and Vulnerabilities</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="py-20">
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gray-900 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16" data-aos="fade-up">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Work Together</h2>
-        <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
+        <div class="w-20 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto"></div>
       </div>
-
       <div class="flex flex-col md:flex-row gap-12">
-        <div class="md:w-1/2 glass rounded-2xl g-border p-8" data-aos="fade-right">
+        <div class="md:w-1/2" data-aos="fade-right">
           <h3 class="text-2xl font-semibold mb-6">Get in Touch</h3>
-          <p class="text-slate-300 mb-8">Have a project in mind or want to discuss opportunities? I'd love to hear from you!</p>
+          <p class="text-gray-300 mb-8">Have a project in mind or want to discuss potential opportunities? I'd love to hear from you!</p>
           <div class="space-y-6">
             <div class="flex items-start">
-              <div class="bg-indigo-500/15 p-3 rounded-full mr-4"><i data-feather="mail" class="text-indigo-300"></i></div>
-              <div><h4 class="font-medium mb-1">Email</h4><a href="mailto:talhamustafa642@gmail.com" class="text-slate-300 hover:text-white">talhamustafa642@gmail.com</a></div>
+              <div class="bg-indigo-600 bg-opacity-20 p-3 rounded-full mr-4"><i data-feather="mail" class="text-indigo-400"></i></div>
+              <div><h4 class="font-medium mb-1">Email</h4><a href="mailto:talhamustafa642@gmail.com" class="text-gray-300 hover:text-white">talhamustafa642@gmail.com</a></div>
             </div>
             <div class="flex items-start">
-              <div class="bg-purple-500/15 p-3 rounded-full mr-4"><i data-feather="phone" class="text-purple-300"></i></div>
-              <div><h4 class="font-medium mb-1">WhatsApp</h4><a href="https://wa.me/923302479956" target="_blank" rel="noopener" class="text-slate-300 hover:text-white">+92 330 2479956</a></div>
+              <div class="bg-purple-600 bg-opacity-20 p-3 rounded-full mr-4"><i data-feather="phone" class="text-purple-400"></i></div>
+              <div><h4 class="font-medium mb-1">WhatsApp</h4><a href="https://wa.me/923302479956" target="_blank" rel="noopener" class="text-gray-300 hover:text-white">+92 330 2479956</a></div>
             </div>
             <div class="flex items-start">
-              <div class="bg-blue-500/15 p-3 rounded-full mr-4"><i data-feather="map-pin" class="text-blue-300"></i></div>
-              <div><h4 class="font-medium mb-1">Location</h4><p class="text-slate-300">Karachi, Pakistan</p></div>
+              <div class="bg-blue-600 bg-opacity-20 p-3 rounded-full mr-4"><i data-feather="map-pin" class="text-blue-400"></i></div>
+              <div><h4 class="font-medium mb-1">Location</h4><p class="text-gray-300">Karachi, Pakistan</p></div>
             </div>
           </div>
           <div class="flex space-x-4 mt-8">
-            <a href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener" class="bg-white/5 hover:bg-white/10 p-3 rounded-full transition"><i data-feather="github" class="text-white"></i></a>
-            <a href="https://linkedin.com/in/mustafa642" target="_blank" rel="noopener" class="bg-white/5 hover:bg-white/10 p-3 rounded-full transition"><i data-feather="linkedin" class="text-blue-300"></i></a>
+            <a href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener" class="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition"><i data-feather="github" class="text-white"></i></a>
+            <a href="https://linkedin.com/in/mustafa642" target="_blank" rel="noopener" class="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition"><i data-feather="linkedin" class="text-blue-400"></i></a>
           </div>
         </div>
-
-        <div class="md:w-1/2 glass rounded-2xl g-border p-8" data-aos="fade-left">
+        <div class="md:w-1/2" data-aos="fade-left">
           <form id="contactForm" class="space-y-6" action="https://formspree.io/f/your-form-id" method="POST" novalidate>
             <div>
-              <label for="name" class="block text-sm font-medium mb-1">Name</label>
-              <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-black/20 border border-white/10 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder-slate-500 transition" required />
+              <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+              <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-white placeholder-gray-400 transition" required />
             </div>
             <div>
-              <label for="email" class="block text-sm font-medium mb-1">Email</label>
-              <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-black/20 border border-white/10 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder-slate-500 transition" required />
+              <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+              <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-white placeholder-gray-400 transition" required />
             </div>
             <div>
-              <label for="subject" class="block text-sm font-medium mb-1">Subject</label>
-              <input type="text" id="subject" name="subject" class="w-full px-4 py-3 bg-black/20 border border-white/10 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder-slate-500 transition" />
+              <label for="subject" class="block text-sm font-medium text-gray-300 mb-1">Subject</label>
+              <input type="text" id="subject" name="subject" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-white placeholder-gray-400 transition" />
             </div>
             <div>
-              <label for="message" class="block text-sm font-medium mb-1">Message</label>
-              <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 bg-black/20 border border-white/10 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 placeholder-slate-500 transition" required></textarea>
+              <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+              <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-white placeholder-gray-400 transition" required></textarea>
             </div>
-            <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-lg hover:from-indigo-700 hover:to-purple-700 transition flex items-center justify-center">
-              Send Message<i data-feather="send" class="ml-2 w-4 h-4"></i>
-            </button>
-            <p id="formStatus" class="text-sm text-slate-300" role="status" aria-live="polite"></p>
+            <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-lg hover:from-indigo-700 hover:to-purple-700 transition flex items-center justify-center">Send Message<i data-feather="send" class="ml-2 w-4 h-4"></i></button>
+            <p id="formStatus" class="text-sm text-gray-300" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>
@@ -484,14 +449,14 @@
   </section>
 
   <!-- Footer -->
-  <footer class="border-t border-white/10 py-8">
+  <footer class="bg-gray-900 border-t border-gray-800 py-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row justify-between items-center">
-        <div class="mb-4 md:mb-0"><span class="text-xl font-bold">Mustafa.</span></div>
-        <div class="text-slate-400 text-sm"><p>© <span id="year"></span> Mustafa Iqbal. All rights reserved.</p></div>
+        <div class="mb-4 md:mb-0"><span class="text-xl font-bold text-white">Mustafa.</span></div>
+        <div class="text-gray-400 text-sm"><p>© <span id="year"></span> Mustafa Iqbal. All rights reserved.</p></div>
         <div class="flex space-x-6 mt-4 md:mt-0">
-          <a href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener" class="text-slate-400 hover:text-white transition"><i data-feather="github"></i></a>
-          <a href="https://linkedin.com/in/mustafa642" target="_blank" rel="noopener" class="text-slate-400 hover:text-white transition"><i data-feather="linkedin"></i></a>
+          <a href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition"><i data-feather="github"></i></a>
+          <a href="https://linkedin.com/in/mustafa642" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition"><i data-feather="linkedin"></i></a>
         </div>
       </div>
     </div>
@@ -502,63 +467,67 @@
     <i data-feather="arrow-up"></i>
   </button>
 
-  <!-- JS (lightweight, smooth, accessible) -->
   <script>
-    // Init AOS + Feather after load
-    window.addEventListener('load', () => {
-      if (window.AOS) AOS.init({ duration: 700, once: true, easing: 'ease-out' });
-      if (window.feather) feather.replace();
-    });
+    // Initialize AOS
+    AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
 
-    // Mobile Menu
+    // Initialize Feather Icons
+    feather.replace();
+
+    // Mobile Menu Toggle
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-    mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+    mobileMenu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
 
-    // Smooth anchor scroll + keep hash
+    // Vanta.js Background
+    VANTA.NET({
+      el: '#vanta-bg', mouseControls: true, touchControls: true, gyroControls: false,
+      minHeight: 200.00, minWidth: 200.00, scale: 1.00, scaleMobile: 1.00,
+      color: 0x3b82f6, backgroundColor: 0x111827, points: 12.00, maxDistance: 22.00, spacing: 18.00
+    });
+
+    // Back to Top Button
+    const backToTopButton = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.remove('opacity-0', 'invisible');
+        backToTopButton.classList.add('opacity-100', 'visible');
+      } else {
+        backToTopButton.classList.remove('opacity-100', 'visible');
+        backToTopButton.classList.add('opacity-0', 'invisible');
+      }
+    });
+    backToTopButton?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', e => {
-        const id = anchor.getAttribute('href');
-        if (!id || id === '#') return;
-        const el = document.querySelector(id);
-        if (!el) return;
+      anchor.addEventListener('click', function (e) {
+        // allow normal behavior if link is just '#'
+        const targetId = this.getAttribute('href');
+        if (!targetId || targetId === '#') return;
         e.preventDefault();
-        el.scrollIntoView({ behavior: 'smooth', block:'start' });
-        history.replaceState(null, '', id);
+        document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' });
       });
     });
 
-    // Active nav via IntersectionObserver
+    // Highlight active navigation link
+    const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-link');
-    const sections = [...document.querySelectorAll('section')];
-    const byId = id => [...navLinks].find(a => a.getAttribute('href') === `#${id}`);
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting){
-          navLinks.forEach(l => l.classList.remove('active'));
-          const link = byId(entry.target.id);
-          link?.classList.add('active');
-        }
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= (sectionTop - 300)) current = section.getAttribute('id');
       });
-    }, { rootMargin:'-40% 0px -50% 0px', threshold:0.01 });
-    sections.forEach(s => io.observe(s));
-
-    // Back to top button visibility (toggle when hero leaves)
-    const backToTopButton = document.getElementById('back-to-top');
-    const hero = document.getElementById('home');
-    const stIO = new IntersectionObserver(([e]) => {
-      if (!backToTopButton) return;
-      backToTopButton.classList.toggle('opacity-100', !e.isIntersecting);
-      backToTopButton.classList.toggle('visible', !e.isIntersecting);
-      backToTopButton.classList.toggle('opacity-0', e.isIntersecting);
-      backToTopButton.classList.toggle('invisible', e.isIntersecting);
-    }, { threshold: 0.01 });
-    hero && stIO.observe(hero);
-    backToTopButton?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (current && link.getAttribute('href') === `#${current}`) link.classList.add('active');
+      });
+    });
 
     // Footer year
-    document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());
+    document.getElementById('year').textContent = new Date().getFullYear();
 
     // Contact form minimal validation
     (function(){
