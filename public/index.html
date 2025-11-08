@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mustafa Iqbal — Cybersecurity Student</title>
-  <meta name="description" content="Portfolio of Mustafa Iqbal — cybersecurity student focusing on SOC/IR, secure backend development, RBAC, audit logging, and log analysis." />
+  <title>Mustafa Iqbal — Tech Enthusiast | Full Stack & DevOps Developer</title>
+  <meta name="description" content="Portfolio of Mustafa Iqbal — passionate software developer with experience in full-stack development and DevOps practices." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://mustafa-portfolio-cyan.vercel.app/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Mustafa Iqbal — Cybersecurity Student" />
-  <meta property="og:description" content="SOC/IR fundamentals, secure coding, RBAC, audit logging. Projects, certifications, and contact info." />
+  <meta property="og:title" content="Mustafa Iqbal — Tech Enthusiast | Full Stack & DevOps Developer" />
+  <meta property="og:description" content="Passionate software developer with experience in full-stack development and DevOps practices." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mustafa-portfolio-cyan.vercel.app/" />
   <meta property="og:image" content="https://mustafa-portfolio-cyan.vercel.app/og-card.png" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Mustafa Iqbal — Cybersecurity Student" />
-  <meta name="twitter:description" content="SOC/IR fundamentals, secure coding, RBAC, audit logging. Projects, certifications, and contact info." />
+  <meta name="twitter:title" content="Mustafa Iqbal — Tech Enthusiast | Full Stack & DevOps Developer" />
+  <meta name="twitter:description" content="Passionate software developer with experience in full-stack development and DevOps practices." />
   <meta name="twitter:image" content="https://mustafa-portfolio-cyan.vercel.app/og-card.png" />
 
   <meta name="theme-color" content="#0f172a" />
@@ -28,28 +28,6 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
-
-  <!-- Schema.org JSON-LD (Person) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Mustafa Iqbal",
-    "jobTitle": "Cybersecurity Student",
-    "email": "mailto:talhamustafa642@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Karachi",
-      "addressCountry": "PK"
-    },
-    "sameAs": [
-      "https://github.com/Mustafa-Hazard",
-      "https://linkedin.com/in/mustafa642",
-      "https://wa.me/923302479956"
-    ],
-    "url": "https://mustafa-portfolio-cyan.vercel.app/"
-  }
-  </script>
 
   <!-- Tailwind + libraries used by top design -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -67,18 +45,54 @@
     .nav-link { position: relative; }
     .nav-link:after { content: ''; position: absolute; width: 0; height: 2px; bottom: -2px; left: 0; background: linear-gradient(90deg, #3b82f6, #8b5cf6); transition: width 0.3s ease; }
     .nav-link:hover:after, .active:after { width: 100%; }
+
+    /* Typewriter effect */
+    .code-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+      color: #00ff00; /* Green color text */
+      font-family: 'Courier New', monospace;
+      font-size: 20px;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: 20px;
+      z-index: 0;
+    }
+
+    .typing-effect {
+      animation: typing 5s steps(60) 1s infinite alternate, blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
   </style>
 </head>
+
 <body class="bg-gray-50">
-  <!-- Hero Section with Vanta.js Background -->
+  <!-- Hero Section with Vanta.js Background and Code Typing Effect -->
   <header id="home" class="relative">
     <div id="vanta-bg" class="min-h-screen flex items-center justify-center px-4">
-      <div class="absolute inset-0 bg-black opacity-20"></div>
+      <div class="absolute inset-0 bg-black opacity-20"></div> <!-- Optional dark overlay -->
+      <div class="code-background">
+        <p class="typing-effect">const skills = ["JavaScript", "Python", "Node.js", "Cybersecurity"];</p>
+        <p class="typing-effect">let experience = "Full Stack Developer | DevOps Enthusiast";</p>
+        <p class="typing-effect">function learn() { return "Always improving and learning new technologies!"; }</p>
+      </div>
       <div class="relative z-10 text-center max-w-4xl mx-auto" data-aos="fade-up">
         <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
           <span class="text-gradient">Mustafa Iqbal</span>
         </h1>
-        <p class="text-xl md:text-2xl text-gray-200 mb-8">Cybersecurity student in Karachi — SOC/IR, secure backend (RBAC, audit logging), and log analysis</p>
+        <p class="text-xl md:text-2xl text-gray-200 mb-8">Tech Enthusiast | Full Stack & DevOps Developer</p>
         <div class="flex justify-center flex-wrap gap-3">
           <a href="#projects" class="px-8 py-3 bg-white text-indigo-600 font-medium rounded-full hover:bg-gray-100 transition">View Projects</a>
           <a href="/resume.pdf" class="px-8 py-3 border-2 border-white text-white font-medium rounded-full hover:bg-white hover:text-indigo-600 transition" download>Download Résumé</a>
@@ -136,8 +150,8 @@
           </div>
         </div>
         <div class="md:w-2/3" data-aos="fade-left">
-          <h3 class="text-2xl font-semibold text-gray-800 mb-4">Cybersecurity Focus</h3>
-          <p class="text-gray-600 mb-6">I’m a cybersecurity student focused on SOC/IR fundamentals, secure backend development (RBAC, audit logging), and log analysis. I enjoy turning messy alerts into clear action and building secure systems.</p>
+          <h3 class="text-2xl font-semibold text-gray-800 mb-4">At a glance</h3>
+          <p class="text-gray-600 mb-6">I'm <strong>Mustafa Muhammad Iqbal</strong>, a <strong>fifth-semester BSCS student at SZABIST University, Karachi</strong>. I'm eager to gain hands-on experience through an internship opportunity where I can apply my technical knowledge, learn new technologies if needed, and contribute meaningfully to real-world projects. I’m passionate about software development and cybersecurity, and always ready to take on new challenges.</p>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <div class="flex items-start">
               <div class="bg-indigo-100 p-3 rounded-full mr-4"><i data-feather="shield" class="text-indigo-600"></i></div>
@@ -160,186 +174,219 @@
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Projects</h2>
-        <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Assets/Threats/Vulnerabilities -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="50">
-          <div class="relative overflow-hidden h-56">
-            <img src="http://static.photos/technology/640x360/110" alt="Risk Fundamentals" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
-            <div class="absolute bottom-4 left-4"><span class="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">Risk Analysis</span></div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-gray-800 mb-2">Assets, Threats & Vulnerabilities</h3>
-            <p class="text-gray-600 mb-4">Concise matrix + narrative on assets, likely threat actors/vectors, mapped vulnerabilities, and prioritized mitigations (NIST-aligned).</p>
-          </div>
-        </div>
-
-        <!-- Incident Report — DDoS (ICMP) -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="100">
-          <div class="relative overflow-hidden h-56">
-            <img src="http://static.photos/technology/640x360/101" alt="Incident Report DDoS" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
-            <div class="absolute bottom-4 left-4"><span class="bg-purple-600 text-white text-xs px-3 py-1 rounded-full">Incident Response</span></div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-gray-800 mb-2">Incident Report — DDoS (ICMP)</h3>
-            <p class="text-gray-600 mb-4">Full lifecycle report (Identify → Protect → Detect → Respond → Recover) incl. packet patterns, IOCs, triage notes, and playbook steps.</p>
-            <div class="flex flex-wrap gap-3">
-              <a href="https://github.com/Mustafa-Hazard/Incident_Report_Analysis" target="_blank" rel="noopener" class="text-indigo-600 font-medium hover:text-indigo-800 inline-flex items-center">View Repo<i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
-              <a href="https://raw.githubusercontent.com/Mustafa-Hazard/Incident_Report_Analysis/main/Incident_Report_Analysis_NIST_Framework_MustafaMuhammad.pdf" target="_blank" rel="noopener" class="text-indigo-600 font-medium hover:text-indigo-800 inline-flex items-center">Read PDF<i data-feather="file-text" class="ml-2 w-4 h-4"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Attendance Manager (RBAC) -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="150">
-          <div class="relative overflow-hidden h-56">
-            <img src="http://static.photos/technology/640x360/120" alt="Attendance Manager" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
-            <div class="absolute bottom-4 left-4"><span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">RBAC</span></div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-gray-800 mb-2">Attendance Manager (RBAC)</h3>
-            <p class="text-gray-600 mb-4">Node.js + PostgreSQL with secure sessions and event-based audit trails. Input validation and least-privilege design.</p>
-            <a href="https://github.com/Mustafa-Hazard/Attendance" target="_blank" rel="noopener" class="text-indigo-600 font-medium hover:text-indigo-800 inline-flex items-center">View Repo<i data-feather="arrow-right" class="ml-2 w-4 h-4"></i></a>
-          </div>
-        </div>
-
-        <!-- Restaurant Console App (Java) -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="200">
-          <div class="relative overflow-hidden h-56">
-            <img src="http://static.photos/technology/640x360/130" alt="Java CLI App" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
-            <div class="absolute bottom-4 left-4"><span class="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">Java</span></div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-gray-800 mb-2">Restaurant Console App (Java)</h3>
-            <p class="text-gray-600 mb-4">CLI with secure login and billing. Emphasizes credential handling, error-checked input, and clean OOP separation.</p>
-          </div>
-        </div>
-
-        <!-- Grade Tracker -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="250">
-          <div class="relative overflow-hidden h-56">
-            <img src="http://static.photos/technology/640x360/140" alt="Grade Tracker" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
-            <div class="absolute bottom-4 left-4"><span class="bg-purple-600 text-white text-xs px-3 py-1 rounded-full">Node + Postgres</span></div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-gray-800 mb-2">Grade Tracker (Node + Postgres)</h3>
-            <p class="text-gray-600 mb-4">Sensible indexes, server-side validation, and defensive query building to reduce injection risk and improve performance.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills Section (rewritten for cybersecurity-learner focus) -->
-<section id="skills" class="py-20 bg-white">
+<section id="projects" class="py-20 bg-gray-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16" data-aos="fade-up">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Skills</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Projects</h2>
       <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
-      <p class="mt-4 text-gray-600 max-w-3xl mx-auto">
-        Early-career cybersecurity learner focused on SOC/IR fundamentals, secure backend practices, and practical log/network analysis through coursework and hands-on labs.
-      </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- SOC / IR -->
-      <div class="bg-gray-50 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="100">
-        <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-          <i data-feather="activity" class="text-indigo-600 w-6 h-6"></i>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Student CGPA & Probation Tracker -->
+      <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="50">
+        <div class="relative overflow-hidden h-56">
+          <img src="http://static.photos/technology/640x360/110" alt="Student CGPA & Probation Tracker" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+          <div class="absolute bottom-4 left-4"><span class="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">Full-Stack</span></div>
         </div>
-        <h3 class="text-xl font-semibold text-center text-gray-800 mb-4">SOC / IR Fundamentals</h3>
-        <ul class="space-y-3">
-          <li class="flex items-start">
-            <div class="w-2 h-2 bg-indigo-600 rounded-full mr-3 mt-2"></div>
-            <span class="text-gray-700"><strong>Alert triage & IOC extraction</strong> — Hands-on</span>
-          </li>
-          <li class="flex items-start">
-            <div class="w-2 h-2 bg-indigo-600 rounded-full mr-3 mt-2"></div>
-            <span class="text-gray-700"><strong>Incident investigation</strong> (NIST CSF) — Foundational</span>
-          </li>
-          <li class="flex items-start">
-            <div class="w-2 h-2 bg-indigo-600 rounded-full mr-3 mt-2"></div>
-            <span class="text-gray-700"><strong>Vulnerability assessment</strong> — Basic</span>
-          </li>
-          <li class="flex items-start">
-            <div class="w-2 h-2 bg-indigo-600 rounded-full mr-3 mt-2"></div>
-            <span class="text-gray-700"><strong>Case exposure:</strong> flagged 32+ out-of-hours failed logins via SQL log review</span>
-          </li>
-        </ul>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Student CGPA & Probation Tracker</h3>
+          <p class="text-gray-600 mb-4">A full-stack web application that calculates GPA and CGPA, tracks probation status, and is deployed on the cloud using NeonDB and Firebase Hosting.</p>
+        </div>
       </div>
 
-      <!-- Security Engineering / Secure Backend -->
-      <div class="bg-gray-50 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="200">
-        <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-          <i data-feather="lock" class="text-purple-600 w-6 h-6"></i>
+      <!-- Maze Game Project -->
+      <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="100">
+        <div class="relative overflow-hidden h-56">
+          <img src="http://static.photos/technology/640x360/101" alt="Maze Game Project" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+          <div class="absolute bottom-4 left-4"><span class="bg-purple-600 text-white text-xs px-3 py-1 rounded-full">Game Development</span></div>
         </div>
-        <h3 class="text-xl font-semibold text-center text-gray-800 mb-4">Security Engineering</h3>
-        <ul class="space-y-3">
-          <li class="flex items-start">
-            <div class="w-2 h-2 bg-purple-600 rounded-full mr-3 mt-2"></div>
-            <span class="text-gray-700"><strong>RBAC / AuthZ</strong> in Node.js apps — Hands-on</span>
-          </li>
-          <li class="flex items-start">
-            <div class="w-2 h-2 bg-purple-600 rounded-full mr-3 mt-2"></div>
-            <span class="text-gray-700"><strong>Audit logging</strong> & event trails — Hands-on</span>
-          </li>
-          <li class="flex items-start">
-            <div class="w-2 h-2 bg-purple-600 rounded-full mr-3 mt-2"></div>
-            <span class="text-gray-700"><strong>Input validation & least privilege</strong> — Foundational</span>
-          </li>
-          <li class="flex items-start">
-            <div class="w-2 h-2 bg-purple-600 rounded-full mr-3 mt-2"></div>
-            <span class="text-gray-700"><strong>Linux hardening</strong> (users, services, basic hardening) — Hands-on</span>
-          </li>
-        </ul>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Maze Game Project</h3>
+          <p class="text-gray-600 mb-4">Implemented simple game logic using loops and conditionals, enhancing problem-solving skills through game development.</p>
+        </div>
       </div>
 
-      <!-- Tools, Languages & Platforms -->
-      <div class="bg-gray-50 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="300">
-        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-          <i data-feather="code" class="text-blue-600 w-6 h-6"></i>
+      <!-- Car Rental Management System -->
+      <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="150">
+        <div class="relative overflow-hidden h-56">
+          <img src="http://static.photos/technology/640x360/120" alt="Car Rental Management System" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+          <div class="absolute bottom-4 left-4"><span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">C Programming</span></div>
         </div>
-        <h3 class="text-xl font-semibold text-center text-gray-800 mb-4">Tools, Languages & Platforms</h3>
-        <ul class="space-y-3">
-          <li class="flex items-start">
-            <div class="w-2 h-2 bg-blue-600 rounded-full mr-3 mt-2"></div>
-            <span class="text-gray-700"><strong>Log & network analysis:</strong> SQL (joins/filters), Splunk (basic), Wireshark — Hands-on/Basic</span>
-          </li>
-          <li class="flex items-start">
-            <div class="w-2 h-2 bg-blue-600 rounded-full mr-3 mt-2"></div>
-            <span class="text-gray-700"><strong>Programming:</strong> Java (advanced), Python, JavaScript (Node.js)</span>
-          </li>
-          <li class="flex items-start">
-            <div class="w-2 h-2 bg-blue-600 rounded-full mr-3 mt-2"></div>
-            <span class="text-gray-700"><strong>Databases & infra:</strong> PostgreSQL, Firebase, Git/GitHub</span>
-          </li>
-          <li class="flex items-start">
-            <div class="w-2 h-2 bg-blue-600 rounded-full mr-3 mt-2"></div>
-            <span class="text-gray-700"><strong>Operating systems:</strong> Windows, Linux (CLI)</span>
-          </li>
-        </ul>
-        <div class="mt-6 p-4 bg-white border border-gray-200 rounded-lg">
-          <p class="text-sm text-gray-700">
-            <strong>Currently learning:</strong> Google Cybersecurity Professional Certificate (7/9),
-            20+ TryHackMe labs (Cyber Security 101).
-          </p>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Car Rental Management System</h3>
+          <p class="text-gray-600 mb-4">Developed in C during a hackathon, focusing on database and object-oriented programming concepts for managing car rental operations.</p>
+        </div>
+      </div>
+
+      <!-- Restaurant Management System -->
+      <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="200">
+        <div class="relative overflow-hidden h-56">
+          <img src="http://static.photos/technology/640x360/130" alt="Restaurant Management System" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+          <div class="absolute bottom-4 left-4"><span class="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">Java</span></div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Restaurant Management System</h3>
+          <p class="text-gray-600 mb-4">A Java-based project with CRUD operations and a user-friendly interface, completed during a hackathon to manage restaurant operations effectively.</p>
+        </div>
+      </div>
+
+      <!-- Traffic Light System (DLD Competition) -->
+      <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="250">
+        <div class="relative overflow-hidden h-56">
+          <img src="http://static.photos/technology/640x360/140" alt="Traffic Light System" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+          <div class="absolute bottom-4 left-4"><span class="bg-purple-600 text-white text-xs px-3 py-1 rounded-full">Digital Logic</span></div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Traffic Light System (DLD Competition)</h3>
+          <p class="text-gray-600 mb-4">A team project implementing digital logic design principles to simulate traffic light control, completed during the DLD competition.</p>
+        </div>
+      </div>
+
+      <!-- Attendance Tracking System -->
+      <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="300">
+        <div class="relative overflow-hidden h-56">
+          <img src="http://static.photos/technology/640x360/150" alt="Attendance Tracking System" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+          <div class="absolute bottom-4 left-4"><span class="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">Node.js</span></div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Attendance Tracking System</h3>
+          <p class="text-gray-600 mb-4">A full-stack application built with Node.js, Express, PostgreSQL, and EJS, providing real-time attendance monitoring and management.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
-  <!-- End Skills Section -->
+ <!-- Skills Section -->
+  <!-- Technical Skills Section -->
+<section id="skills" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Technical Skills</h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Programming -->
+      <div class="bg-gray-50 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+        <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+          <i data-feather="code" class="text-indigo-600 w-6 h-6"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-center text-gray-800 mb-4">Programming</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-indigo-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>Java</strong> (Advanced)</span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-indigo-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>Python</strong></span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-indigo-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>JavaScript</strong> (Node.js)</span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-indigo-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>SQL</strong></span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Frameworks -->
+      <div class="bg-gray-50 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+        <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+          <i data-feather="tool" class="text-purple-600 w-6 h-6"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-center text-gray-800 mb-4">Frameworks</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-purple-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>Express.js</strong></span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-purple-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>Alpine.js</strong></span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-purple-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>EJS</strong></span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Databases & Tools -->
+      <div class="bg-gray-50 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="300">
+        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+          <i data-feather="database" class="text-blue-600 w-6 h-6"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-center text-gray-800 mb-4">Databases & Tools</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-blue-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>PostgreSQL</strong></span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-blue-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>Firebase</strong></span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-blue-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>Git/GitHub</strong></span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Operating Systems & Cybersecurity -->
+      <div class="bg-gray-50 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="400">
+        <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+          <i data-feather="cpu" class="text-green-600 w-6 h-6"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-center text-gray-800 mb-4">Operating Systems & Cybersecurity</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-green-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>Windows</strong></span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-green-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>Linux (CLI, system hardening)</strong></span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-green-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>SQL log analysis</strong></span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-green-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>Wireshark</strong></span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-green-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>Splunk (basic)</strong></span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-green-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>Linux hardening</strong></span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-green-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>NIST CSF risk management</strong></span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-2 h-2 bg-green-600 rounded-full mr-3 mt-2"></div>
+            <span class="text-gray-700"><strong>Vulnerability assessment & incident investigation</strong></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 
   <!-- Education Section -->
   <section id="education" class="py-20 bg-gray-50">
@@ -358,41 +405,42 @@
   </section>
 
   <!-- Certifications Section -->
+<!-- Certifications Section -->
 <section id="certs" class="py-20 bg-white">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center mb-16" data-aos="fade-up">
-<h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Certifications</h2>
-<div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
-</div>
-<!-- Changed grid layout to 2 columns on medium screens -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="50">
-<h3 class="font-semibold text-gray-800">Python Pro — Udemy (2025)</h3>
-<a class="text-indigo-600 font-medium inline-flex items-center mt-2" href="https://www.udemy.com/certificate/UC-dbdf73dc-9367-4df0-b854-486c0b946b9a/" target="_blank" rel="noopener">Verify<i data-feather="external-link" class="ml-2 w-4 h-4"></i></a>
-</div>
-<div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="100">
-<h3 class="font-semibold text-gray-800">Linux for Beginners — Udemy (2025)</h3>
-<a class="text-indigo-600 font-medium inline-flex items-center mt-2" href="https://www.udemy.com/certificate/UC-91ec6ae7-dc40-42dc-8a3f-504f880ef5b8/" target="_blank" rel="noopener">Verify<i data-feather="external-link" class="ml-2 w-4 h-4"></i></a>
-</div>
-<div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="150">
-<h3 class="font-semibold text-gray-800">SEMrush Academy (2025)</h3>
-<a class="text-indigo-600 font-medium inline-flex items-center mt-2" href="https://static.semrush.com/academy/certificates/7b86fc0626/mustafa-muhammad-iqbal_25.pdf" target="_blank" rel="noopener">View PDF<i data-feather="file-text" class="ml-2 w-4 h-4"></i></a>
-</div>
-<div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="200">
-<h3 class="font-semibold text-gray-800">Google Cybersecurity Specialization — Coursera (7/9)</h3>
-<div class="mt-2 grid gap-2">
-<a class="text-indigo-600 hover:text-indigo-800" href="https://coursera.org/share/77e83be860c6819d79c6947fc3961c07" target="_blank" rel="noopener">Foundations of Cybersecurity</a>
-<a class="text-indigo-600 hover:text-indigo-800" href="https://coursera.org/share/56d5dd64706bf09f8bf4d6db8e281897" target="_blank" rel="noopener">Play It Safe</a>
-<a class="text-indigo-600 hover:text-indigo-800" href="https://coursera.org/share/ab08bf4386e0e683111a61434a261b53" target="_blank" rel="noopener">Tools of the Trade</a>
-<a class="text-indigo-600 hover:text-indigo-800" href="https://coursera.org/share/72b07b47471003af97d970f8a0199fab" target="_blank" rel="noopener">Connect & Protect</a>
-<a class="text-indigo-600 hover:text-indigo-800" href="https://coursera.org/share/d16c728aa888bf6c9a67e47fae91c41e" target="_blank" rel="noopener">Assets, Threats, and Vulnerabilities</a>
-<a class="text-indigo-600 hover:text-indigo-800" href="https://coursera.org/share/6fd7a8525cd6ce1b073c2e219c9398f7" target="_blank" rel="noopener">Sound the Alarm: Detection and Response</a>
-<a class="text-indigo-600 hover:text-indigo-800" href="https://coursera.org/share/3e8dbda6db309d9d2c3839c97ac1d102" target="_blank" rel="noopener">Automate Cybersecurity Tasks with Python</a>
-</div>
-</div>
-</div>
-</div>
-</section>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Certifications</h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
+    </div>
+    <!-- Changed grid layout to 2 columns on medium screens -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Google Cybersecurity Professional Certificate -->
+      <div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="50">
+        <h3 class="font-semibold text-gray-800">Google Cybersecurity Professional Certificate — Coursera (Oct 2025)</h3>
+        <a class="text-indigo-600 font-medium inline-flex items-center mt-2" href="https://coursera.org/share/40092fd5dc6991639bd5538a67c5a9d1" target="_blank" rel="noopener">Verify<i data-feather="external-link" class="ml-2 w-4 h-4"></i></a>
+      </div>
+
+      <!-- Google AI Essential -->
+      <div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="font-semibold text-gray-800">Google AI Essential — Coursera (Oct 2025)</h3>
+        <a class="text-indigo-600 font-medium inline-flex items-center mt-2" href="https://www.coursera.org/account/accomplishments/specialization/953XK0GYCIT1?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=s12n" target="_blank" rel="noopener">Verify<i data-feather="external-link" class="ml-2 w-4 h-4"></i></a>
+      </div>
+
+      <!-- Linux for Beginners -->
+      <div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="150">
+        <h3 class="font-semibold text-gray-800">Linux for Beginners — Udemy (Jul 2025)</h3>
+        <a class="text-indigo-600 font-medium inline-flex items-center mt-2" href="https://www.udemy.com/certificate/UC-91ec6ae7-dc40-42dc-8a3f-504f880ef5b8/" target="_blank" rel="noopener">Verify<i data-feather="external-link" class="ml-2 w-4 h-4"></i></a>
+      </div>
+
+      <!-- Python Pro -->
+      <div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="font-semibold text-gray-800">Python Pro — Udemy (Apr 2025)</h3>
+        <a class="text-indigo-600 font-medium inline-flex items-center mt-2" href="https://www.udemy.com/certificate/UC-dbdf73dc-9367-4df0-b854-486c0b946b9a/" target="_blank" rel="noopener">Verify<i data-feather="external-link" class="ml-2 w-4 h-4"></i></a>
+      </div>
+    </div>
+  </div>
+
+  </section>
 
   <!-- Contact Section -->
   <section id="contact" class="py-20 bg-gray-900 text-white">
@@ -449,8 +497,7 @@
       </div>
     </div>
   </section>
-
-  <!-- Footer -->
+<!-- Footer -->
   <footer class="bg-gray-900 border-t border-gray-800 py-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row justify-between items-center">
@@ -496,7 +543,7 @@
         backToTopButton.classList.remove('opacity-0', 'invisible');
         backToTopButton.classList.add('opacity-100', 'visible');
       } else {
-        backToTopButton.classList.remove('opacity-100', 'visible');
+               backToTopButton.classList.remove('opacity-100', 'visible');
         backToTopButton.classList.add('opacity-0', 'invisible');
       }
     });
