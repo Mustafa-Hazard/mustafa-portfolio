@@ -1,0 +1,30 @@
+Folder PATH listing for volume Windows-SSD
+Volume serial number is 169F-9015
+C:.
+¦   404.html
+¦   og-card.png
+¦   Prompt to Summarize Mustafa Iqbal’s Port.md
+¦   README.md
+¦   resume.pdf
+¦   structure.txt
+¦   vercel.json
+¦   
++---public
+    ¦   Incident_Report_Analysis_NIST_Framework_MustafaMuhammad.pdf
+    ¦   index.html
+    ¦   og-card.png
+    ¦   Oldresume.pdf
+    ¦   resume.pdf
+    ¦   robots.txt
+    ¦   sitemap.xml
+    ¦   SQL Filters — Cybersecurity Incident Investigation (1).pdf
+    ¦   
+    +---assets
+    ¦       logo.png
+    ¦       
+    +---images
+            Car_Rental.png
+            DLD.jpg
+            Menu.jpg
+            profile.jpg
+            
