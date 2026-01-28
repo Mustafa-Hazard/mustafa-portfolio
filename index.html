@@ -23,15 +23,15 @@
 
   <meta name="theme-color" content="#0b1220" />
 
-  <!-- Favicons (ensure exist in /public) -->
+  <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
 
-  <!-- Performance: Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Tailwind -->
@@ -41,7 +41,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-  <!-- Icons + Vanta (defer improves paint) -->
+  <!-- Icons + Vanta -->
   <script defer src="https://unpkg.com/feather-icons"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
 
@@ -54,12 +54,22 @@
     }
     html { scroll-behavior: smooth; }
     body { font-family: 'Poppins', sans-serif; }
-    .text-gradient { background: linear-gradient(90deg, #60a5fa, #a78bfa); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .glass { background: var(--card); border: 1px solid var(--stroke); box-shadow: var(--glow); backdrop-filter: blur(12px); }
+    .text-gradient {
+      background: linear-gradient(90deg, #60a5fa, #a78bfa);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .glass {
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      box-shadow: var(--glow);
+      backdrop-filter: blur(12px);
+    }
     .card-hover { transition: transform .25s ease, box-shadow .25s ease; }
     .card-hover:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(0,0,0,.18); }
 
-    /* Better hero code overlay: subtle, non-blocking */
+    /* Hero code overlay */
     .code-overlay {
       position: absolute; inset: 0;
       pointer-events: none;
@@ -82,27 +92,54 @@
     }
     .dot{ width:10px; height:10px; border-radius:999px; display:inline-block; }
     .dot.r{ background:#ff5f57; } .dot.y{ background:#febc2e; } .dot.g{ background:#28c840; }
-
-    /* Typewriter (single controlled element) */
     .tw-caret { border-right: 2px solid rgba(255,255,255,.75); padding-right: 2px; }
 
     /* Nav underline */
     .nav-link { position: relative; }
-    .nav-link:after { content:''; position:absolute; width:0; height:2px; bottom:-3px; left:0;
+    .nav-link:after {
+      content:'';
+      position:absolute;
+      width:0;
+      height:2px;
+      bottom:-3px;
+      left:0;
       background: linear-gradient(90deg, #60a5fa, #a78bfa);
       transition: width .25s ease;
     }
     .nav-link:hover:after, .active:after { width:100%; }
 
+    /* Fancy badge */
+    .badge-shine{
+      position: relative;
+      overflow: hidden;
+    }
+    .badge-shine:before{
+      content:"";
+      position:absolute;
+      top:-20px;
+      left:-40px;
+      width:40px;
+      height:120px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.25), transparent);
+      transform: rotate(25deg);
+      animation: shine 2.8s infinite;
+    }
+    @keyframes shine{
+      0%{ left:-60px; }
+      100%{ left:120%; }
+    }
+
     /* Reduced motion */
     @media (prefers-reduced-motion: reduce){
       html { scroll-behavior: auto; }
       .card-hover:hover{ transform:none; }
+      .badge-shine:before{ display:none; }
     }
   </style>
 </head>
 
 <body class="bg-gray-50 text-gray-900">
+
   <!-- Navigation -->
   <nav class="fixed w-full z-50">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -144,7 +181,6 @@
   <!-- Hero -->
   <header id="home" class="relative">
     <div id="vanta-bg" class="min-h-screen flex items-center justify-center px-4">
-      <!-- Overlay -->
       <div class="absolute inset-0 bg-black/35"></div>
 
       <!-- Code overlay -->
@@ -165,7 +201,7 @@
 
       <!-- Content -->
       <div class="relative z-10 text-center max-w-4xl mx-auto pt-28" data-aos="fade-up">
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 text-white/85 mb-6">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 text-white/85 mb-6 badge-shine">
           <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
           Open to internships • Karachi, Pakistan
         </div>
@@ -233,14 +269,19 @@
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <div class="flex items-start p-5 rounded-2xl bg-gray-50 border border-gray-100">
-              <div class="bg-indigo-100 p-3 rounded-full mr-4"><i data-feather="shield" class="text-indigo-600"></i></div>
+              <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                <i data-feather="shield" class="text-indigo-600"></i>
+              </div>
               <div>
                 <h4 class="font-semibold text-gray-900 mb-1">SOC / IR Mindset</h4>
                 <p class="text-gray-600 text-sm">Alert triage, IOC extraction, incident notes & reporting</p>
               </div>
             </div>
+
             <div class="flex items-start p-5 rounded-2xl bg-gray-50 border border-gray-100">
-              <div class="bg-purple-100 p-3 rounded-full mr-4"><i data-feather="lock" class="text-purple-600"></i></div>
+              <div class="bg-purple-100 p-3 rounded-full mr-4">
+                <i data-feather="lock" class="text-purple-600"></i>
+              </div>
               <div>
                 <h4 class="font-semibold text-gray-900 mb-1">Secure Coding</h4>
                 <p class="text-gray-600 text-sm">RBAC, validation, least privilege, audit logging</p>
@@ -279,21 +320,84 @@
       <!-- Filters -->
       <div class="flex flex-wrap justify-center gap-2 mb-10" data-aos="fade-up">
         <button class="filter-btn px-4 py-2 rounded-full bg-white border border-gray-200 font-semibold text-gray-700 hover:bg-gray-100" data-filter="all">All</button>
+        <button class="filter-btn px-4 py-2 rounded-full bg-white border border-gray-200 font-semibold text-gray-700 hover:bg-gray-100" data-filter="featured">Featured</button>
         <button class="filter-btn px-4 py-2 rounded-full bg-white border border-gray-200 font-semibold text-gray-700 hover:bg-gray-100" data-filter="fullstack">Full-Stack</button>
         <button class="filter-btn px-4 py-2 rounded-full bg-white border border-gray-200 font-semibold text-gray-700 hover:bg-gray-100" data-filter="web">Web</button>
         <button class="filter-btn px-4 py-2 rounded-full bg-white border border-gray-200 font-semibold text-gray-700 hover:bg-gray-100" data-filter="systems">Systems</button>
       </div>
 
       <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Project Card template style -->
+
+        <!-- AeroNexa (FEATURED • TOP) -->
+        <article class="project-card bg-white rounded-2xl overflow-hidden shadow-md card-hover border border-gray-100"
+                 data-tags="featured fullstack web"
+                 data-title="AeroNexa – Full-Stack Airline Management System"
+                 data-desc="🔧 Technical Challenges Addressed
+Data Consistency & Migrations: Resolved complex Entity Framework Core migration conflicts to maintain schema integrity and transactional consistency across the SQL Server database.
+Business Rule Enforcement: Implemented strict server-side and client-side validation layers to enforce time-bound scheduling logic and prevent invalid operational states.
+EF Core Migration Stability: Ensured database schema consistency by resolving complex migration and synchronization issues.
+Robust Validation Layer: Enforced strict temporal and business-rule validations to prevent invalid flight scheduling states."
+                 data-img="/images/AeroNexa.png"
+                 data-links='[
+                   {"label":"GitHub","url":"https://github.com/Mustafa-Hazard/AirlineTicketingSystem"},
+                   {"label":"Contact for Demo","url":"#contact"}
+                 ]'>
+          <div class="relative overflow-hidden h-60">
+            <img src="/images/AeroNexa.png" alt="AeroNexa – Airline Management System"
+     class="w-full h-full object-contain bg-black/10 p-2 transition duration-500"
+     style="object-position:center;"
+     onerror="this.src='https://static.photos/technology/1200x800/9';" />
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent"></div>
+
+            <div class="absolute top-4 left-4 flex items-center gap-2">
+              <span class="inline-flex items-center gap-2 bg-white/15 border border-white/20 text-white text-xs px-3 py-1 rounded-full backdrop-blur badge-shine">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Featured
+              </span>
+              <span class="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full shadow">
+                AeroNexa
+              </span>
+            </div>
+
+            <div class="absolute bottom-4 left-4 flex flex-wrap gap-2">
+              <span class="bg-emerald-600 text-white text-xs px-3 py-1 rounded-full">ASP.NET Core MVC</span>
+              <span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">EF Core</span>
+              <span class="bg-purple-600 text-white text-xs px-3 py-1 rounded-full">SQL Server</span>
+              <span class="bg-slate-700 text-white text-xs px-3 py-1 rounded-full">Glass UI</span>
+            </div>
+          </div>
+
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">AeroNexa</h3>
+            <p class="text-gray-600 mb-4">
+              Full-Stack Airline Management System with secure booking, admin command center,
+              automated notifications, and fast search — built with professional engineering practices.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-3">
+              <button class="open-modal inline-flex items-center text-indigo-700 font-semibold hover:text-indigo-900">
+                Quick View <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+              </button>
+
+              <a href="#contact" class="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 text-gray-900 font-semibold hover:bg-gray-200 transition">
+                Request Demo <i data-feather="send" class="ml-2 w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Student CGPA & Probation Tracker -->
         <article class="project-card bg-white rounded-2xl overflow-hidden shadow-md card-hover border border-gray-100"
                  data-tags="fullstack web"
                  data-title="Student CGPA & Probation Tracker"
-                 data-desc="Full-stack app that calculates GPA/CGPA, tracks probation, and uses NeonDB + Firebase hosting."
+                 data-desc="A full-stack web application that calculates GPA and CGPA, tracks probation status, and is deployed using NeonDB and Firebase Hosting."
                  data-img="/images/Student.png"
-                 data-links='[{"label":"GitHub","url":"https://github.com/Mustafa-Hazard/Student-CGPA-Probation-Tracker.git"}]'>
+                 data-links='[
+                   {"label":"GitHub","url":"https://github.com/Mustafa-Hazard/Student-CGPA-Probation-Tracker.git"}
+                 ]'>
           <div class="relative overflow-hidden h-56">
-            <img src="/images/Student.png" alt="Student CGPA & Probation Tracker" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+            <img src="/images/Student.png" alt="Student CGPA & Probation Tracker"
+                 class="w-full h-full object-cover transition duration-500 hover:scale-110" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent"></div>
             <div class="absolute bottom-4 left-4">
               <span class="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">Full-Stack</span>
@@ -308,14 +412,18 @@
           </div>
         </article>
 
+        <!-- Numerical Computing Calculator -->
         <article class="project-card bg-white rounded-2xl overflow-hidden shadow-md card-hover border border-gray-100"
                  data-tags="web"
                  data-title="Numerical Computing Calculator"
-                 data-desc="Web-based numerical methods calculator for root-finding with adjustable tolerance, iterations, and bounds."
+                 data-desc="A web-based numerical methods calculator for root finding with adjustable bounds, tolerance, and iterations."
                  data-img="/images/Project_NC.png"
-                 data-links='[{"label":"Live Demo","url":"https://numericalcomputingcalculator.vercel.app/"}]'>
+                 data-links='[
+                   {"label":"Live Demo","url":"https://numericalcomputingcalculator.vercel.app/"}
+                 ]'>
           <div class="relative overflow-hidden h-56">
-            <img src="/images/Project_NC.png" alt="Numerical Computing Calculator" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+            <img src="/images/Project_NC.png" alt="Numerical Computing Calculator"
+                 class="w-full h-full object-cover transition duration-500 hover:scale-110" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent"></div>
             <div class="absolute bottom-4 left-4">
               <span class="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">Web</span>
@@ -330,14 +438,17 @@
           </div>
         </article>
 
+        <!-- Car Rental Management System -->
         <article class="project-card bg-white rounded-2xl overflow-hidden shadow-md card-hover border border-gray-100"
                  data-tags="systems"
                  data-title="Car Rental Management System"
-                 data-desc="Built in C during a hackathon, focusing on structured design and operations flow."
+                 data-desc="Developed in C during a hackathon, focusing on database-style data handling and operations flow."
                  data-img="/images/Car_Rental.png"
-                 data-links='[]'>
+                 data-links="[]">
           <div class="relative overflow-hidden h-56">
-            <img src="/images/Car_Rental.png" alt="Car Rental Management System" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+            <img src="/images/Car_Rental.png" alt="Car Rental Management System"
+                 class="w-full h-full object-cover transition duration-500 hover:scale-110"
+                 onerror="this.src='https://static.photos/transport/640x360/12';" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent"></div>
             <div class="absolute bottom-4 left-4">
               <span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">Systems</span>
@@ -352,14 +463,16 @@
           </div>
         </article>
 
+        <!-- Restaurant Management System -->
         <article class="project-card bg-white rounded-2xl overflow-hidden shadow-md card-hover border border-gray-100"
                  data-tags="systems"
                  data-title="Restaurant Management System"
-                 data-desc="Java project with CRUD operations and a simple interface for managing items and orders."
+                 data-desc="Java project with CRUD operations and a user-friendly interface to manage menu items and orders."
                  data-img="/images/Menu.jpg"
-                 data-links='[]'>
+                 data-links="[]">
           <div class="relative overflow-hidden h-56">
-            <img src="/images/Menu.jpg" alt="Restaurant Management System" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+            <img src="/images/Menu.jpg" alt="Restaurant Management System"
+                 class="w-full h-full object-cover transition duration-500 hover:scale-110" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent"></div>
             <div class="absolute bottom-4 left-4">
               <span class="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">Java</span>
@@ -374,14 +487,16 @@
           </div>
         </article>
 
+        <!-- Traffic Light System -->
         <article class="project-card bg-white rounded-2xl overflow-hidden shadow-md card-hover border border-gray-100"
                  data-tags="systems"
                  data-title="Traffic Light System (DLD)"
-                 data-desc="Digital logic simulation for traffic control, built as a team project for DLD competition."
+                 data-desc="Digital logic simulation for traffic control, built as a team project for a DLD competition."
                  data-img="/images/DLD.jpg"
-                 data-links='[]'>
+                 data-links="[]">
           <div class="relative overflow-hidden h-56">
-            <img src="/images/DLD.jpg" alt="Traffic Light System" class="w-full h-full object-cover transition duration-500 hover:scale-110" />
+            <img src="/images/DLD.jpg" alt="Traffic Light System (DLD)"
+                 class="w-full h-full object-cover transition duration-500 hover:scale-110" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent"></div>
             <div class="absolute bottom-4 left-4">
               <span class="bg-purple-600 text-white text-xs px-3 py-1 rounded-full">Digital Logic</span>
@@ -396,14 +511,18 @@
           </div>
         </article>
 
+        <!-- Attendance Tracking System -->
         <article class="project-card bg-white rounded-2xl overflow-hidden shadow-md card-hover border border-gray-100"
                  data-tags="fullstack web"
                  data-title="Attendance Tracking System"
-                 data-desc="Node.js + Express + PostgreSQL + EJS app providing attendance monitoring and basic management."
+                 data-desc="Node.js + Express + PostgreSQL + EJS app providing attendance monitoring and basic management workflows."
                  data-img="/images/attendance.jpg"
-                 data-links='[{"label":"GitHub","url":"https://github.com/Mustafa-Hazard/Attendance"}]'>
+                 data-links='[
+                   {"label":"GitHub","url":"https://github.com/Mustafa-Hazard/Attendance"}
+                 ]'>
           <div class="relative overflow-hidden h-56">
-            <img src="/images/attendance.jpg" alt="Attendance Tracking System" class="w-full h-full object-cover transition duration-500 hover:scale-110"
+            <img src="/images/attendance.jpg" alt="Attendance Tracking System"
+                 class="w-full h-full object-cover transition duration-500 hover:scale-110"
                  onerror="this.src='https://static.photos/technology/640x360/150';" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent"></div>
             <div class="absolute bottom-4 left-4">
@@ -418,25 +537,240 @@
             </button>
           </div>
         </article>
+
       </div>
     </div>
   </section>
 
-  <!-- Skills / Education / Certs / Contact: keep your existing sections if you like -->
-  <!-- (You can paste your current sections below this line unchanged.) -->
+  <!-- Skills -->
+  <section id="skills" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Technical Skills</h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
+        <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+          A mix of full-stack development, DevOps fundamentals, and cybersecurity foundations.
+        </p>
+      </div>
 
-  <!-- Education Section (your original kept, minor polish) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100" data-aos="fade-up">
+          <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+            <i data-feather="code" class="text-indigo-600 w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-center text-gray-900 mb-4">Programming</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li><strong>Java</strong> (Advanced)</li>
+            <li><strong>Python</strong></li>
+            <li><strong>JavaScript</strong> (Node.js)</li>
+            <li><strong>SQL</strong></li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+          <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+            <i data-feather="tool" class="text-purple-600 w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-center text-gray-900 mb-4">Frameworks</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li><strong>Express.js</strong></li>
+            <li><strong>EJS</strong></li>
+            <li><strong>ASP.NET Core MVC</strong></li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+          <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+            <i data-feather="database" class="text-blue-600 w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-center text-gray-900 mb-4">Databases & Tools</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li><strong>PostgreSQL</strong></li>
+            <li><strong>SQL Server</strong></li>
+            <li><strong>Firebase</strong></li>
+            <li><strong>Git/GitHub</strong></li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 md:col-span-2 lg:col-span-3" data-aos="fade-up" data-aos-delay="300">
+          <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div class="flex items-start gap-4">
+              <div class="bg-emerald-100 w-16 h-16 rounded-full flex items-center justify-center">
+                <i data-feather="shield" class="text-emerald-700 w-7 h-7"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-1">Cybersecurity & OS</h3>
+                <p class="text-gray-600">SOC/IR fundamentals, log analysis, and security-first practices.</p>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-full bg-white border text-sm">Linux (CLI, hardening)</span>
+              <span class="px-3 py-1 rounded-full bg-white border text-sm">Wireshark</span>
+              <span class="px-3 py-1 rounded-full bg-white border text-sm">Splunk (basic)</span>
+              <span class="px-3 py-1 rounded-full bg-white border text-sm">NIST CSF</span>
+              <span class="px-3 py-1 rounded-full bg-white border text-sm">Validation & RBAC</span>
+              <span class="px-3 py-1 rounded-full bg-white border text-sm">Incident Investigation</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
   <section id="education" class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16" data-aos="fade-up">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Education</h2>
         <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
       </div>
+
       <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100" data-aos="fade-up">
-        <h3 class="text-2xl font-semibold text-gray-900">SZABIST, Karachi</h3>
+        <h3 class="text-2xl font-semibold text-gray-900">Shaheed Zulfikar Ali Bhutto Institute of Science & Technology (SZABIST), Karachi</h3>
         <p class="text-gray-600 mt-2">3rd Year · 5th Semester</p>
         <p class="text-gray-700 mt-4">Focus: Cybersecurity foundations, secure backend development, SOC/IR fundamentals.</p>
         <p class="text-gray-500 mt-2">Subjects: Networks, Operating Systems, Secure Coding, Databases</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certs" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Certifications</h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100" data-aos="fade-up">
+          <h3 class="font-semibold text-gray-900">Google Cybersecurity Professional Certificate — Coursera (Oct 2025)</h3>
+          <a class="text-indigo-700 font-semibold inline-flex items-center mt-2 hover:text-indigo-900"
+             href="https://coursera.org/share/40092fd5dc6991639bd5538a67c5a9d1" target="_blank" rel="noopener">
+            Verify <i data-feather="external-link" class="ml-2 w-4 h-4"></i>
+          </a>
+        </div>
+
+        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100" data-aos="fade-up" data-aos-delay="50">
+          <h3 class="font-semibold text-gray-900">Google AI Essential — Coursera (Oct 2025)</h3>
+          <a class="text-indigo-700 font-semibold inline-flex items-center mt-2 hover:text-indigo-900"
+             href="https://www.coursera.org/account/accomplishments/specialization/953XK0GYCIT1?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=s12n" target="_blank" rel="noopener">
+            Verify <i data-feather="external-link" class="ml-2 w-4 h-4"></i>
+          </a>
+        </div>
+
+        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="font-semibold text-gray-900">Linux for Beginners — Udemy (Jul 2025)</h3>
+          <a class="text-indigo-700 font-semibold inline-flex items-center mt-2 hover:text-indigo-900"
+             href="https://www.udemy.com/certificate/UC-91ec6ae7-dc40-42dc-8a3f-504f880ef5b8/" target="_blank" rel="noopener">
+            Verify <i data-feather="external-link" class="ml-2 w-4 h-4"></i>
+          </a>
+        </div>
+
+        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100" data-aos="fade-up" data-aos-delay="150">
+          <h3 class="font-semibold text-gray-900">Python Pro — Udemy (Apr 2025)</h3>
+          <a class="text-indigo-700 font-semibold inline-flex items-center mt-2 hover:text-indigo-900"
+             href="https://www.udemy.com/certificate/UC-dbdf73dc-9367-4df0-b854-486c0b946b9a/" target="_blank" rel="noopener">
+            Verify <i data-feather="external-link" class="ml-2 w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Work Together</h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto"></div>
+        <p class="mt-4 text-gray-300 max-w-2xl mx-auto">
+          Have a project idea or internship opportunity? Let’s connect.
+        </p>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-12">
+        <div class="md:w-1/2" data-aos="fade-right">
+          <h3 class="text-2xl font-semibold mb-6">Get in Touch</h3>
+          <p class="text-gray-300 mb-8">I reply quickly — feel free to reach out anytime.</p>
+
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div class="bg-indigo-600/20 p-3 rounded-full mr-4"><i data-feather="mail" class="text-indigo-300"></i></div>
+              <div>
+                <h4 class="font-medium mb-1">Email</h4>
+                <a href="mailto:talhamustafa642@gmail.com" class="text-gray-300 hover:text-white">talhamustafa642@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-purple-600/20 p-3 rounded-full mr-4"><i data-feather="phone" class="text-purple-300"></i></div>
+              <div>
+                <h4 class="font-medium mb-1">WhatsApp</h4>
+                <a href="https://wa.me/923302479956" target="_blank" rel="noopener" class="text-gray-300 hover:text-white">+92 330 2479956</a>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-blue-600/20 p-3 rounded-full mr-4"><i data-feather="map-pin" class="text-blue-300"></i></div>
+              <div>
+                <h4 class="font-medium mb-1">Location</h4>
+                <p class="text-gray-300">Karachi, Pakistan</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex space-x-4 mt-8">
+            <a href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener"
+               class="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition" aria-label="GitHub">
+              <i data-feather="github" class="text-white"></i>
+            </a>
+            <a href="https://linkedin.com/in/mustafa642" target="_blank" rel="noopener"
+               class="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition" aria-label="LinkedIn">
+              <i data-feather="linkedin" class="text-blue-300"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="md:w-1/2" data-aos="fade-left">
+          <form id="contactForm" class="space-y-6" action="https://formspree.io/f/xldaeoyn" method="POST" novalidate>
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+              <input type="text" id="name" name="name"
+                     class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-white placeholder-gray-400 transition"
+                     required />
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+              <input type="email" id="email" name="email"
+                     class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-white placeholder-gray-400 transition"
+                     required />
+            </div>
+
+            <div>
+              <label for="subject" class="block text-sm font-medium text-gray-300 mb-1">Subject</label>
+              <input type="text" id="subject" name="subject"
+                     class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-white placeholder-gray-400 transition" />
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+              <textarea id="message" name="message" rows="4"
+                        class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-white placeholder-gray-400 transition"
+                        required></textarea>
+            </div>
+
+            <button type="submit"
+                    class="w-full px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-lg hover:from-indigo-700 hover:to-purple-700 transition inline-flex items-center justify-center">
+              Send Message <i data-feather="send" class="ml-2 w-4 h-4"></i>
+            </button>
+
+            <p id="formStatus" class="text-sm text-gray-300" role="status" aria-live="polite"></p>
+          </form>
+        </div>
       </div>
     </div>
   </section>
@@ -456,33 +790,45 @@
   </footer>
 
   <!-- Back to Top -->
-  <button id="back-to-top" class="fixed bottom-8 right-8 bg-indigo-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-indigo-700" aria-label="Back to top">
+  <button id="back-to-top"
+          class="fixed bottom-8 right-8 bg-indigo-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-indigo-700"
+          aria-label="Back to top">
     <i data-feather="arrow-up"></i>
   </button>
 
   <!-- Modal -->
   <div id="projectModal" class="fixed inset-0 hidden items-center justify-center z-[60]">
     <div class="absolute inset-0 bg-black/60"></div>
-    <div class="relative w-[min(900px,calc(100%-2rem))] bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100">
+    <div class="relative w-[min(960px,calc(100%-2rem))] bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100">
       <button id="closeModal" class="absolute top-4 right-4 p-2 rounded-full bg-gray-100 hover:bg-gray-200" aria-label="Close">
         <i data-feather="x"></i>
       </button>
+
       <div class="grid md:grid-cols-2 gap-0">
         <div class="bg-gray-100">
-          <img id="modalImg" src="" alt="" class="w-full h-72 md:h-full object-cover" />
+<img id="modalImg" src="" alt="" class="w-full h-72 md:h-full object-contain bg-gray-100 p-3" />
         </div>
+
         <div class="p-7">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 font-semibold text-xs mb-3">
+            <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Project Overview
+          </div>
+
           <h3 id="modalTitle" class="text-2xl font-bold text-gray-900"></h3>
-          <p id="modalDesc" class="text-gray-600 mt-3"></p>
+          <p id="modalDesc" class="text-gray-600 mt-3 whitespace-pre-line"></p>
+
           <div id="modalLinks" class="mt-6 flex flex-wrap gap-3"></div>
-          <div class="mt-8 text-sm text-gray-500">Tip: press <kbd class="px-2 py-1 bg-gray-100 border rounded">Esc</kbd> to close.</div>
+
+          <div class="mt-8 text-sm text-gray-500">
+            Tip: press <kbd class="px-2 py-1 bg-gray-100 border rounded">Esc</kbd> to close.
+          </div>
         </div>
       </div>
     </div>
   </div>
 
   <script>
-    // AOS + icons
+    // AOS + Feather
     window.addEventListener('DOMContentLoaded', () => {
       if (window.AOS) AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
       if (window.feather) feather.replace();
@@ -494,7 +840,7 @@
     menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
     mobileMenu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
 
-    // Vanta background (initialize after scripts load)
+    // Vanta background
     window.addEventListener('load', () => {
       if (window.VANTA && window.VANTA.NET) {
         VANTA.NET({
@@ -502,10 +848,10 @@
           mouseControls: true,
           touchControls: true,
           gyroControls: false,
-          minHeight: 200.00,
-          minWidth: 200.00,
-          scale: 1.00,
-          scaleMobile: 1.00,
+          minHeight: 200.0,
+          minWidth: 200.0,
+          scale: 1.0,
+          scaleMobile: 1.0,
           color: 0x60a5fa,
           backgroundColor: 0x0b1220,
           points: 12.0,
@@ -528,7 +874,7 @@
     });
     backToTopButton?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-    // Active nav highlighting (includes header + sections)
+    // Active nav highlighting
     const sectionEls = document.querySelectorAll('section, header');
     const navLinks = document.querySelectorAll('.nav-link');
     window.addEventListener('scroll', () => {
@@ -562,7 +908,7 @@
 
       if (!deleting) {
         char++;
-        if (char > current.length + 14) deleting = true;
+        if (char > current.length + 12) deleting = true;
       } else {
         char--;
         if (char <= 0) {
@@ -575,28 +921,30 @@
     }
     tick();
 
-    // Projects filter
+    // Projects filtering
     const filterBtns = document.querySelectorAll('.filter-btn');
     const cards = document.querySelectorAll('.project-card');
-    let activeFilter = 'all';
 
     function applyFilter(tag){
-      activeFilter = tag;
       filterBtns.forEach(b => {
         const isActive = b.dataset.filter === tag;
         b.classList.toggle('bg-indigo-600', isActive);
         b.classList.toggle('text-white', isActive);
         b.classList.toggle('border-indigo-600', isActive);
+
         if (!isActive) {
           b.classList.add('bg-white','text-gray-700','border-gray-200');
           b.classList.remove('bg-indigo-600','text-white','border-indigo-600');
         } else {
           b.classList.remove('bg-white','text-gray-700','border-gray-200');
         }
+
+        // little premium ring for Featured button
+        if (b.dataset.filter === 'featured') b.classList.add('ring-1','ring-indigo-200');
       });
 
       cards.forEach(card => {
-        const tags = (card.dataset.tags || '').split(' ');
+        const tags = (card.dataset.tags || '').split(' ').filter(Boolean);
         const show = tag === 'all' || tags.includes(tag);
         card.classList.toggle('hidden', !show);
       });
@@ -614,7 +962,6 @@
     const modalLinks = document.getElementById('modalLinks');
 
     function openModalFromCard(card){
-      if (!modal) return;
       const title = card.dataset.title || 'Project';
       const desc  = card.dataset.desc || '';
       const img   = card.dataset.img || '';
@@ -631,7 +978,7 @@
         links.forEach(l => {
           const a = document.createElement('a');
           a.href = l.url;
-          a.target = '_blank';
+          a.target = l.url.startsWith('#') ? '_self' : '_blank';
           a.rel = 'noopener';
           a.className = 'inline-flex items-center px-4 py-2 rounded-full bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition';
           a.textContent = l.label;
@@ -651,7 +998,6 @@
     }
 
     function closeModal(){
-      if (!modal) return;
       modal.classList.add('hidden');
       modal.classList.remove('flex');
       document.body.style.overflow = '';
@@ -669,6 +1015,32 @@
       if (e.target === modal || e.target === modal.firstElementChild) closeModal();
     });
     window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+    // Contact form validation (Formspree friendly)
+    (function(){
+      const form = document.getElementById('contactForm');
+      const status = document.getElementById('formStatus');
+      form?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (status) status.textContent = '';
+
+        const data = new FormData(form);
+        const name = (data.get('name')||'').toString().trim();
+        const email = (data.get('email')||'').toString().trim();
+        const message = (data.get('message')||'').toString().trim();
+
+        if (!name || !email || !message) { status.textContent = 'Please fill out all required fields.'; return; }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { status.textContent = 'Please enter a valid email.'; return; }
+
+        try {
+          const resp = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+          if (resp.ok) { form.reset(); status.textContent = 'Thanks! Your message has been sent.'; }
+          else { status.textContent = 'Something went wrong. You can email me directly.'; }
+        } catch {
+          status.textContent = 'Network error — please email me directly.';
+        }
+      });
+    })();
   </script>
 </body>
 </html>
