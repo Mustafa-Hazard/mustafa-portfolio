@@ -3,25 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mustafa Iqbal — Full Stack • DevOps • Cybersecurity</title>
-  <meta name="description" content="Portfolio of Mustafa Iqbal — software developer focused on full-stack development, DevOps, and cybersecurity foundations." />
-  <meta name="robots" content="index,follow" />
+  
+  <!-- SEO Meta Tags -->
+  <title>Mustafa Iqbal | Full Stack Developer • DevOps Engineer • Cybersecurity Specialist in Karachi</title>
+  <meta name="description" content="Mustafa Iqbal - BSCS student at SZABIST specializing in full-stack development, DevOps, and cybersecurity. Currently interning at DUA Department. View projects: AeroNexa, CGPA Tracker, and more. Available for internships in Karachi, Pakistan." />
+  <meta name="keywords" content="Mustafa Iqbal, Full Stack Developer, DevOps Engineer, Cybersecurity, SZABIST, Karachi, Pakistan, Software Developer, ASP.NET, Node.js, SQL Server, PostgreSQL, Internship" />
+  <meta name="author" content="Mustafa Muhammad Iqbal" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href="https://mustafa-portfolio-cyan.vercel.app/" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Mustafa Iqbal — Full Stack • DevOps • Cybersecurity" />
-  <meta property="og:description" content="Software developer focused on full-stack development, DevOps, and cybersecurity foundations." />
+  
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mustafa-portfolio-cyan.vercel.app/" />
+  <meta property="og:title" content="Mustafa Iqbal | Full Stack Developer • DevOps • Cybersecurity" />
+  <meta property="og:description" content="BSCS student at SZABIST specializing in full-stack development, DevOps, and cybersecurity foundations. Currently interning at DUA Department." />
   <meta property="og:image" content="https://mustafa-portfolio-cyan.vercel.app/og-card.png" />
+  <meta property="og:site_name" content="Mustafa Iqbal Portfolio" />
+  <meta property="og:locale" content="en_US" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Mustafa Iqbal — Full Stack • DevOps • Cybersecurity" />
-  <meta name="twitter:description" content="Software developer focused on full-stack development, DevOps, and cybersecurity foundations." />
+  <meta name="twitter:url" content="https://mustafa-portfolio-cyan.vercel.app/" />
+  <meta name="twitter:title" content="Mustafa Iqbal | Full Stack Developer • DevOps • Cybersecurity" />
+  <meta name="twitter:description" content="BSCS student at SZABIST specializing in full-stack development, DevOps, and cybersecurity foundations." />
   <meta name="twitter:image" content="https://mustafa-portfolio-cyan.vercel.app/og-card.png" />
 
-  <meta name="theme-color" content="#0b1220" />
+  <!-- Schema.org markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mustafa Muhammad Iqbal",
+    "jobTitle": "Full Stack Developer & Cybersecurity Specialist",
+    "url": "https://mustafa-portfolio-cyan.vercel.app/",
+    "sameAs": [
+      "https://github.com/Mustafa-Hazard",
+      "https://linkedin.com/in/mustafa642"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Karachi",
+      "addressCountry": "Pakistan"
+    },
+    "email": "talhamustafa642@gmail.com",
+    "telephone": "+923302479956",
+    "alumniOf": {
+      "@type": "Organization",
+      "name": "SZABIST University"
+    },
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Google Cybersecurity Professional Certificate",
+        "credentialCategory": "certificate",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "Google"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <meta name="theme-color" content="#0f172a" />
 
   <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -29,1018 +73,1685 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
 
-  <!-- Fonts -->
+  <!-- Fonts - Distinctive Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'display': ['Syne', 'system-ui', 'sans-serif'],
+            'mono': ['JetBrains Mono', 'monospace'],
+            'sans': ['DM Sans', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
 
-  <!-- AOS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-  <!-- Icons + Vanta -->
+  <!-- Icons -->
   <script defer src="https://unpkg.com/feather-icons"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
 
   <style>
-    :root{
-      --bg: #0b1220;
-      --card: rgba(255,255,255,.06);
-      --stroke: rgba(255,255,255,.10);
-      --glow: 0 0 0 1px rgba(255,255,255,.08), 0 25px 60px rgba(0,0,0,.45);
+    :root {
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --accent-cyan: #06b6d4;
+      --accent-violet: #8b5cf6;
+      --accent-orange: #f97316;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
     }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Poppins', sans-serif; }
-    .text-gradient {
-      background: linear-gradient(90deg, #60a5fa, #a78bfa);
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      overflow-x: hidden;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-primary);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--accent-cyan), var(--accent-violet));
+      border-radius: 10px;
+    }
+
+    /* Smooth Page Transitions */
+    .fade-in {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Gradient Text */
+    .gradient-text {
+      background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-violet) 50%, var(--accent-orange) 100%);
       -webkit-background-clip: text;
       background-clip: text;
-      color: transparent;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% auto;
+      animation: gradientShift 3s ease infinite;
     }
-    .glass {
-      background: var(--card);
-      border: 1px solid var(--stroke);
-      box-shadow: var(--glow);
-      backdrop-filter: blur(12px);
-    }
-    .card-hover { transition: transform .25s ease, box-shadow .25s ease; }
-    .card-hover:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(0,0,0,.18); }
 
-    /* Hero code overlay */
-    .code-overlay {
-      position: absolute; inset: 0;
-      pointer-events: none;
-      opacity: .18;
-      mask-image: radial-gradient(circle at 35% 30%, rgba(0,0,0,1), rgba(0,0,0,0));
-      -webkit-mask-image: radial-gradient(circle at 35% 30%, rgba(0,0,0,1), rgba(0,0,0,0));
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
     }
-    .code-box {
+
+    /* Floating Navigation */
+    .floating-nav {
+      backdrop-filter: blur(20px);
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .floating-nav.scrolled {
+      background: rgba(15, 23, 42, 0.95);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Nav Link Animation */
+    .nav-link {
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    .nav-link::after {
+      content: '';
       position: absolute;
-      left: 50%;
-      top: 55%;
-      transform: translate(-50%,-50%);
-      width: min(980px, calc(100% - 2rem));
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      border-radius: 18px;
-      padding: 18px 18px 14px;
-      background: rgba(0,0,0,.35);
-      border: 1px solid rgba(255,255,255,.10);
-      box-shadow: 0 25px 70px rgba(0,0,0,.55);
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-violet));
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .dot{ width:10px; height:10px; border-radius:999px; display:inline-block; }
-    .dot.r{ background:#ff5f57; } .dot.y{ background:#febc2e; } .dot.g{ background:#28c840; }
-    .tw-caret { border-right: 2px solid rgba(255,255,255,.75); padding-right: 2px; }
 
-    /* Nav underline */
-    .nav-link { position: relative; }
-    .nav-link:after {
-      content:'';
-      position:absolute;
-      width:0;
-      height:2px;
-      bottom:-3px;
-      left:0;
-      background: linear-gradient(90deg, #60a5fa, #a78bfa);
-      transition: width .25s ease;
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
     }
-    .nav-link:hover:after, .active:after { width:100%; }
 
-    /* Fancy badge */
-    .badge-shine{
+    /* Hero Particles Background */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(249, 115, 22, 0.1) 0%, transparent 50%);
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+    }
+
+    /* Animated Code Background */
+    .code-rain {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      opacity: 0.15;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--accent-cyan);
+      pointer-events: none;
+    }
+
+    .code-line {
+      position: absolute;
+      white-space: nowrap;
+      animation: slideCode 20s linear infinite;
+    }
+
+    @keyframes slideCode {
+      0% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.3;
+      }
+      90% {
+        opacity: 0.3;
+      }
+      100% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+    }
+
+    /* Glowing Cards */
+    .glow-card {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
     }
-    .badge-shine:before{
-      content:"";
-      position:absolute;
-      top:-20px;
-      left:-40px;
-      width:40px;
-      height:120px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,.25), transparent);
-      transform: rotate(25deg);
-      animation: shine 2.8s infinite;
-    }
-    @keyframes shine{
-      0%{ left:-60px; }
-      100%{ left:120%; }
+
+    .glow-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(6, 182, 212, 0.15), transparent 40%);
+      opacity: 0;
+      transition: opacity 0.3s;
     }
 
-    /* Reduced motion */
-    @media (prefers-reduced-motion: reduce){
-      html { scroll-behavior: auto; }
-      .card-hover:hover{ transform:none; }
-      .badge-shine:before{ display:none; }
+    .glow-card:hover::before {
+      opacity: 1;
+    }
+
+    .glow-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(6, 182, 212, 0.4);
+      box-shadow: 0 20px 60px rgba(6, 182, 212, 0.2);
+    }
+
+    /* Project Card Hover Effect */
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .project-card .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+      opacity: 0.6;
+      transition: opacity 0.3s;
+    }
+
+    .project-card:hover .overlay {
+      opacity: 0.9;
+    }
+
+    .project-card img {
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .project-card:hover img {
+      transform: scale(1.1) rotate(1deg);
+    }
+
+    /* Magnetic Button Effect */
+    .magnetic-btn {
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+
+    .magnetic-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-violet));
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .magnetic-btn:hover::before {
+      opacity: 1;
+    }
+
+    .magnetic-btn span {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Status Badge */
+    .status-badge {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .status-badge::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      animation: shimmer 3s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+
+    /* Pulse Animation */
+    .pulse-dot {
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+      }
+    }
+
+    /* Code Block Styling */
+    .code-block {
+      font-family: 'JetBrains Mono', monospace;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .code-block::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 30px;
+      background: rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Skill Tags */
+    .skill-tag {
+      backdrop-filter: blur(10px);
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      transition: all 0.3s;
+    }
+
+    .skill-tag:hover {
+      background: rgba(6, 182, 212, 0.2);
+      border-color: rgba(6, 182, 212, 0.5);
+      transform: translateY(-2px);
+    }
+
+    /* Timeline */
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent-cyan), var(--accent-violet));
+    }
+
+    /* Mobile Menu Slide */
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .mobile-menu.active {
+      transform: translateX(0);
+    }
+
+    /* Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* Loading Animation */
+    .loading-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--bg-primary);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.5s, visibility 0.5s;
+    }
+
+    .loading-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(6, 182, 212, 0.3);
+      border-top-color: var(--accent-cyan);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
     }
   </style>
 </head>
 
-<body class="bg-gray-50 text-gray-900">
+<body>
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="spinner"></div>
+  </div>
 
-  <!-- Navigation -->
-  <nav class="fixed w-full z-50">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="mt-4 rounded-2xl bg-white/80 backdrop-blur shadow-sm border border-gray-200">
-        <div class="flex h-16 items-center justify-between px-4">
-          <a href="#home" class="text-xl font-bold text-indigo-600">Mustafa<span class="text-gray-900">.</span></a>
+  <!-- Floating Navigation -->
+  <nav class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
+    <div class="floating-nav rounded-2xl px-6 py-4" id="navbar">
+      <div class="flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#home" class="text-2xl font-display font-bold">
+          <span class="gradient-text">Mustafa</span>
+        </a>
 
-          <div class="hidden md:flex items-center space-x-8">
-            <a href="#home" class="nav-link text-gray-700 hover:text-indigo-600 active">Home</a>
-            <a href="#about" class="nav-link text-gray-700 hover:text-indigo-600">About</a>
-            <a href="#projects" class="nav-link text-gray-700 hover:text-indigo-600">Projects</a>
-            <a href="#skills" class="nav-link text-gray-700 hover:text-indigo-600">Skills</a>
-            <a href="#education" class="nav-link text-gray-700 hover:text-indigo-600">Education</a>
-            <a href="#certs" class="nav-link text-gray-700 hover:text-indigo-600">Certifications</a>
-            <a href="#contact" class="nav-link text-gray-700 hover:text-indigo-600">Contact</a>
-          </div>
-
-          <div class="flex md:hidden items-center">
-            <button id="menu-btn" class="text-gray-900" aria-label="Toggle menu">
-              <i data-feather="menu"></i>
-            </button>
-          </div>
+        <!-- Desktop Menu -->
+        <div class="hidden lg:flex items-center space-x-8">
+          <a href="#home" class="nav-link text-sm font-medium hover:text-cyan-400 active">Home</a>
+          <a href="#about" class="nav-link text-sm font-medium hover:text-cyan-400">About</a>
+          <a href="#experience" class="nav-link text-sm font-medium hover:text-cyan-400">Experience</a>
+          <a href="#projects" class="nav-link text-sm font-medium hover:text-cyan-400">Projects</a>
+          <a href="#skills" class="nav-link text-sm font-medium hover:text-cyan-400">Skills</a>
+          <a href="#contact" class="nav-link text-sm font-medium hover:text-cyan-400">Contact</a>
         </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-white rounded-b-2xl px-4 py-4">
-          <a href="#home" class="block py-2 text-gray-700 hover:text-indigo-600">Home</a>
-          <a href="#about" class="block py-2 text-gray-700 hover:text-indigo-600">About</a>
-          <a href="#projects" class="block py-2 text-gray-700 hover:text-indigo-600">Projects</a>
-          <a href="#skills" class="block py-2 text-gray-700 hover:text-indigo-600">Skills</a>
-          <a href="#education" class="block py-2 text-gray-700 hover:text-indigo-600">Education</a>
-          <a href="#certs" class="block py-2 text-gray-700 hover:text-indigo-600">Certifications</a>
-          <a href="#contact" class="block py-2 text-gray-700 hover:text-indigo-600">Contact</a>
-        </div>
+        <!-- CTA Button -->
+        <a href="#contact" class="hidden lg:block magnetic-btn px-6 py-2.5 rounded-full bg-gradient-to-r from-cyan-500 to-violet-600 text-white text-sm font-semibold">
+          <span>Let's Talk</span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobileMenuBtn" class="lg:hidden text-white" aria-label="Toggle menu">
+          <i data-feather="menu"></i>
+        </button>
       </div>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <header id="home" class="relative">
-    <div id="vanta-bg" class="min-h-screen flex items-center justify-center px-4">
-      <div class="absolute inset-0 bg-black/35"></div>
-
-      <!-- Code overlay -->
-      <div class="code-overlay">
-        <div class="code-box">
-          <div class="flex items-center gap-2 mb-3">
-            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-            <span class="ml-2 text-xs text-white/70">mustafa-portfolio • main</span>
-          </div>
-          <pre class="text-[12px] sm:text-[13px] leading-6 text-emerald-200/90 whitespace-pre-wrap">
-<span class="text-white/70">// building secure & reliable software</span>
-<span class="text-emerald-300">const</span> focus = ["Full Stack", "DevOps", "Cybersecurity"];
-<span class="text-emerald-300">function</span> mindset(){ return "learn • build • ship"; }
-<span class="text-white/70" id="typeTarget"></span><span class="tw-caret" id="caret">&nbsp;</span>
-          </pre>
-        </div>
-      </div>
-
-      <!-- Content -->
-      <div class="relative z-10 text-center max-w-4xl mx-auto pt-28" data-aos="fade-up">
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 text-white/85 mb-6 badge-shine">
-          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-          Open to internships • Karachi, Pakistan
-        </div>
-
-        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
-          <span class="text-gradient">Mustafa Iqbal</span>
-        </h1>
-
-        <p class="text-lg md:text-2xl text-gray-200 mb-10">
-          Full Stack • DevOps • Cybersecurity foundations
-        </p>
-
-        <div class="flex justify-center flex-wrap gap-3">
-          <a href="#projects" class="px-8 py-3 bg-white text-indigo-700 font-semibold rounded-full hover:bg-gray-100 transition">
-            View Projects
-          </a>
-          <a href="/resume.pdf" class="px-8 py-3 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-indigo-700 transition" download>
-            Download Résumé
-          </a>
-          <a href="#contact" class="px-8 py-3 bg-indigo-600 text-white font-semibold rounded-full hover:bg-indigo-700 transition">
-            Contact
-          </a>
-        </div>
-
-        <div class="mt-10 flex justify-center gap-4 text-white/85">
-          <a class="p-3 rounded-full bg-white/10 border border-white/15 hover:bg-white/15 transition" href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener" aria-label="GitHub">
-            <i data-feather="github"></i>
-          </a>
-          <a class="p-3 rounded-full bg-white/10 border border-white/15 hover:bg-white/15 transition" href="https://linkedin.com/in/mustafa642" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <i data-feather="linkedin"></i>
-          </a>
-          <a class="p-3 rounded-full bg-white/10 border border-white/15 hover:bg-white/15 transition" href="mailto:talhamustafa642@gmail.com" aria-label="Email">
-            <i data-feather="mail"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- About -->
-  <section id="about" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About Me</h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
-        <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
-          I build practical projects with clean UI, reliable backend logic, and security-first thinking.
-        </p>
-      </div>
-
-      <div class="flex flex-col md:flex-row items-center gap-12">
-        <div class="md:w-1/3" data-aos="fade-right">
-          <div class="rounded-2xl overflow-hidden shadow-xl">
-            <img src="/images/profile.jpg" alt="Profile picture of Mustafa Iqbal"
-                 class="w-full h-auto object-cover" />
-          </div>
-        </div>
-
-        <div class="md:w-2/3" data-aos="fade-left">
-          <h3 class="text-2xl font-semibold text-gray-900 mb-4">At a glance</h3>
-          <p class="text-gray-700 mb-6">
-            I'm <strong>Mustafa Muhammad Iqbal</strong>, a <strong>BSCS student at SZABIST, Karachi</strong>.
-            I’m looking for an internship where I can contribute to real projects, learn fast, and grow into a strong engineer.
-          </p>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <div class="flex items-start p-5 rounded-2xl bg-gray-50 border border-gray-100">
-              <div class="bg-indigo-100 p-3 rounded-full mr-4">
-                <i data-feather="shield" class="text-indigo-600"></i>
-              </div>
-              <div>
-                <h4 class="font-semibold text-gray-900 mb-1">SOC / IR Mindset</h4>
-                <p class="text-gray-600 text-sm">Alert triage, IOC extraction, incident notes & reporting</p>
-              </div>
-            </div>
-
-            <div class="flex items-start p-5 rounded-2xl bg-gray-50 border border-gray-100">
-              <div class="bg-purple-100 p-3 rounded-full mr-4">
-                <i data-feather="lock" class="text-purple-600"></i>
-              </div>
-              <div>
-                <h4 class="font-semibold text-gray-900 mb-1">Secure Coding</h4>
-                <p class="text-gray-600 text-sm">RBAC, validation, least privilege, audit logging</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex flex-wrap gap-3">
-            <a href="mailto:talhamustafa642@gmail.com" class="inline-flex items-center px-4 py-2 rounded-full bg-indigo-50 text-indigo-700 font-semibold hover:bg-indigo-100 transition">
-              Email <i data-feather="mail" class="ml-2 w-4 h-4"></i>
-            </a>
-            <a href="https://wa.me/923302479956" target="_blank" rel="noopener" class="inline-flex items-center px-4 py-2 rounded-full bg-emerald-50 text-emerald-700 font-semibold hover:bg-emerald-100 transition">
-              WhatsApp <i data-feather="message-circle" class="ml-2 w-4 h-4"></i>
-            </a>
-            <a href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener" class="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 text-gray-900 font-semibold hover:bg-gray-200 transition">
-              GitHub <i data-feather="github" class="ml-2 w-4 h-4"></i>
-            </a>
-            <a href="https://linkedin.com/in/mustafa642" target="_blank" rel="noopener" class="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 text-blue-700 font-semibold hover:bg-blue-100 transition">
-              LinkedIn <i data-feather="linkedin" class="ml-2 w-4 h-4"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Projects</h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
-        <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Filter by type and open a quick preview.</p>
-      </div>
-
-      <!-- Filters -->
-      <div class="flex flex-wrap justify-center gap-2 mb-10" data-aos="fade-up">
-        <button class="filter-btn px-4 py-2 rounded-full bg-white border border-gray-200 font-semibold text-gray-700 hover:bg-gray-100" data-filter="all">All</button>
-        <button class="filter-btn px-4 py-2 rounded-full bg-white border border-gray-200 font-semibold text-gray-700 hover:bg-gray-100" data-filter="featured">Featured</button>
-        <button class="filter-btn px-4 py-2 rounded-full bg-white border border-gray-200 font-semibold text-gray-700 hover:bg-gray-100" data-filter="fullstack">Full-Stack</button>
-        <button class="filter-btn px-4 py-2 rounded-full bg-white border border-gray-200 font-semibold text-gray-700 hover:bg-gray-100" data-filter="web">Web</button>
-        <button class="filter-btn px-4 py-2 rounded-full bg-white border border-gray-200 font-semibold text-gray-700 hover:bg-gray-100" data-filter="systems">Systems</button>
-      </div>
-
-      <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-        <!-- AeroNexa (FEATURED • TOP) -->
-        <article class="project-card bg-white rounded-2xl overflow-hidden shadow-md card-hover border border-gray-100"
-                 data-tags="featured fullstack web"
-                 data-title="AeroNexa – Full-Stack Airline Management System"
-                 data-desc="🔧 Technical Challenges Addressed
-Data Consistency & Migrations: Resolved complex Entity Framework Core migration conflicts to maintain schema integrity and transactional consistency across the SQL Server database.
-Business Rule Enforcement: Implemented strict server-side and client-side validation layers to enforce time-bound scheduling logic and prevent invalid operational states.
-EF Core Migration Stability: Ensured database schema consistency by resolving complex migration and synchronization issues.
-Robust Validation Layer: Enforced strict temporal and business-rule validations to prevent invalid flight scheduling states."
-                 data-img="/images/AeroNexa.png"
-                 data-links='[
-                   {"label":"GitHub","url":"https://github.com/Mustafa-Hazard/AirlineTicketingSystem"},
-                   {"label":"Contact for Demo","url":"#contact"}
-                 ]'>
-          <div class="relative overflow-hidden h-60">
-            <img src="/images/AeroNexa.png" alt="AeroNexa – Airline Management System"
-     class="w-full h-full object-contain bg-black/10 p-2 transition duration-500"
-     style="object-position:center;"
-     onerror="this.src='https://static.photos/technology/1200x800/9';" />
-
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent"></div>
-
-            <div class="absolute top-4 left-4 flex items-center gap-2">
-              <span class="inline-flex items-center gap-2 bg-white/15 border border-white/20 text-white text-xs px-3 py-1 rounded-full backdrop-blur badge-shine">
-                <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Featured
-              </span>
-              <span class="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full shadow">
-                AeroNexa
-              </span>
-            </div>
-
-            <div class="absolute bottom-4 left-4 flex flex-wrap gap-2">
-              <span class="bg-emerald-600 text-white text-xs px-3 py-1 rounded-full">ASP.NET Core MVC</span>
-              <span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">EF Core</span>
-              <span class="bg-purple-600 text-white text-xs px-3 py-1 rounded-full">SQL Server</span>
-              <span class="bg-slate-700 text-white text-xs px-3 py-1 rounded-full">Glass UI</span>
-            </div>
-          </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">AeroNexa</h3>
-            <p class="text-gray-600 mb-4">
-              Full-Stack Airline Management System with secure booking, admin command center,
-              automated notifications, and fast search — built with professional engineering practices.
-            </p>
-
-            <div class="flex flex-wrap items-center gap-3">
-              <button class="open-modal inline-flex items-center text-indigo-700 font-semibold hover:text-indigo-900">
-                Quick View <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-              </button>
-
-              <a href="#contact" class="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 text-gray-900 font-semibold hover:bg-gray-200 transition">
-                Request Demo <i data-feather="send" class="ml-2 w-4 h-4"></i>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Student CGPA & Probation Tracker -->
-        <article class="project-card bg-white rounded-2xl overflow-hidden shadow-md card-hover border border-gray-100"
-                 data-tags="fullstack web"
-                 data-title="Student CGPA & Probation Tracker"
-                 data-desc="A full-stack web application that calculates GPA and CGPA, tracks probation status, and is deployed using NeonDB and Firebase Hosting."
-                 data-img="/images/Student.png"
-                 data-links='[
-                   {"label":"GitHub","url":"https://github.com/Mustafa-Hazard/Student-CGPA-Probation-Tracker.git"}
-                 ]'>
-          <div class="relative overflow-hidden h-56">
-            <img src="/images/Student.png" alt="Student CGPA & Probation Tracker"
-                 class="w-full h-full object-cover transition duration-500 hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent"></div>
-            <div class="absolute bottom-4 left-4">
-              <span class="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">Full-Stack</span>
-            </div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">Student CGPA & Probation Tracker</h3>
-            <p class="text-gray-600 mb-4">GPA/CGPA calculator with probation tracking and cloud deployment.</p>
-            <button class="open-modal inline-flex items-center text-indigo-700 font-semibold hover:text-indigo-900">
-              Quick View <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-            </button>
-          </div>
-        </article>
-
-        <!-- Numerical Computing Calculator -->
-        <article class="project-card bg-white rounded-2xl overflow-hidden shadow-md card-hover border border-gray-100"
-                 data-tags="web"
-                 data-title="Numerical Computing Calculator"
-                 data-desc="A web-based numerical methods calculator for root finding with adjustable bounds, tolerance, and iterations."
-                 data-img="/images/Project_NC.png"
-                 data-links='[
-                   {"label":"Live Demo","url":"https://numericalcomputingcalculator.vercel.app/"}
-                 ]'>
-          <div class="relative overflow-hidden h-56">
-            <img src="/images/Project_NC.png" alt="Numerical Computing Calculator"
-                 class="w-full h-full object-cover transition duration-500 hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent"></div>
-            <div class="absolute bottom-4 left-4">
-              <span class="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">Web</span>
-            </div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">Numerical Computing Calculator</h3>
-            <p class="text-gray-600 mb-4">Root finding tools with configurable tolerance and iterations.</p>
-            <button class="open-modal inline-flex items-center text-indigo-700 font-semibold hover:text-indigo-900">
-              Quick View <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-            </button>
-          </div>
-        </article>
-
-        <!-- Car Rental Management System -->
-        <article class="project-card bg-white rounded-2xl overflow-hidden shadow-md card-hover border border-gray-100"
-                 data-tags="systems"
-                 data-title="Car Rental Management System"
-                 data-desc="Developed in C during a hackathon, focusing on database-style data handling and operations flow."
-                 data-img="/images/Car_Rental.png"
-                 data-links="[]">
-          <div class="relative overflow-hidden h-56">
-            <img src="/images/Car_Rental.png" alt="Car Rental Management System"
-                 class="w-full h-full object-cover transition duration-500 hover:scale-110"
-                 onerror="this.src='https://static.photos/transport/640x360/12';" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent"></div>
-            <div class="absolute bottom-4 left-4">
-              <span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">Systems</span>
-            </div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">Car Rental Management System</h3>
-            <p class="text-gray-600 mb-4">C project for core logic, data handling, and operations flow.</p>
-            <button class="open-modal inline-flex items-center text-indigo-700 font-semibold hover:text-indigo-900">
-              Quick View <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-            </button>
-          </div>
-        </article>
-
-        <!-- Restaurant Management System -->
-        <article class="project-card bg-white rounded-2xl overflow-hidden shadow-md card-hover border border-gray-100"
-                 data-tags="systems"
-                 data-title="Restaurant Management System"
-                 data-desc="Java project with CRUD operations and a user-friendly interface to manage menu items and orders."
-                 data-img="/images/Menu.jpg"
-                 data-links="[]">
-          <div class="relative overflow-hidden h-56">
-            <img src="/images/Menu.jpg" alt="Restaurant Management System"
-                 class="w-full h-full object-cover transition duration-500 hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent"></div>
-            <div class="absolute bottom-4 left-4">
-              <span class="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">Java</span>
-            </div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">Restaurant Management System</h3>
-            <p class="text-gray-600 mb-4">CRUD-based Java project for restaurant operations.</p>
-            <button class="open-modal inline-flex items-center text-indigo-700 font-semibold hover:text-indigo-900">
-              Quick View <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-            </button>
-          </div>
-        </article>
-
-        <!-- Traffic Light System -->
-        <article class="project-card bg-white rounded-2xl overflow-hidden shadow-md card-hover border border-gray-100"
-                 data-tags="systems"
-                 data-title="Traffic Light System (DLD)"
-                 data-desc="Digital logic simulation for traffic control, built as a team project for a DLD competition."
-                 data-img="/images/DLD.jpg"
-                 data-links="[]">
-          <div class="relative overflow-hidden h-56">
-            <img src="/images/DLD.jpg" alt="Traffic Light System (DLD)"
-                 class="w-full h-full object-cover transition duration-500 hover:scale-110" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent"></div>
-            <div class="absolute bottom-4 left-4">
-              <span class="bg-purple-600 text-white text-xs px-3 py-1 rounded-full">Digital Logic</span>
-            </div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">Traffic Light System (DLD)</h3>
-            <p class="text-gray-600 mb-4">Team project simulating traffic light sequences using DLD.</p>
-            <button class="open-modal inline-flex items-center text-indigo-700 font-semibold hover:text-indigo-900">
-              Quick View <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-            </button>
-          </div>
-        </article>
-
-        <!-- Attendance Tracking System -->
-        <article class="project-card bg-white rounded-2xl overflow-hidden shadow-md card-hover border border-gray-100"
-                 data-tags="fullstack web"
-                 data-title="Attendance Tracking System"
-                 data-desc="Node.js + Express + PostgreSQL + EJS app providing attendance monitoring and basic management workflows."
-                 data-img="/images/attendance.jpg"
-                 data-links='[
-                   {"label":"GitHub","url":"https://github.com/Mustafa-Hazard/Attendance"}
-                 ]'>
-          <div class="relative overflow-hidden h-56">
-            <img src="/images/attendance.jpg" alt="Attendance Tracking System"
-                 class="w-full h-full object-cover transition duration-500 hover:scale-110"
-                 onerror="this.src='https://static.photos/technology/640x360/150';" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent"></div>
-            <div class="absolute bottom-4 left-4">
-              <span class="bg-indigo-600 text-white text-xs px-3 py-1 rounded-full">Node.js</span>
-            </div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">Attendance Tracking System</h3>
-            <p class="text-gray-600 mb-4">Full-stack attendance monitoring using Node/Express/Postgres.</p>
-            <button class="open-modal inline-flex items-center text-indigo-700 font-semibold hover:text-indigo-900">
-              Quick View <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
-            </button>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Technical Skills</h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
-        <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
-          A mix of full-stack development, DevOps fundamentals, and cybersecurity foundations.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100" data-aos="fade-up">
-          <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-            <i data-feather="code" class="text-indigo-600 w-6 h-6"></i>
-          </div>
-          <h3 class="text-xl font-semibold text-center text-gray-900 mb-4">Programming</h3>
-          <ul class="space-y-3 text-gray-700">
-            <li><strong>Java</strong> (Advanced)</li>
-            <li><strong>Python</strong></li>
-            <li><strong>JavaScript</strong> (Node.js)</li>
-            <li><strong>SQL</strong></li>
-          </ul>
-        </div>
-
-        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100" data-aos="fade-up" data-aos-delay="100">
-          <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-            <i data-feather="tool" class="text-purple-600 w-6 h-6"></i>
-          </div>
-          <h3 class="text-xl font-semibold text-center text-gray-900 mb-4">Frameworks</h3>
-          <ul class="space-y-3 text-gray-700">
-            <li><strong>Express.js</strong></li>
-            <li><strong>EJS</strong></li>
-            <li><strong>ASP.NET Core MVC</strong></li>
-          </ul>
-        </div>
-
-        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100" data-aos="fade-up" data-aos-delay="200">
-          <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-            <i data-feather="database" class="text-blue-600 w-6 h-6"></i>
-          </div>
-          <h3 class="text-xl font-semibold text-center text-gray-900 mb-4">Databases & Tools</h3>
-          <ul class="space-y-3 text-gray-700">
-            <li><strong>PostgreSQL</strong></li>
-            <li><strong>SQL Server</strong></li>
-            <li><strong>Firebase</strong></li>
-            <li><strong>Git/GitHub</strong></li>
-          </ul>
-        </div>
-
-        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 md:col-span-2 lg:col-span-3" data-aos="fade-up" data-aos-delay="300">
-          <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <div class="flex items-start gap-4">
-              <div class="bg-emerald-100 w-16 h-16 rounded-full flex items-center justify-center">
-                <i data-feather="shield" class="text-emerald-700 w-7 h-7"></i>
-              </div>
-              <div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-1">Cybersecurity & OS</h3>
-                <p class="text-gray-600">SOC/IR fundamentals, log analysis, and security-first practices.</p>
-              </div>
-            </div>
-
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 rounded-full bg-white border text-sm">Linux (CLI, hardening)</span>
-              <span class="px-3 py-1 rounded-full bg-white border text-sm">Wireshark</span>
-              <span class="px-3 py-1 rounded-full bg-white border text-sm">Splunk (basic)</span>
-              <span class="px-3 py-1 rounded-full bg-white border text-sm">NIST CSF</span>
-              <span class="px-3 py-1 rounded-full bg-white border text-sm">Validation & RBAC</span>
-              <span class="px-3 py-1 rounded-full bg-white border text-sm">Incident Investigation</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Education -->
-  <section id="education" class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Education</h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
-      </div>
-
-      <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100" data-aos="fade-up">
-        <h3 class="text-2xl font-semibold text-gray-900">Shaheed Zulfikar Ali Bhutto Institute of Science & Technology (SZABIST), Karachi</h3>
-        <p class="text-gray-600 mt-2">3rd Year · 5th Semester</p>
-        <p class="text-gray-700 mt-4">Focus: Cybersecurity foundations, secure backend development, SOC/IR fundamentals.</p>
-        <p class="text-gray-500 mt-2">Subjects: Networks, Operating Systems, Secure Coding, Databases</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Certifications -->
-  <section id="certs" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Certifications</h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100" data-aos="fade-up">
-          <h3 class="font-semibold text-gray-900">Google Cybersecurity Professional Certificate — Coursera (Oct 2025)</h3>
-          <a class="text-indigo-700 font-semibold inline-flex items-center mt-2 hover:text-indigo-900"
-             href="https://coursera.org/share/40092fd5dc6991639bd5538a67c5a9d1" target="_blank" rel="noopener">
-            Verify <i data-feather="external-link" class="ml-2 w-4 h-4"></i>
-          </a>
-        </div>
-
-        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100" data-aos="fade-up" data-aos-delay="50">
-          <h3 class="font-semibold text-gray-900">Google AI Essential — Coursera (Oct 2025)</h3>
-          <a class="text-indigo-700 font-semibold inline-flex items-center mt-2 hover:text-indigo-900"
-             href="https://www.coursera.org/account/accomplishments/specialization/953XK0GYCIT1?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=s12n" target="_blank" rel="noopener">
-            Verify <i data-feather="external-link" class="ml-2 w-4 h-4"></i>
-          </a>
-        </div>
-
-        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100" data-aos="fade-up" data-aos-delay="100">
-          <h3 class="font-semibold text-gray-900">Linux for Beginners — Udemy (Jul 2025)</h3>
-          <a class="text-indigo-700 font-semibold inline-flex items-center mt-2 hover:text-indigo-900"
-             href="https://www.udemy.com/certificate/UC-91ec6ae7-dc40-42dc-8a3f-504f880ef5b8/" target="_blank" rel="noopener">
-            Verify <i data-feather="external-link" class="ml-2 w-4 h-4"></i>
-          </a>
-        </div>
-
-        <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100" data-aos="fade-up" data-aos-delay="150">
-          <h3 class="font-semibold text-gray-900">Python Pro — Udemy (Apr 2025)</h3>
-          <a class="text-indigo-700 font-semibold inline-flex items-center mt-2 hover:text-indigo-900"
-             href="https://www.udemy.com/certificate/UC-dbdf73dc-9367-4df0-b854-486c0b946b9a/" target="_blank" rel="noopener">
-            Verify <i data-feather="external-link" class="ml-2 w-4 h-4"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="py-20 bg-gray-900 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Work Together</h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto"></div>
-        <p class="mt-4 text-gray-300 max-w-2xl mx-auto">
-          Have a project idea or internship opportunity? Let’s connect.
-        </p>
-      </div>
-
-      <div class="flex flex-col md:flex-row gap-12">
-        <div class="md:w-1/2" data-aos="fade-right">
-          <h3 class="text-2xl font-semibold mb-6">Get in Touch</h3>
-          <p class="text-gray-300 mb-8">I reply quickly — feel free to reach out anytime.</p>
-
-          <div class="space-y-6">
-            <div class="flex items-start">
-              <div class="bg-indigo-600/20 p-3 rounded-full mr-4"><i data-feather="mail" class="text-indigo-300"></i></div>
-              <div>
-                <h4 class="font-medium mb-1">Email</h4>
-                <a href="mailto:talhamustafa642@gmail.com" class="text-gray-300 hover:text-white">talhamustafa642@gmail.com</a>
-              </div>
-            </div>
-
-            <div class="flex items-start">
-              <div class="bg-purple-600/20 p-3 rounded-full mr-4"><i data-feather="phone" class="text-purple-300"></i></div>
-              <div>
-                <h4 class="font-medium mb-1">WhatsApp</h4>
-                <a href="https://wa.me/923302479956" target="_blank" rel="noopener" class="text-gray-300 hover:text-white">+92 330 2479956</a>
-              </div>
-            </div>
-
-            <div class="flex items-start">
-              <div class="bg-blue-600/20 p-3 rounded-full mr-4"><i data-feather="map-pin" class="text-blue-300"></i></div>
-              <div>
-                <h4 class="font-medium mb-1">Location</h4>
-                <p class="text-gray-300">Karachi, Pakistan</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex space-x-4 mt-8">
-            <a href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener"
-               class="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition" aria-label="GitHub">
-              <i data-feather="github" class="text-white"></i>
-            </a>
-            <a href="https://linkedin.com/in/mustafa642" target="_blank" rel="noopener"
-               class="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition" aria-label="LinkedIn">
-              <i data-feather="linkedin" class="text-blue-300"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="md:w-1/2" data-aos="fade-left">
-          <form id="contactForm" class="space-y-6" action="https://formspree.io/f/xldaeoyn" method="POST" novalidate>
-            <div>
-              <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
-              <input type="text" id="name" name="name"
-                     class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-white placeholder-gray-400 transition"
-                     required />
-            </div>
-
-            <div>
-              <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
-              <input type="email" id="email" name="email"
-                     class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-white placeholder-gray-400 transition"
-                     required />
-            </div>
-
-            <div>
-              <label for="subject" class="block text-sm font-medium text-gray-300 mb-1">Subject</label>
-              <input type="text" id="subject" name="subject"
-                     class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-white placeholder-gray-400 transition" />
-            </div>
-
-            <div>
-              <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
-              <textarea id="message" name="message" rows="4"
-                        class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-white placeholder-gray-400 transition"
-                        required></textarea>
-            </div>
-
-            <button type="submit"
-                    class="w-full px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-lg hover:from-indigo-700 hover:to-purple-700 transition inline-flex items-center justify-center">
-              Send Message <i data-feather="send" class="ml-2 w-4 h-4"></i>
-            </button>
-
-            <p id="formStatus" class="text-sm text-gray-300" role="status" aria-live="polite"></p>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 border-t border-gray-800 py-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        <div class="mb-4 md:mb-0"><span class="text-xl font-bold text-white">Mustafa.</span></div>
-        <div class="text-gray-400 text-sm"><p>© <span id="year"></span> Mustafa Iqbal. All rights reserved.</p></div>
-        <div class="flex space-x-6 mt-4 md:mt-0">
-          <a href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition"><i data-feather="github"></i></a>
-          <a href="https://linkedin.com/in/mustafa642" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition"><i data-feather="linkedin"></i></a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Back to Top -->
-  <button id="back-to-top"
-          class="fixed bottom-8 right-8 bg-indigo-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-indigo-700"
-          aria-label="Back to top">
-    <i data-feather="arrow-up"></i>
-  </button>
-
-  <!-- Modal -->
-  <div id="projectModal" class="fixed inset-0 hidden items-center justify-center z-[60]">
-    <div class="absolute inset-0 bg-black/60"></div>
-    <div class="relative w-[min(960px,calc(100%-2rem))] bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100">
-      <button id="closeModal" class="absolute top-4 right-4 p-2 rounded-full bg-gray-100 hover:bg-gray-200" aria-label="Close">
+  <!-- Mobile Menu -->
+  <div class="mobile-menu fixed top-0 right-0 h-screen w-80 bg-slate-900/95 backdrop-blur-xl z-40 lg:hidden" id="mobileMenu">
+    <div class="p-8">
+      <button id="closeMobileMenu" class="absolute top-6 right-6 text-white" aria-label="Close menu">
         <i data-feather="x"></i>
       </button>
-
-      <div class="grid md:grid-cols-2 gap-0">
-        <div class="bg-gray-100">
-<img id="modalImg" src="" alt="" class="w-full h-72 md:h-full object-contain bg-gray-100 p-3" />
-        </div>
-
-        <div class="p-7">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 font-semibold text-xs mb-3">
-            <span class="w-2 h-2 rounded-full bg-indigo-600"></span> Project Overview
-          </div>
-
-          <h3 id="modalTitle" class="text-2xl font-bold text-gray-900"></h3>
-          <p id="modalDesc" class="text-gray-600 mt-3 whitespace-pre-line"></p>
-
-          <div id="modalLinks" class="mt-6 flex flex-wrap gap-3"></div>
-
-          <div class="mt-8 text-sm text-gray-500">
-            Tip: press <kbd class="px-2 py-1 bg-gray-100 border rounded">Esc</kbd> to close.
-          </div>
+      
+      <div class="mt-16 space-y-6">
+        <a href="#home" class="mobile-link block text-xl font-medium hover:text-cyan-400 transition">Home</a>
+        <a href="#about" class="mobile-link block text-xl font-medium hover:text-cyan-400 transition">About</a>
+        <a href="#experience" class="mobile-link block text-xl font-medium hover:text-cyan-400 transition">Experience</a>
+        <a href="#projects" class="mobile-link block text-xl font-medium hover:text-cyan-400 transition">Projects</a>
+        <a href="#skills" class="mobile-link block text-xl font-medium hover:text-cyan-400 transition">Skills</a>
+        <a href="#contact" class="mobile-link block text-xl font-medium hover:text-cyan-400 transition">Contact</a>
+        
+        <div class="pt-6 border-t border-white/10">
+          <a href="#contact" class="block text-center px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-violet-600 text-white font-semibold">
+            Let's Talk
+          </a>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Hero Section -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Animated Background -->
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    
+    <!-- Animated Code Rain -->
+    <div class="code-rain" id="codeRain"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 py-32 text-center">
+      <!-- Status Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm font-medium mb-8 status-badge">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></span>
+        Currently Interning at SZABIST
+      </div>
+
+      <!-- Main Heading -->
+      <h1 class="font-display font-bold text-5xl md:text-7xl lg:text-8xl mb-6 fade-in">
+        Hi, I'm <span class="gradient-text">Mustafa Iqbal</span>
+      </h1>
+
+      <!-- Subtitle with Typewriter Effect -->
+      <div class="text-xl md:text-2xl lg:text-3xl text-slate-300 mb-4 fade-in" style="animation-delay: 0.1s">
+        <span id="typewriter"></span>
+        <span class="inline-block w-0.5 h-8 bg-cyan-400 ml-1 animate-pulse"></span>
+      </div>
+
+      <!-- Description -->
+      <p class="max-w-2xl mx-auto text-lg text-slate-400 mb-12 fade-in" style="animation-delay: 0.2s">
+        Full Stack Developer • DevOps Enthusiast • Cybersecurity Specialist
+        <br />Building secure, scalable solutions with modern technologies
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-4 mb-16 fade-in" style="animation-delay: 0.3s">
+        <a href="#projects" class="magnetic-btn px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-violet-600 text-white font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all">
+          <span>View My Work</span>
+        </a>
+        <a href="/Mustafa_Iqbal_CV.pdf" download class="px-8 py-4 rounded-full border-2 border-white/20 hover:border-cyan-400 text-white font-semibold backdrop-blur-sm transition-all">
+          Download CV
+        </a>
+      </div>
+
+      <!-- Social Links -->
+      <div class="flex items-center justify-center gap-6 fade-in" style="animation-delay: 0.4s">
+        <a href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener noreferrer" class="p-3 rounded-full bg-white/5 border border-white/10 hover:border-cyan-400 hover:bg-white/10 transition-all" aria-label="GitHub">
+          <i data-feather="github"></i>
+        </a>
+        <a href="https://linkedin.com/in/mustafa642" target="_blank" rel="noopener noreferrer" class="p-3 rounded-full bg-white/5 border border-white/10 hover:border-cyan-400 hover:bg-white/10 transition-all" aria-label="LinkedIn">
+          <i data-feather="linkedin"></i>
+        </a>
+        <a href="mailto:talhamustafa642@gmail.com" class="p-3 rounded-full bg-white/5 border border-white/10 hover:border-cyan-400 hover:bg-white/10 transition-all" aria-label="Email">
+          <i data-feather="mail"></i>
+        </a>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <i data-feather="chevron-down" class="text-cyan-400"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="relative py-32 px-6">
+    <div class="max-w-7xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-20">
+        <span class="text-cyan-400 font-mono text-sm font-medium">// WHO I AM</span>
+        <h2 class="font-display font-bold text-4xl md:text-5xl lg:text-6xl mt-4 mb-6">
+          About <span class="gradient-text">Me</span>
+        </h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-cyan-500 to-violet-600 mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Profile Image -->
+        <div class="order-2 lg:order-1">
+          <div class="relative">
+            <div class="absolute -inset-4 bg-gradient-to-r from-cyan-500 to-violet-600 rounded-3xl blur-2xl opacity-20"></div>
+            <div class="relative rounded-3xl overflow-hidden border-2 border-white/10 glow-card">
+              <img src="/images/profile.jpg" alt="Mustafa Iqbal - Full Stack Developer" class="w-full h-auto" />
+            </div>
+          </div>
+        </div>
+
+        <!-- About Content -->
+        <div class="order-1 lg:order-2 space-y-6">
+          <h3 class="font-display font-bold text-3xl md:text-4xl">
+            Building Digital <span class="gradient-text">Solutions</span>
+          </h3>
+          
+          <p class="text-lg text-slate-300 leading-relaxed">
+            I'm <strong class="text-white">Mustafa Muhammad Iqbal</strong>, a passionate BSCS student at <strong class="text-white">SZABIST, Karachi</strong>. Currently interning at the DUA Department, I'm gaining hands-on experience with real-world software development workflows.
+          </p>
+
+          <p class="text-lg text-slate-300 leading-relaxed">
+            My expertise spans <strong class="text-cyan-400">full-stack development</strong>, <strong class="text-violet-400">DevOps practices</strong>, and <strong class="text-orange-400">cybersecurity fundamentals</strong>. I'm committed to building secure, scalable, and user-friendly applications that solve real problems.
+          </p>
+
+          <!-- Specializations -->
+          <div class="grid sm:grid-cols-2 gap-4 pt-6">
+            <div class="glow-card p-6 rounded-2xl">
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center mb-4">
+                <i data-feather="shield" class="text-cyan-400"></i>
+              </div>
+              <h4 class="font-display font-semibold text-lg mb-2">SOC/IR Mindset</h4>
+              <p class="text-sm text-slate-400">Alert triage, IOC extraction, incident notes & reporting</p>
+            </div>
+
+            <div class="glow-card p-6 rounded-2xl">
+              <div class="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/30 flex items-center justify-center mb-4">
+                <i data-feather="lock" class="text-violet-400"></i>
+              </div>
+              <h4 class="font-display font-semibold text-lg mb-2">Secure Coding</h4>
+              <p class="text-sm text-slate-400">RBAC, validation, least privilege, audit logging</p>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="flex flex-wrap gap-3 pt-6">
+            <a href="mailto:talhamustafa642@gmail.com" class="skill-tag px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">
+              <i data-feather="mail" class="w-4 h-4"></i>
+              Email Me
+            </a>
+            <a href="https://wa.me/923302479956" target="_blank" rel="noopener" class="skill-tag px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">
+              <i data-feather="message-circle" class="w-4 h-4"></i>
+              WhatsApp
+            </a>
+            <a href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener" class="skill-tag px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">
+              <i data-feather="github" class="w-4 h-4"></i>
+              GitHub
+            </a>
+            <a href="https://linkedin.com/in/mustafa642" target="_blank" rel="noopener" class="skill-tag px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">
+              <i data-feather="linkedin" class="w-4 h-4"></i>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="relative py-32 px-6 bg-slate-900/50">
+    <div class="max-w-7xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-20">
+        <span class="text-cyan-400 font-mono text-sm font-medium">// MY JOURNEY</span>
+        <h2 class="font-display font-bold text-4xl md:text-5xl lg:text-6xl mt-4 mb-6">
+          Work <span class="gradient-text">Experience</span>
+        </h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-cyan-500 to-violet-600 mx-auto rounded-full"></div>
+      </div>
+
+      <!-- Experience Timeline -->
+      <div class="max-w-4xl mx-auto">
+        <div class="relative pl-8 timeline-item glow-card p-8 rounded-2xl">
+          <div class="absolute left-0 top-8 w-4 h-4 rounded-full bg-gradient-to-br from-cyan-400 to-violet-600 shadow-lg shadow-cyan-500/50"></div>
+          
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+            <div>
+              <h3 class="font-display font-bold text-2xl md:text-3xl mb-2">DUA Department – SZABIST University</h3>
+              <p class="text-cyan-400 font-semibold text-lg">Software Development Intern</p>
+            </div>
+            <div class="mt-4 md:mt-0">
+              <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm font-medium">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></span>
+                Dec 2025 – Present
+              </span>
+            </div>
+          </div>
+
+          <ul class="space-y-4 text-slate-300">
+            <li class="flex items-start gap-3">
+              <i data-feather="check-circle" class="text-cyan-400 flex-shrink-0 mt-1"></i>
+              <span>Validated partner data integrity across institutional MoUs to ensure compliance and record accuracy</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-feather="check-circle" class="text-cyan-400 flex-shrink-0 mt-1"></i>
+              <span>Streamlined secure documentation and audit trails, improving the efficiency of information retrieval</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-feather="check-circle" class="text-cyan-400 flex-shrink-0 mt-1"></i>
+              <span>Synthesized operational metrics into structured reports to identify and communicate organizational risk</span>
+            </li>
+          </ul>
+
+          <div class="flex flex-wrap gap-2 mt-6">
+            <span class="skill-tag px-3 py-1 rounded-full text-xs font-medium">Data Validation</span>
+            <span class="skill-tag px-3 py-1 rounded-full text-xs font-medium">Database Management</span>
+            <span class="skill-tag px-3 py-1 rounded-full text-xs font-medium">Documentation</span>
+            <span class="skill-tag px-3 py-1 rounded-full text-xs font-medium">Risk Assessment</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <!-- Project Modal -->
+  <div id="projectModal" class="fixed inset-0 z-[100] flex items-center justify-center px-4 hidden">
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" id="modalBackdrop"></div>
+    <div class="relative w-full max-w-3xl bg-slate-800 border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+      <!-- Modal Image -->
+      <div class="relative h-56 md:h-64 overflow-hidden">
+        <img id="modalImg" src="" alt="" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-800 via-transparent to-transparent"></div>
+        <button id="modalClose" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/50 backdrop-blur-sm border border-white/10 flex items-center justify-center hover:border-cyan-400 transition">
+          <i data-feather="x" class="w-4 h-4 text-white"></i>
+        </button>
+        <!-- Badge row inside image -->
+        <div class="absolute bottom-4 left-5 flex flex-wrap gap-2" id="modalBadges"></div>
+      </div>
+      <!-- Modal Body -->
+      <div class="p-6">
+        <h3 id="modalTitle" class="font-display font-bold text-2xl mb-2"></h3>
+        <p id="modalDesc" class="text-slate-400 text-sm leading-relaxed mb-5"></p>
+        <!-- Tech Tags -->
+        <div id="modalTags" class="flex flex-wrap gap-2 mb-6"></div>
+        <!-- Action Buttons -->
+        <div id="modalActions" class="flex flex-wrap gap-3"></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="projects" class="relative py-32 px-6">
+    <div class="max-w-7xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-20">
+        <span class="text-cyan-400 font-mono text-sm font-medium">// MY WORK</span>
+        <h2 class="font-display font-bold text-4xl md:text-5xl lg:text-6xl mt-4 mb-6">
+          Featured <span class="gradient-text">Projects</span>
+        </h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-cyan-500 to-violet-600 mx-auto rounded-full"></div>
+        <p class="text-slate-400 mt-6 max-w-2xl mx-auto">
+          Explore my portfolio of full-stack applications, systems, and web solutions
+        </p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap justify-center gap-3 mb-16">
+        <button class="filter-btn px-6 py-2.5 rounded-full bg-gradient-to-r from-cyan-500 to-violet-600 text-white font-semibold text-sm" data-filter="all">All Projects</button>
+        <button class="filter-btn px-6 py-2.5 rounded-full bg-white/5 border border-white/10 hover:border-cyan-400 text-white font-semibold text-sm" data-filter="featured">Featured</button>
+        <button class="filter-btn px-6 py-2.5 rounded-full bg-white/5 border border-white/10 hover:border-cyan-400 text-white font-semibold text-sm" data-filter="fullstack">Full-Stack</button>
+        <button class="filter-btn px-6 py-2.5 rounded-full bg-white/5 border border-white/10 hover:border-cyan-400 text-white font-semibold text-sm" data-filter="web">Web</button>
+        <button class="filter-btn px-6 py-2.5 rounded-full bg-white/5 border border-white/10 hover:border-cyan-400 text-white font-semibold text-sm" data-filter="systems">Systems</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div id="projectsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- AeroNexa -->
+        <article class="project-card glow-card rounded-2xl overflow-hidden group cursor-pointer"
+          data-tags="featured fullstack web"
+          data-title="AeroNexa – Airline Management"
+          data-desc="A full-stack airline management system featuring secure flight booking, an admin command center, automated email notifications, and fast search. Built with professional engineering practices including strict validation layers and transactional consistency across the SQL Server database."
+          data-img="/images/AeroNexa.png"
+          data-tech="ASP.NET Core MVC,EF Core,SQL Server,C#,Glass UI"
+          data-github="https://github.com/Mustafa-Hazard/AirlineTicketingSystem"
+          data-live="">
+          <div class="relative h-64 overflow-hidden">
+            <img src="/images/AeroNexa.png" alt="AeroNexa" class="w-full h-full object-cover" />
+            <div class="overlay"></div>
+            <div class="absolute top-4 left-4 flex gap-2">
+              <span class="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/50 text-emerald-300 text-xs font-semibold backdrop-blur-sm">⭐ Featured</span>
+              <span class="px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-500/50 text-cyan-300 text-xs font-semibold backdrop-blur-sm">ASP.NET</span>
+            </div>
+            <!-- Hover hint -->
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="px-5 py-2.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-white text-sm font-semibold flex items-center gap-2">
+                <i data-feather="eye" class="w-4 h-4"></i> Quick View
+              </span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-2">
+              <h3 class="font-display font-bold text-xl">AeroNexa</h3>
+              <div class="flex gap-2">
+                <a href="https://github.com/Mustafa-Hazard/AirlineTicketingSystem" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="text-slate-500 hover:text-cyan-400 transition" aria-label="GitHub">
+                  <i data-feather="github" class="w-5 h-5"></i>
+                </a>
+              </div>
+            </div>
+            <p class="text-slate-400 text-sm mb-4">Full-Stack Airline Management System with secure booking, admin dashboard, and automated notifications.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag px-2.5 py-1 rounded-md text-xs">ASP.NET Core</span>
+              <span class="skill-tag px-2.5 py-1 rounded-md text-xs">EF Core</span>
+              <span class="skill-tag px-2.5 py-1 rounded-md text-xs">SQL Server</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Student CGPA Tracker -->
+        <article class="project-card glow-card rounded-2xl overflow-hidden group cursor-pointer"
+          data-tags="fullstack web"
+          data-title="Student CGPA & Probation Tracker"
+          data-desc="A full-stack web application that calculates GPA and CGPA, tracks academic probation status in real time, and is deployed using NeonDB for the database and Firebase Hosting for production."
+          data-img="/images/Student.png"
+          data-tech="Node.js,Express,NeonDB,Firebase,EJS"
+          data-github="https://github.com/Mustafa-Hazard/Student-CGPA-Probation-Tracker"
+          data-live="">
+          <div class="relative h-64 overflow-hidden">
+            <img src="/images/Student.png" alt="CGPA Tracker" class="w-full h-full object-cover" />
+            <div class="overlay"></div>
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1 rounded-full bg-violet-500/20 border border-violet-500/50 text-violet-300 text-xs font-semibold backdrop-blur-sm">Full-Stack</span>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="px-5 py-2.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-white text-sm font-semibold flex items-center gap-2">
+                <i data-feather="eye" class="w-4 h-4"></i> Quick View
+              </span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-2">
+              <h3 class="font-display font-bold text-xl">CGPA Tracker</h3>
+              <a href="https://github.com/Mustafa-Hazard/Student-CGPA-Probation-Tracker" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="text-slate-500 hover:text-cyan-400 transition" aria-label="GitHub">
+                <i data-feather="github" class="w-5 h-5"></i>
+              </a>
+            </div>
+            <p class="text-slate-400 text-sm mb-4">GPA/CGPA calculator with probation tracking and cloud deployment.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag px-2.5 py-1 rounded-md text-xs">Node.js</span>
+              <span class="skill-tag px-2.5 py-1 rounded-md text-xs">NeonDB</span>
+              <span class="skill-tag px-2.5 py-1 rounded-md text-xs">Firebase</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Numerical Computing Calculator -->
+        <article class="project-card glow-card rounded-2xl overflow-hidden group cursor-pointer"
+          data-tags="web"
+          data-title="Numerical Computing Calculator"
+          data-desc="A web-based numerical methods calculator for root finding algorithms. Supports adjustable bounds, tolerance levels, and iteration counts. Useful for engineering and mathematics coursework."
+          data-img="/images/Project_NC.png"
+          data-tech="HTML5,CSS3,JavaScript,Vercel"
+          data-github=""
+          data-live="https://numericalcomputingcalculator.vercel.app/">
+          <div class="relative h-64 overflow-hidden">
+            <img src="/images/Project_NC.png" alt="Numerical Calculator" class="w-full h-full object-cover" />
+            <div class="overlay"></div>
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1 rounded-full bg-orange-500/20 border border-orange-500/50 text-orange-300 text-xs font-semibold backdrop-blur-sm">Web App</span>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="px-5 py-2.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-white text-sm font-semibold flex items-center gap-2">
+                <i data-feather="eye" class="w-4 h-4"></i> Quick View
+              </span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-2">
+              <h3 class="font-display font-bold text-xl">Numerical Calculator</h3>
+              <a href="https://numericalcomputingcalculator.vercel.app/" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="text-slate-500 hover:text-orange-400 transition" aria-label="Live Demo">
+                <i data-feather="external-link" class="w-5 h-5"></i>
+              </a>
+            </div>
+            <p class="text-slate-400 text-sm mb-4">Root finding tools with configurable tolerance and iterations.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag px-2.5 py-1 rounded-md text-xs">JavaScript</span>
+              <span class="skill-tag px-2.5 py-1 rounded-md text-xs">HTML5</span>
+              <span class="skill-tag px-2.5 py-1 rounded-md text-xs">Vercel</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Car Rental System -->
+        <article class="project-card glow-card rounded-2xl overflow-hidden group cursor-pointer"
+          data-tags="systems"
+          data-title="Car Rental Management System"
+          data-desc="Developed during a hackathon in C, this project handles database-style data storage, CRUD operations, and a complete operations flow for managing car rentals — from registration to checkout."
+          data-img="/images/Car_Rental.png"
+          data-tech="C,File I/O,Data Structures"
+          data-github=""
+          data-live="">
+          <div class="relative h-64 overflow-hidden">
+            <img src="/images/Car_Rental.png" alt="Car Rental System" class="w-full h-full object-cover" />
+            <div class="overlay"></div>
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1 rounded-full bg-blue-500/20 border border-blue-500/50 text-blue-300 text-xs font-semibold backdrop-blur-sm">C Language</span>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="px-5 py-2.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-white text-sm font-semibold flex items-center gap-2">
+                <i data-feather="eye" class="w-4 h-4"></i> Quick View
+              </span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display font-bold text-xl mb-2">Car Rental System</h3>
+            <p class="text-slate-400 text-sm mb-4">Hackathon project for data handling and operations flow in C.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag px-2.5 py-1 rounded-md text-xs">C</span>
+              <span class="skill-tag px-2.5 py-1 rounded-md text-xs">File I/O</span>
+              <span class="skill-tag px-2.5 py-1 rounded-md text-xs">Data Structures</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Restaurant Management -->
+        <article class="project-card glow-card rounded-2xl overflow-hidden group cursor-pointer"
+          data-tags="systems"
+          data-title="Restaurant Management System"
+          data-desc="A Java-based POS system with full CRUD operations for managing menu items and customer orders. Features a clean user interface for adding, updating, and removing menu entries in real time."
+          data-img="/images/Menu.jpg"
+          data-tech="Java,OOP,CRUD,File I/O"
+          data-github=""
+          data-live="">
+          <div class="relative h-64 overflow-hidden">
+            <img src="/images/Menu.jpg" alt="Restaurant Management" class="w-full h-full object-cover" />
+            <div class="overlay"></div>
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1 rounded-full bg-red-500/20 border border-red-500/50 text-red-300 text-xs font-semibold backdrop-blur-sm">Java</span>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="px-5 py-2.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-white text-sm font-semibold flex items-center gap-2">
+                <i data-feather="eye" class="w-4 h-4"></i> Quick View
+              </span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display font-bold text-xl mb-2">Restaurant POS</h3>
+            <p class="text-slate-400 text-sm mb-4">CRUD-based Java application for restaurant menu and order management.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag px-2.5 py-1 rounded-md text-xs">Java</span>
+              <span class="skill-tag px-2.5 py-1 rounded-md text-xs">OOP</span>
+              <span class="skill-tag px-2.5 py-1 rounded-md text-xs">CRUD</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Traffic Light DLD -->
+        <article class="project-card glow-card rounded-2xl overflow-hidden group cursor-pointer"
+          data-tags="systems"
+          data-title="Traffic Light System (DLD)"
+          data-desc="A digital logic design project built as a team effort for a university competition. Simulates a complete traffic light sequence using combinational and sequential logic circuits, demonstrating core DLD principles."
+          data-img="/images/DLD.jpg"
+          data-tech="Digital Logic,Sequential Circuits,7-Segment Display"
+          data-github=""
+          data-live="">
+          <div class="relative h-64 overflow-hidden">
+            <img src="/images/DLD.jpg" alt="Traffic Light DLD" class="w-full h-full object-cover" />
+            <div class="overlay"></div>
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1 rounded-full bg-purple-500/20 border border-purple-500/50 text-purple-300 text-xs font-semibold backdrop-blur-sm">Digital Logic</span>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="px-5 py-2.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-white text-sm font-semibold flex items-center gap-2">
+                <i data-feather="eye" class="w-4 h-4"></i> Quick View
+              </span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-display font-bold text-xl mb-2">Traffic Light (DLD)</h3>
+            <p class="text-slate-400 text-sm mb-4">Team project simulating traffic light sequences using digital logic.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag px-2.5 py-1 rounded-md text-xs">Digital Logic</span>
+              <span class="skill-tag px-2.5 py-1 rounded-md text-xs">Sequential Circuits</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Attendance System -->
+        <article class="project-card glow-card rounded-2xl overflow-hidden group cursor-pointer"
+          data-tags="fullstack web"
+          data-title="Attendance Tracking System"
+          data-desc="A full-stack attendance management application built with Node.js, Express, and PostgreSQL. Features student registration, daily attendance marking, and report generation with a clean EJS-templated frontend."
+          data-img="/images/attendance.jpg"
+          data-tech="Node.js,Express,PostgreSQL,EJS"
+          data-github="https://github.com/Mustafa-Hazard/Attendance"
+          data-live="">
+           <div class="relative h-64 overflow-hidden">
+    <img 
+      src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80"
+      alt="Attendance Tracker Dashboard"
+      class="w-full h-full object-cover"
+    />
+            <div class="overlay"></div>
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1 rounded-full bg-green-500/20 border border-green-500/50 text-green-300 text-xs font-semibold backdrop-blur-sm">Node.js</span>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span class="px-5 py-2.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-white text-sm font-semibold flex items-center gap-2">
+                <i data-feather="eye" class="w-4 h-4"></i> Quick View
+              </span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-2">
+              <h3 class="font-display font-bold text-xl">Attendance Tracker</h3>
+              <a href="https://github.com/Mustafa-Hazard/Attendance" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="text-slate-500 hover:text-cyan-400 transition" aria-label="GitHub">
+                <i data-feather="github" class="w-5 h-5"></i>
+              </a>
+            </div>
+            <p class="text-slate-400 text-sm mb-4">Full-stack attendance monitoring using Node.js, Express, and PostgreSQL.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag px-2.5 py-1 rounded-md text-xs">Node.js</span>
+              <span class="skill-tag px-2.5 py-1 rounded-md text-xs">PostgreSQL</span>
+              <span class="skill-tag px-2.5 py-1 rounded-md text-xs">Express</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="relative py-32 px-6 bg-slate-900/50">
+    <div class="max-w-7xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-20">
+        <span class="text-cyan-400 font-mono text-sm font-medium">// WHAT I DO</span>
+        <h2 class="font-display font-bold text-4xl md:text-5xl lg:text-6xl mt-4 mb-6">
+          Technical <span class="gradient-text">Skills</span>
+        </h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-cyan-500 to-violet-600 mx-auto rounded-full"></div>
+      </div>
+
+      <!-- Skills Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Programming Languages -->
+        <div class="glow-card p-8 rounded-2xl">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-violet-600 flex items-center justify-center mb-6">
+            <i data-feather="code" class="w-8 h-8 text-white"></i>
+          </div>
+          <h3 class="font-display font-bold text-2xl mb-4">Programming</h3>
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="text-slate-300">Java</span>
+              <span class="text-cyan-400 text-sm font-semibold">Advanced</span>
+            </div>
+            <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-cyan-500 to-violet-600 rounded-full" style="width: 90%"></div>
+            </div>
+            
+            <div class="flex justify-between items-center pt-2">
+              <span class="text-slate-300">Python</span>
+              <span class="text-cyan-400 text-sm font-semibold">Intermediate</span>
+            </div>
+            <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-cyan-500 to-violet-600 rounded-full" style="width: 75%"></div>
+            </div>
+            
+            <div class="flex justify-between items-center pt-2">
+              <span class="text-slate-300">JavaScript</span>
+              <span class="text-cyan-400 text-sm font-semibold">Proficient</span>
+            </div>
+            <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-cyan-500 to-violet-600 rounded-full" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Frameworks -->
+        <div class="glow-card p-8 rounded-2xl">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-500 to-orange-600 flex items-center justify-center mb-6">
+            <i data-feather="layers" class="w-8 h-8 text-white"></i>
+          </div>
+          <h3 class="font-display font-bold text-2xl mb-4">Frameworks</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag px-3 py-2 rounded-lg text-sm font-medium">Express.js</span>
+            <span class="skill-tag px-3 py-2 rounded-lg text-sm font-medium">ASP.NET Core</span>
+            <span class="skill-tag px-3 py-2 rounded-lg text-sm font-medium">EJS</span>
+            <span class="skill-tag px-3 py-2 rounded-lg text-sm font-medium">MVC</span>
+          </div>
+        </div>
+
+        <!-- Databases -->
+        <div class="glow-card p-8 rounded-2xl">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center mb-6">
+            <i data-feather="database" class="w-8 h-8 text-white"></i>
+          </div>
+          <h3 class="font-display font-bold text-2xl mb-4">Databases</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag px-3 py-2 rounded-lg text-sm font-medium">PostgreSQL</span>
+            <span class="skill-tag px-3 py-2 rounded-lg text-sm font-medium">SQL Server</span>
+            <span class="skill-tag px-3 py-2 rounded-lg text-sm font-medium">Firebase</span>
+            <span class="skill-tag px-3 py-2 rounded-lg text-sm font-medium">NeonDB</span>
+          </div>
+        </div>
+
+        <!-- Cybersecurity -->
+        <div class="glow-card p-8 rounded-2xl lg:col-span-3">
+          <div class="flex flex-col lg:flex-row items-start lg:items-center gap-8">
+            <div class="flex-shrink-0">
+              <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan-600 flex items-center justify-center">
+                <i data-feather="shield" class="w-8 h-8 text-white"></i>
+              </div>
+            </div>
+            
+            <div class="flex-1">
+              <h3 class="font-display font-bold text-2xl mb-2">Cybersecurity & DevOps</h3>
+              <p class="text-slate-400 mb-4">SOC/IR fundamentals, log analysis, and security-first practices</p>
+              
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-tag px-3 py-2 rounded-lg text-sm font-medium">Linux CLI</span>
+                <span class="skill-tag px-3 py-2 rounded-lg text-sm font-medium">Wireshark</span>
+                <span class="skill-tag px-3 py-2 rounded-lg text-sm font-medium">Splunk</span>
+                <span class="skill-tag px-3 py-2 rounded-lg text-sm font-medium">NIST CSF</span>
+                <span class="skill-tag px-3 py-2 rounded-lg text-sm font-medium">RBAC</span>
+                <span class="skill-tag px-3 py-2 rounded-lg text-sm font-medium">Incident Response</span>
+                <span class="skill-tag px-3 py-2 rounded-lg text-sm font-medium">Git/GitHub</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Certifications -->
+  <section id="education" class="relative py-32 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-16">
+        
+        <!-- Education -->
+        <div>
+          <div class="mb-12">
+            <span class="text-cyan-400 font-mono text-sm font-medium">// EDUCATION</span>
+            <h2 class="font-display font-bold text-3xl md:text-4xl mt-4 mb-6">
+              Academic <span class="gradient-text">Background</span>
+            </h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-cyan-500 to-violet-600 rounded-full"></div>
+          </div>
+
+          <div class="glow-card p-8 rounded-2xl">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center flex-shrink-0">
+                <i data-feather="book-open" class="text-cyan-400"></i>
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-xl mb-1">SZABIST University</h3>
+                <p class="text-slate-400 text-sm">Bachelor of Science in Computer Science</p>
+              </div>
+            </div>
+            
+            <div class="space-y-2 text-sm text-slate-300">
+              <p><strong class="text-white">Year:</strong> 3rd Year • 5th Semester</p>
+              <p><strong class="text-white">Focus:</strong> Cybersecurity, Secure Backend Development, SOC/IR</p>
+              <p><strong class="text-white">Key Subjects:</strong> Networks, Operating Systems, Secure Coding, Databases</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div>
+          <div class="mb-12">
+            <span class="text-violet-400 font-mono text-sm font-medium">// CREDENTIALS</span>
+            <h2 class="font-display font-bold text-3xl md:text-4xl mt-4 mb-6">
+              Professional <span class="gradient-text">Certifications</span>
+            </h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-cyan-500 to-violet-600 rounded-full"></div>
+          </div>
+
+          <div class="space-y-4">
+            <div class="glow-card p-6 rounded-xl">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h4 class="font-display font-semibold text-lg mb-1">Google Cybersecurity Professional</h4>
+                  <p class="text-slate-400 text-sm">Coursera • Oct 2025</p>
+                </div>
+                <a href="https://coursera.org/share/40092fd5dc6991639bd5538a67c5a9d1" target="_blank" rel="noopener" class="flex-shrink-0 text-cyan-400 hover:text-cyan-300 transition">
+                  <i data-feather="external-link"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="glow-card p-6 rounded-xl">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h4 class="font-display font-semibold text-lg mb-1">Google AI Essentials</h4>
+                  <p class="text-slate-400 text-sm">Coursera • Oct 2025</p>
+                </div>
+                <a href="https://www.coursera.org/account/accomplishments/specialization/953XK0GYCIT1" target="_blank" rel="noopener" class="flex-shrink-0 text-cyan-400 hover:text-cyan-300 transition">
+                  <i data-feather="external-link"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="glow-card p-6 rounded-xl">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h4 class="font-display font-semibold text-lg mb-1">Linux for Beginners</h4>
+                  <p class="text-slate-400 text-sm">Udemy • Jul 2025</p>
+                </div>
+                <a href="https://www.udemy.com/certificate/UC-91ec6ae7-dc40-42dc-8a3f-504f880ef5b8/" target="_blank" rel="noopener" class="flex-shrink-0 text-cyan-400 hover:text-cyan-300 transition">
+                  <i data-feather="external-link"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="glow-card p-6 rounded-xl">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <h4 class="font-display font-semibold text-lg mb-1">Python Pro</h4>
+                  <p class="text-slate-400 text-sm">Udemy • Apr 2025</p>
+                </div>
+                <a href="https://www.udemy.com/certificate/UC-dbdf73dc-9367-4df0-b854-486c0b946b9a/" target="_blank" rel="noopener" class="flex-shrink-0 text-cyan-400 hover:text-cyan-300 transition">
+                  <i data-feather="external-link"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="relative py-32 px-6 bg-slate-900/50">
+    <div class="max-w-7xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-20">
+        <span class="text-cyan-400 font-mono text-sm font-medium">// GET IN TOUCH</span>
+        <h2 class="font-display font-bold text-4xl md:text-5xl lg:text-6xl mt-4 mb-6">
+          Let's <span class="gradient-text">Connect</span>
+        </h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-cyan-500 to-violet-600 mx-auto rounded-full"></div>
+        <p class="text-slate-400 mt-6 max-w-2xl mx-auto">
+          Have a project in mind or looking for a dedicated developer? Let's talk!
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-16">
+        
+        <!-- Contact Info -->
+        <div class="space-y-8">
+          <div class="glow-card p-6 rounded-2xl flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center flex-shrink-0">
+              <i data-feather="mail" class="text-cyan-400"></i>
+            </div>
+            <div>
+              <h3 class="font-display font-semibold text-lg mb-1">Email</h3>
+              <a href="mailto:talhamustafa642@gmail.com" class="text-slate-400 hover:text-cyan-400 transition">
+                talhamustafa642@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <div class="glow-card p-6 rounded-2xl flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center flex-shrink-0">
+              <i data-feather="phone" class="text-emerald-400"></i>
+            </div>
+            <div>
+              <h3 class="font-display font-semibold text-lg mb-1">WhatsApp</h3>
+              <a href="https://wa.me/923302479956" target="_blank" rel="noopener" class="text-slate-400 hover:text-emerald-400 transition">
+                +92 330 2479956
+              </a>
+            </div>
+          </div>
+
+          <div class="glow-card p-6 rounded-2xl flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/30 flex items-center justify-center flex-shrink-0">
+              <i data-feather="map-pin" class="text-violet-400"></i>
+            </div>
+            <div>
+              <h3 class="font-display font-semibold text-lg mb-1">Location</h3>
+              <p class="text-slate-400">Karachi, Pakistan</p>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="flex gap-4 pt-6">
+            <a href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener" class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-400 flex items-center justify-center transition-all" aria-label="GitHub">
+              <i data-feather="github"></i>
+            </a>
+            <a href="https://linkedin.com/in/mustafa642" target="_blank" rel="noopener" class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-400 flex items-center justify-center transition-all" aria-label="LinkedIn">
+              <i data-feather="linkedin"></i>
+            </a>
+            <a href="mailto:talhamustafa642@gmail.com" class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-400 flex items-center justify-center transition-all" aria-label="Email">
+              <i data-feather="mail"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="glow-card p-8 rounded-2xl">
+          <form id="contactForm" action="https://formspree.io/f/xldaeoyn" method="POST" class="space-y-6">
+            <div>
+              <label for="name" class="block text-sm font-medium mb-2">Name</label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                required
+                class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-cyan-400 focus:outline-none transition-all"
+                placeholder="Your name"
+              />
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium mb-2">Email</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required
+                class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-cyan-400 focus:outline-none transition-all"
+                placeholder="your.email@example.com"
+              />
+            </div>
+
+            <div>
+              <label for="subject" class="block text-sm font-medium mb-2">Subject</label>
+              <input 
+                type="text" 
+                id="subject" 
+                name="subject"
+                class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-cyan-400 focus:outline-none transition-all"
+                placeholder="What's this about?"
+              />
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-medium mb-2">Message</label>
+              <textarea 
+                id="message" 
+                name="message" 
+                required
+                rows="5"
+                class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-cyan-400 focus:outline-none transition-all resize-none"
+                placeholder="Tell me about your project..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="w-full magnetic-btn px-6 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-violet-600 text-white font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all">
+              <span class="flex items-center justify-center gap-2">
+                Send Message
+                <i data-feather="send" class="w-5 h-5"></i>
+              </span>
+            </button>
+
+            <p id="formStatus" class="text-sm text-center text-slate-400"></p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="relative py-12 px-6 border-t border-white/10">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <p class="font-display font-bold text-xl gradient-text">Mustafa Iqbal</p>
+          <p class="text-slate-400 text-sm mt-1">Full Stack Developer • DevOps • Cybersecurity</p>
+        </div>
+
+        <div class="flex items-center gap-6">
+          <a href="https://github.com/Mustafa-Hazard" target="_blank" rel="noopener" class="text-slate-400 hover:text-cyan-400 transition" aria-label="GitHub">
+            <i data-feather="github"></i>
+          </a>
+          <a href="https://linkedin.com/in/mustafa642" target="_blank" rel="noopener" class="text-slate-400 hover:text-cyan-400 transition" aria-label="LinkedIn">
+            <i data-feather="linkedin"></i>
+          </a>
+          <a href="mailto:talhamustafa642@gmail.com" class="text-slate-400 hover:text-cyan-400 transition" aria-label="Email">
+            <i data-feather="mail"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-8 border-t border-white/10 text-center text-slate-400 text-sm">
+        <p>© <span id="year"></span> Mustafa Iqbal. Crafted with passion and code.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button 
+    id="scrollTop" 
+    class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-gradient-to-r from-cyan-500 to-violet-600 text-white flex items-center justify-center opacity-0 invisible transition-all hover:shadow-lg hover:shadow-cyan-500/50"
+    aria-label="Scroll to top"
+  >
+    <i data-feather="arrow-up"></i>
+  </button>
+
   <script>
-    // AOS + Feather
-    window.addEventListener('DOMContentLoaded', () => {
-      if (window.AOS) AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
-      if (window.feather) feather.replace();
-    });
+    // Code Rain Effect
+    function initCodeRain() {
+      const codeRain = document.getElementById('codeRain');
+      const codeLines = [
+        '// building secure & reliable software',
+        'const focus = ["Full Stack", "DevOps", "Cybersecurity"];',
+        'function mindset(){ return "learn • build • ship"; }',
+        'const stack = ["Node.js", "Express", "PostgreSQL", "Firebase"];',
+        'const security = ["NIST-CSF", "Log Analysis", "Wireshark", "Splunk"];',
+        'const goal = "Build secure, reliable systems and beautiful UIs.";',
+        'export default function Portfolio() { return <Innovation />; }',
+        'async function deploy() { await ship(secure, scalable, fast); }',
+        'class Developer extends Engineer { constructor() { super("passionate"); } }',
+        'import { passion, dedication } from "@mustafa/mindset";',
+        'const skills = { frontend: "React", backend: "Node.js", db: "SQL" };',
+        'while(learning) { build(); improve(); repeat(); }',
+        'SELECT * FROM opportunities WHERE passion = true;',
+        'git commit -m "Another day, another feature shipped"',
+        'docker build -t portfolio:awesome .',
+        'kubectl apply -f secure-deployment.yaml'
+      ];
 
-    // Mobile menu
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-    mobileMenu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
-
-    // Vanta background
-    window.addEventListener('load', () => {
-      if (window.VANTA && window.VANTA.NET) {
-        VANTA.NET({
-          el: '#vanta-bg',
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.0,
-          minWidth: 200.0,
-          scale: 1.0,
-          scaleMobile: 1.0,
-          color: 0x60a5fa,
-          backgroundColor: 0x0b1220,
-          points: 12.0,
-          maxDistance: 22.0,
-          spacing: 18.0
-        });
+      function createCodeLine(text, delay) {
+        const line = document.createElement('div');
+        line.className = 'code-line';
+        line.textContent = text;
+        line.style.top = `${Math.random() * 80 + 10}%`;
+        line.style.animationDelay = `${delay}s`;
+        line.style.animationDuration = `${20 + Math.random() * 10}s`;
+        codeRain.appendChild(line);
       }
-    });
 
-    // Back to top
-    const backToTopButton = document.getElementById('back-to-top');
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        backToTopButton.classList.remove('opacity-0', 'invisible');
-        backToTopButton.classList.add('opacity-100', 'visible');
-      } else {
-        backToTopButton.classList.remove('opacity-100', 'visible');
-        backToTopButton.classList.add('opacity-0', 'invisible');
-      }
-    });
-    backToTopButton?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    // Active nav highlighting
-    const sectionEls = document.querySelectorAll('section, header');
-    const navLinks = document.querySelectorAll('.nav-link');
-    window.addEventListener('scroll', () => {
-      let current = 'home';
-      sectionEls.forEach(section => {
-        const top = section.offsetTop;
-        if (window.pageYOffset >= (top - 250)) current = section.getAttribute('id') || current;
+      // Create multiple code lines with different delays
+      codeLines.forEach((line, index) => {
+        createCodeLine(line, index * 2);
       });
+
+      // Add more variety with random delays
+      for (let i = 0; i < 5; i++) {
+        const randomLine = codeLines[Math.floor(Math.random() * codeLines.length)];
+        createCodeLine(randomLine, 15 + i * 3);
+      }
+    }
+
+    // Page Load
+    window.addEventListener('load', () => {
+      const loadingOverlay = document.getElementById('loadingOverlay');
+      setTimeout(() => {
+        loadingOverlay.classList.add('hidden');
+      }, 500);
+
+      // Initialize Code Rain Effect
+      initCodeRain();
+
+      // Initialize Feather Icons
+      if (typeof feather !== 'undefined') {
+        feather.replace();
+      }
+    });
+
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const navHeight = 100;
+          const targetPosition = target.offsetTop - navHeight;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Navbar Scroll Effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+
+      // Active Nav Link
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= sectionTop - 200) {
+          current = section.getAttribute('id');
+        }
+      });
+
       navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+
+      // Scroll to Top Button
+      const scrollTop = document.getElementById('scrollTop');
+      if (window.scrollY > 500) {
+        scrollTop.classList.remove('opacity-0', 'invisible');
+      } else {
+        scrollTop.classList.add('opacity-0', 'invisible');
+      }
+    });
+
+    // Scroll to Top
+    document.getElementById('scrollTop').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Mobile Menu
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMobileMenu = document.getElementById('closeMobileMenu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('active');
+    });
+
+    closeMobileMenu.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
       });
     });
 
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Typewriter
-    const lines = [
-      'const stack = ["Node.js", "Express", "PostgreSQL", "Firebase"];',
-      'const security = ["NIST-CSF", "Log Analysis", "Wireshark", "Splunk"];',
-      'const goal = "Build secure, reliable systems and beautiful UIs.";'
+    // Typewriter Effect
+    const typewriter = document.getElementById('typewriter');
+    const texts = [
+      'Full Stack Developer',
+      'DevOps Enthusiast',
+      'Cybersecurity Specialist',
+      'Problem Solver'
     ];
-    const target = document.getElementById('typeTarget');
-    let line = 0, char = 0, deleting = false;
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
 
-    function tick(){
-      if (!target) return;
-      const current = lines[line];
-      target.textContent = current.slice(0, char);
-
-      if (!deleting) {
-        char++;
-        if (char > current.length + 12) deleting = true;
+    function type() {
+      const currentText = texts[textIndex];
+      
+      if (isDeleting) {
+        typewriter.textContent = currentText.substring(0, charIndex - 1);
+        charIndex--;
       } else {
-        char--;
-        if (char <= 0) {
-          deleting = false;
-          line = (line + 1) % lines.length;
-        }
+        typewriter.textContent = currentText.substring(0, charIndex + 1);
+        charIndex++;
       }
-      const speed = deleting ? 24 : 34;
-      setTimeout(tick, speed);
-    }
-    tick();
 
-    // Projects filtering
+      let typeSpeed = isDeleting ? 50 : 100;
+
+      if (!isDeleting && charIndex === currentText.length) {
+        typeSpeed = 2000;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % texts.length;
+        typeSpeed = 500;
+      }
+
+      setTimeout(type, typeSpeed);
+    }
+
+    type();
+
+    // Project Filtering
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.project-card');
+    const projectCards = document.querySelectorAll('.project-card');
 
-    function applyFilter(tag){
-      filterBtns.forEach(b => {
-        const isActive = b.dataset.filter === tag;
-        b.classList.toggle('bg-indigo-600', isActive);
-        b.classList.toggle('text-white', isActive);
-        b.classList.toggle('border-indigo-600', isActive);
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
 
-        if (!isActive) {
-          b.classList.add('bg-white','text-gray-700','border-gray-200');
-          b.classList.remove('bg-indigo-600','text-white','border-indigo-600');
-        } else {
-          b.classList.remove('bg-white','text-gray-700','border-gray-200');
-        }
-
-        // little premium ring for Featured button
-        if (b.dataset.filter === 'featured') b.classList.add('ring-1','ring-indigo-200');
-      });
-
-      cards.forEach(card => {
-        const tags = (card.dataset.tags || '').split(' ').filter(Boolean);
-        const show = tag === 'all' || tags.includes(tag);
-        card.classList.toggle('hidden', !show);
-      });
-    }
-
-    filterBtns.forEach(btn => btn.addEventListener('click', () => applyFilter(btn.dataset.filter)));
-    applyFilter('all');
-
-    // Modal
-    const modal = document.getElementById('projectModal');
-    const closeModalBtn = document.getElementById('closeModal');
-    const modalImg = document.getElementById('modalImg');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalDesc = document.getElementById('modalDesc');
-    const modalLinks = document.getElementById('modalLinks');
-
-    function openModalFromCard(card){
-      const title = card.dataset.title || 'Project';
-      const desc  = card.dataset.desc || '';
-      const img   = card.dataset.img || '';
-      let links = [];
-      try { links = JSON.parse(card.dataset.links || '[]'); } catch {}
-
-      modalTitle.textContent = title;
-      modalDesc.textContent = desc;
-      modalImg.src = img;
-      modalImg.alt = title;
-
-      modalLinks.innerHTML = '';
-      if (links.length) {
-        links.forEach(l => {
-          const a = document.createElement('a');
-          a.href = l.url;
-          a.target = l.url.startsWith('#') ? '_self' : '_blank';
-          a.rel = 'noopener';
-          a.className = 'inline-flex items-center px-4 py-2 rounded-full bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition';
-          a.textContent = l.label;
-          modalLinks.appendChild(a);
+        filterBtns.forEach(b => {
+          b.classList.remove('bg-gradient-to-r', 'from-cyan-500', 'to-violet-600');
+          b.classList.add('bg-white/5', 'border', 'border-white/10');
         });
-      } else {
-        const p = document.createElement('p');
-        p.className = 'text-gray-500 text-sm';
-        p.textContent = 'No public link available for this project.';
-        modalLinks.appendChild(p);
+        btn.classList.remove('bg-white/5', 'border', 'border-white/10');
+        btn.classList.add('bg-gradient-to-r', 'from-cyan-500', 'to-violet-600');
+
+        projectCards.forEach(card => {
+          const tags = card.getAttribute('data-tags');
+          if (filter === 'all' || tags.includes(filter)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // ─── Project Modal ───
+    const modal         = document.getElementById('projectModal');
+    const modalBackdrop = document.getElementById('modalBackdrop');
+    const modalClose    = document.getElementById('modalClose');
+    const modalImg      = document.getElementById('modalImg');
+    const modalTitle    = document.getElementById('modalTitle');
+    const modalDesc     = document.getElementById('modalDesc');
+    const modalTags     = document.getElementById('modalTags');
+    const modalActions  = document.getElementById('modalActions');
+
+    function openModal(card) {
+      modalImg.src   = card.dataset.img   || '';
+      modalImg.alt   = card.dataset.title || '';
+      modalTitle.textContent = card.dataset.title || '';
+      modalDesc.textContent  = card.dataset.desc  || '';
+
+      // Tech tags
+      modalTags.innerHTML = '';
+      (card.dataset.tech || '').split(',').filter(Boolean).forEach(t => {
+        const span = document.createElement('span');
+        span.className = 'skill-tag px-3 py-1.5 rounded-lg text-xs font-medium';
+        span.textContent = t.trim();
+        modalTags.appendChild(span);
+      });
+
+      // Action buttons
+      modalActions.innerHTML = '';
+      const github = card.dataset.github;
+      const live   = card.dataset.live;
+
+      if (github) {
+        modalActions.innerHTML +=
+          `<a href="${github}" target="_blank" rel="noopener"
+              class="flex-1 text-center px-5 py-2.5 rounded-xl bg-white/5 border border-white/10 hover:border-cyan-400 text-sm font-semibold transition-all flex items-center justify-center gap-2">
+            <i data-feather="github" class="w-4 h-4"></i> View on GitHub
+          </a>`;
+      }
+      if (live) {
+        modalActions.innerHTML +=
+          `<a href="${live}" target="_blank" rel="noopener"
+              class="flex-1 text-center px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-violet-600 text-white text-sm font-semibold hover:shadow-lg hover:shadow-cyan-500/30 transition-all flex items-center justify-center gap-2">
+            <i data-feather="external-link" class="w-4 h-4"></i> Live Demo
+          </a>`;
+      }
+      if (!github && !live) {
+        modalActions.innerHTML =
+          '<p class="text-slate-500 text-sm">No public link available for this project.</p>';
       }
 
       modal.classList.remove('hidden');
-      modal.classList.add('flex');
       document.body.style.overflow = 'hidden';
-      if (window.feather) feather.replace();
+      if (typeof feather !== 'undefined') feather.replace();
     }
 
-    function closeModal(){
+    function closeModal() {
       modal.classList.add('hidden');
-      modal.classList.remove('flex');
       document.body.style.overflow = '';
     }
 
-    document.querySelectorAll('.open-modal').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const card = e.target.closest('.project-card');
-        if (card) openModalFromCard(card);
+    // Click on card opens modal
+    projectCards.forEach(card => {
+      card.addEventListener('click', () => openModal(card));
+    });
+
+    // Close triggers
+    modalClose.addEventListener('click', closeModal);
+    modalBackdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    // Card Mouse Effect
+    document.querySelectorAll('.glow-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
       });
     });
 
-    closeModalBtn?.addEventListener('click', closeModal);
-    modal?.addEventListener('click', (e) => {
-      if (e.target === modal || e.target === modal.firstElementChild) closeModal();
-    });
-    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+    // Form Submission
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
 
-    // Contact form validation (Formspree friendly)
-    (function(){
-      const form = document.getElementById('contactForm');
-      const status = document.getElementById('formStatus');
-      form?.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        if (status) status.textContent = '';
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      formStatus.textContent = 'Sending...';
+      
+      const formData = new FormData(contactForm);
+      
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
 
-        const data = new FormData(form);
-        const name = (data.get('name')||'').toString().trim();
-        const email = (data.get('email')||'').toString().trim();
-        const message = (data.get('message')||'').toString().trim();
-
-        if (!name || !email || !message) { status.textContent = 'Please fill out all required fields.'; return; }
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { status.textContent = 'Please enter a valid email.'; return; }
-
-        try {
-          const resp = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
-          if (resp.ok) { form.reset(); status.textContent = 'Thanks! Your message has been sent.'; }
-          else { status.textContent = 'Something went wrong. You can email me directly.'; }
-        } catch {
-          status.textContent = 'Network error — please email me directly.';
+        if (response.ok) {
+          formStatus.textContent = '✓ Message sent successfully!';
+          formStatus.className = 'text-sm text-center text-emerald-400';
+          contactForm.reset();
+        } else {
+          formStatus.textContent = '✗ Something went wrong. Please try again.';
+          formStatus.className = 'text-sm text-center text-red-400';
         }
-      });
-    })();
+      } catch (error) {
+        formStatus.textContent = '✗ Network error. Please check your connection.';
+        formStatus.className = 'text-sm text-center text-red-400';
+      }
+    });
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Initialize Feather Icons on load
+    if (typeof feather !== 'undefined') {
+      feather.replace();
+    }
   </script>
 </body>
 </html>

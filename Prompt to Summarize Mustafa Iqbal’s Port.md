@@ -1,31 +1,19 @@
-Prompt to Summarize Mustafa Iqbal’s Portfolio:
+📌 Portfolio Summary – Mustafa Iqbal
 
-Mustafa Iqbal is a Tech Enthusiast | Full Stack & DevOps Developer with experience in software development, cybersecurity, and cloud deployment. His portfolio highlights his expertise through:
+Mustafa Iqbal is a tech enthusiast and aspiring Full Stack & DevOps Developer with hands-on experience in software development, cybersecurity fundamentals, and cloud-based deployment. His portfolio reflects a strong focus on building secure, scalable, and user-centric applications using modern technologies.
 
-Dynamic Hero Section: Featuring an animated Vanta.js background with a typewriter effect displaying his tech skills and development philosophy.
+The portfolio opens with a dynamic hero section, featuring an animated background and a typewriter effect that highlights his technical skill set and development mindset. A responsive navigation system with smooth scrolling and mobile support ensures an intuitive user experience across devices.
 
-Navigation: A user-friendly, responsive navigation bar with smooth scrolling and a mobile menu.
+Key sections include:
 
-Sections:
+About: An overview of Mustafa’s academic journey at SZABIST, his passion for software engineering, and his growing interest in cybersecurity and secure backend systems.
 
-About: A brief introduction to Mustafa’s academic background, his passion for software development, and cybersecurity.
+Projects: A curated collection of academic and personal projects such as a CGPA & Probation Tracker, Attendance Management System, Maze Game, and Car Rental System, demonstrating proficiency in Java, Node.js, Python, and database-driven applications.
 
-Projects: Showcasing various projects like a CGPA & Probation Tracker, Maze Game, Car Rental System, and more, demonstrating his coding proficiency in Java, Node.js, and Python.
+Skills: A comprehensive breakdown of technical competencies, including JavaScript, Python, SQL, Express.js, Linux hardening, cybersecurity tools, and DevOps fundamentals.
 
-Skills: A comprehensive list of technical skills, including JavaScript, Python, SQL, Express.js, Cybersecurity Tools, Linux Hardening, and more.
+Education: Details of his ongoing BSCS degree at SZABIST, with coursework aligned toward cybersecurity, networks, operating systems, and secure backend development.
 
-Education: Information about his ongoing studies at SZABIST and the subjects related to cybersecurity and secure backend development.
+Certifications: Industry-recognized credentials such as the Google Cybersecurity Professional Certificate, Google AI Essentials, and other technical certifications highlighting continuous learning.
 
-Certifications: Recognized certifications such as Google Cybersecurity Professional Certificate, Google AI Essentials, and others, showcasing his continuous learning.
-
-Interactive Features:
-
-Back-to-top button for seamless navigation.
-
-Smooth scroll for quick jumps to different sections.
-
-Mobile-friendly design ensuring the portfolio looks great on all devices.
-
-Contact Form: An easy-to-use form for potential clients and collaborators to get in touch, with validation for proper input and email format.
-
-Footer: Includes social media links (GitHub, LinkedIn) and dynamically updates the year.
+The portfolio also includes interactive features like a back-to-top button, smooth scrolling, and a fully responsive layout. A contact form with input validation allows recruiters, collaborators, and clients to easily connect, while the footer provides quick access to GitHub and LinkedIn, with the year updated dynamically.
